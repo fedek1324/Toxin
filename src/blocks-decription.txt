@@ -1,0 +1,47 @@
+format is 
+pug-template ...
+folder ....
+* - doesnt have folder (but has bem name)
+when dont have style and not reusable
+
+b-header
+	b-logo
+	e-nav-content(menu-items)
+		e-nav-item(text, img) x
+		b-button x2	
+b-header/
+	__e-nav-item/
+	__e-nav-content/
+	
+b-logo(type="full")
+	(+b.b-logo._type)
+	e-img.IMG(src = .../type)
+b-logo/
+	_type_water-mark/
+	_type_full/
+	
+b-button
+
+	
+#in detail here
+b-text-field(head-text, placeholder-text = "")
+	head-text? e-head
+	e-rectange
+		e-placeholder	
+b-text-field/
+	__e-head/
+		b-text-field__e-head.pug
+		b-text-field__e-head.scss
+	__e-rectange/
+		b-text-field__e-rectange.pug
+		b-text-field__e-rectange.scss
+	__e-placeholder/
+		b-text-field__e-placeholder.pug
+		b-text-field__e-placeholder.scss
+	_hover-focus/
+		b-text-field_hover-focus.scss
+	b-text-field.pug
+	b-text-field.scss
+	
+
+	

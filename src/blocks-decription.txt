@@ -4,6 +4,19 @@ folder ....
 * - doesnt have folder (but has bem name)
 when dont have style and not reusable
 
+Colors & Type
+
+b-color(name, color)
+	e-square(color)
+	e-description(name, color)
+		e-color-name
+		e-color-hex
+b-color/
+	_e-color/
+	_e-description/
+	_e-color-name
+	_e_color-hex/
+
 b-header
 	b-logo
 	e-nav-content(menu-items)

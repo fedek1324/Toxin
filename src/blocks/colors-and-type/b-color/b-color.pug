@@ -1,0 +1,9 @@
+mixin b-color(name, color)
+  style
+    include ./b-color-and-elements.scss
+  +b.b-color
+    +e.e-square(style="background-color: " + color + ";")
+    +e.e-description 
+      +e.e-color-name #{name}
+        
+      +e.e-color-hex #{color}

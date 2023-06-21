@@ -1,0 +1,11 @@
+
+mixin b-logo(type = "full")
+  style 
+    include ./logo_type_watermark.scss
+    include ./logo_type_full.scss
+  if type == "full"
+    +b.b-logo.IMG(src="./assets/images/logo-full.png")._type_full
+  else if type == "watermark"
+    +b.b-logo.IMG(src="./assets/images/logo-watermark.png")._type_watermark
+  else
+    +b.b-logo.IMG(src="./assets/images/logo-full.png")._type_full

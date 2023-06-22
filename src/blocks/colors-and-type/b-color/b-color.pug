@@ -1,6 +1,5 @@
 mixin b-color(name, color)
-  style
-    include ./b-color-and-elements.scss
+  link(rel='stylesheet', href=require('./b-color-and-elements.scss'))
   +b.b-color
     +e.e-square(style="background-color: " + color + ";")
     +e.e-description 

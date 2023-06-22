@@ -1,8 +1,7 @@
 
 mixin b-logo(type = "full")
-  style 
-    include ./logo_type_watermark.scss
-    include ./logo_type_full.scss
+  link(rel='stylesheet', href=require('./logo_type_watermark.scss'))
+  link(rel='stylesheet', href=require('./logo_type_full.scss'))
   if type == "full"
     +b.b-logo.IMG(src="./assets/images/logo-full.png")._type_full
   else if type == "watermark"

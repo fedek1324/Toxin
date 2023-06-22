@@ -3,14 +3,26 @@
 .b-color {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .b-color__e-square {
-    height: 70px;
-    width: 70px;
+    min-height: 70px;
+    min-width: 70px;
     border-radius: 6px;
 }
 
 .b-color__e-color-name {
-  @extend h1;
+  @extend .h2;
+}
+
+.b-color__e-color-hex {
+  @extend .h2;
+  font-weight: normal;
+}
+
+.b-color__e-description {
+  margin-left: 40px;
+
+  line-height: 146.28%;
 }

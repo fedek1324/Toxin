@@ -1,17 +1,59 @@
-@use "font-faces";
+@use "font-face-Quicksand";
+@use "font-face-Montserrat";
+
+$grads: 100, 75, 50, 25, 5;
+$dark: #1F2041;
+$dark75: rgba($dark, 0.75);
+$dark50: rgba($dark, 0.50);
+$dark25: rgba($dark, 0.25);
+$dark5: rgba($dark, 0.05);
+
+@each $grad in $grads {
+    $opacity: calc($grad / 100); // Calculate the opacity based on the percentage
+    .dark-#{$grad} {
+        background-color: rgba($dark, $opacity);
+    }
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
 
 body {
     margin: 0 auto;
-    font-family: Quicksand, sans-serif;
+    font-family: Montserrat, sans-serif;
+
+    @extend .body-text
 }
 
-h1 {
+.h1 {
     font-style: normal;
-    font-weight: 700;
     font-size: 22px;
+    font-weight: 700;
     line-height: 29px;
 
-    /* Dark 100% */
+    color: $dark;
+}
 
-    color: #1F2041;
+.h2 {
+    font-size: 19px;
+    font-weight: 700;
+
+    color: $dark;
+}
+
+.h3 {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    color: $dark;
+}
+
+.body-text {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 24px;
+
+    color: $dark75;
 }

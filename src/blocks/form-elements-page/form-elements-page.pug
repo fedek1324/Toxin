@@ -1,10 +1,38 @@
 include ../logo/logo.pug
 include ../colors-and-type-blocks/b-color/b-color.pug
 include ../colors-and-type-blocks/h1/h1.pug
+include ../colors-and-type-blocks/h2/h2.pug
+include ../colors-and-type-blocks/h3/h3.pug
+include ../colors-and-type-blocks/body-text/body-text
+include  ../spacer/spacer
 
-+b-logo("watermark")
-+b-color("Black", "#000000")
-+b-color("Boloto", "#ACC321")
-+b-h1("h1")
-
-p The qugg
++b.b-form-elements-page
+    link(rel='stylesheet', href=require('./form-elements-page.scss'))
+    +e.DIV.e-container
+        +e.DIV.e-header
+            +b-logo("watermark")
+            +b-spacer({height: "67px"})
+        +e.e-colors-and-types-container
+            +b-spacer({width: "120px", height: "1px"})
+            +e.e-colors-container
+                +b-color("Dark Shade 100%", "#1F2041").__color
+                +b-color("Dark Shade 75%", "#575870").__color
+                +b-color("Dark Shade 50%", "#8F90A0").__color
+                +b-color("Dark Shade 25%", "#C7C7CF").__color
+                +b-color("Dark Shade 5%", "#F3F4F5").__color
+                +b-color("Purple", "#BC9CFB").__color
+                +b-color("Green", "#6FCF97").__color
+            +b-spacer({width: "415px", height: "1px"})
+            +e.e-text-types-container
+                +e.e-text-type-container
+                    +e.SPAN.e-text-type-name-h1 H1
+                    +e.SPAN.e-text-type-exapmle-h1 This one is the sub-section or widget title
+                +e.e-text-type-container
+                    +e.SPAN.e-text-type-name-h2 H2
+                    +e.SPAN.e-text-type-exapmle-h2 Next one is the item title inside widgets
+                +e.e-text-type-container
+                    +e.SPAN.e-text-type-name-h3 H3
+                    +e.SPAN.e-text-type-exapmle-h3 This is a label or CTA text
+                +e.e-text-type-container
+                    +e.SPAN.e-text-type-name-body Body
+                    +e.SPAN.e-text-type-exapmle-h3 This is the body text which is used for most of the design, like paragraphs, lists, etc.

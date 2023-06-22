@@ -1,0 +1,7 @@
+mixin b-spacer(options)
+    - let inlineStyle
+    if options.width
+        - inlineStyle = "display: inline-block;"
+    else
+        - inlineStyle = ""
+    +b.b-spacer(style=inlineStyle +  "width: " + options.width + ";" + "height: " + options.height + ";")

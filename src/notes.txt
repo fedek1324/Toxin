@@ -4,4 +4,33 @@ style
 
 then webpack dont track style.scss file changes and doesnt reload server
 
+
+
 if images suddenly disappeared just rebuild
+
+
+
+https://gwfh.mranftl.com/fonts/quicksand?subsets=latin
+fonts and fontfaces
+
+
+
+mixin b-color(name, color)
+  +b.b-color&attributes(attributes)
+
+&attributes(attributes) is necesarry for creating mixins like here
++link('https://github.com')._external Github
+
+or
+
++b.b-form-elements-page
+    link(rel='stylesheet', href=require('./form-elements-page.scss'))
+    +e.DIV.e-container
+        +e.DIV.e-colors-container
+            +b-color("Black", "#000000").__color
+
+block b-color is b-color b-form-elements-page__color
+
+when there i make drowser dev console wider all by blocks start to became smaller (bcs some blocks have
+width 100%) and even block with fixed width has started to became smaller so i set it min width and
+it fixed everything (situation it type examples h1 h2 etc)

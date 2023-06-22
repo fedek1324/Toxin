@@ -1,0 +1,17 @@
+@use "font-faces";
+
+body {
+    margin: 0 auto;
+    font-family: Quicksand, sans-serif;
+}
+
+h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 29px;
+
+    /* Dark 100% */
+
+    color: #1F2041;
+}

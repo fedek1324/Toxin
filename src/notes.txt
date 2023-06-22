@@ -1,0 +1,7 @@
+if in pug use
+style
+  include ../style.scss
+
+then webpack dont track style.scss file changes and doesnt reload server
+
+if images suddenly disappeared just rebuild

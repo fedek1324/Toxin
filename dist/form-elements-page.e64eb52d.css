@@ -207,30 +207,85 @@ body {
   font-family: Montserrat, sans-serif;
 }
 
-.h1 {
+.h1, .b-form-elements-page__e-text-type-name-h1, .b-form-elements-page__e-text-type-exapmle-h1 {
   font-style: normal;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
   line-height: 29px;
   color: #1F2041;
 }
 
-.h2 {
+.h2, .b-form-elements-page__e-text-type-name-h2, .b-form-elements-page__e-text-type-exapmle-h2 {
   font-size: 19px;
   font-weight: 700;
   color: #1F2041;
 }
 
-.h3 {
+.h3, .b-form-elements-page__e-text-type-name-h3, .b-form-elements-page__e-text-type-exapmle-h3 {
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
+  line-height: 128%;
   color: #1F2041;
 }
 
-.body-text, body {
+.body-text, .b-form-elements-page__e-text-type-name-body, .b-form-elements-page__e-text-type-exapmle-body-text, body {
   font-size: 14px;
   font-weight: normal;
   line-height: 24px;
   color: rgba(31, 32, 65, 0.75);
+}
+
+.b-form-elements-page {
+  padding: 30px 30px 0;
+}
+
+.b-form-elements-page__e-content-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 800px) {
+  .b-form-elements-page__e-content-container {
+    flex-direction: column;
+  }
+}
+.b-form-elements-page__e-colors-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.b-form-elements-page__color {
+  margin-bottom: 20px;
+}
+
+.b-form-elements-page__e-text-types-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 436px;
+}
+
+@media (max-width: 800px) {
+  .b-form-elements-page__e-text-types-container {
+    margin-top: 51px;
+  }
+}
+.b-form-elements-page__e-text-type-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 51px;
+}
+
+.b-form-elements-page__e-text-type-name-body, .b-form-elements-page__e-text-type-name-h3, .b-form-elements-page__e-text-type-name-h2, .b-form-elements-page__e-text-type-name-h1 {
+  min-width: 50px;
+  text-align: end;
+  font-weight: normal;
+  color: rgba(31, 32, 65, 0.25);
+  margin-right: 30px;
+}
+
+@supports (font-family: "Montserrat") {
+  .b-form-elements-page__e-text-type-name-body, .b-form-elements-page__e-text-type-name-h3, .b-form-elements-page__e-text-type-name-h2, .b-form-elements-page__e-text-type-name-h1 {
+    min-width: 37px;
+  }
 }

@@ -1,3 +1,25 @@
+TODO
+Fix double fonts import (doubled files in dist)
+Fix multiple style import in each block
+text spacing b-color __description
+
+
+interesting example: colors and type page
+1) There are 2 spacers (flex inline blocks) who have
+flex: 1 (= flex-grow: 1; flex-shink: 1; flex-basis: 0%;) - so it grabs all empty space of flex dlock
+bcs other items have flex-grow: 0 by default so they dont grab empty space.
+
+max-width: 125 px - for 1st and 415px for second - so they have max width
+
+2) There are 2 blocks who have flex-basis: auto by defulat so it takes width which is content
+width by deafult. So spacers start to shrink.
+Second block has max width also
+
+When any of 2 blocks start to shrink flex-wrap: wrap triggers. And also @media queries which set
+flex-direction to column to spacers now invisible. and also @media adds margin-top to text types block
+
+
+
 if in pug use
 style
   include ../style.scss

@@ -1,5 +1,5 @@
-
 mixin b-logo(type = "full")
+  link(rel='stylesheet', href=require('./logo.scss'))
   link(rel='stylesheet', href=require('./logo_type_watermark.scss'))
   link(rel='stylesheet', href=require('./logo_type_full.scss'))
   if type == "full"

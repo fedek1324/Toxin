@@ -6,6 +6,7 @@
   display: flex;
   flex-wrap: wrap;
 }
+
 @media (max-width: 800px) {
   .b-form-elements-page__e-content-container {
     flex-direction: column;

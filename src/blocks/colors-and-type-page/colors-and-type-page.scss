@@ -1,0 +1,104 @@
+@use "./src/common";
+
+.b-colors-and-type-page {
+  padding: 30px 30px 0;
+}
+
+
+.b-colors-and-type-page__e-content-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (max-width: 800px) {
+  .b-colors-and-type-page__e-content-container {
+    flex-direction: column;
+  }
+}
+
+
+.b-colors-and-type-page__e-colors-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.b-colors-and-type-page__color {
+  margin-bottom: 20px;
+}
+
+
+
+
+.b-colors-and-type-page__e-text-types-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 436px;
+}
+@media (max-width: 800px) {
+  .b-colors-and-type-page__e-text-types-container {
+    margin-top: 51px;
+  }
+}
+
+
+.b-colors-and-type-page__e-text-type-container {
+  display: flex;
+  flex-direction: row;
+
+  margin-bottom: 51px;
+}
+
+
+%b-colors-and-type-page__e-text-type-name {
+  min-width: 50px; // to align all text type names. have extra space for other fonts compatibility
+  text-align: end;
+
+  font-weight: normal;
+  color: common.$dark25;
+
+  margin-right: 30px;
+}
+@supports (font-family: "Montserrat") {
+  %b-colors-and-type-page__e-text-type-name {
+    min-width: 37px; // to align all text type names
+  }
+}
+
+
+
+.b-colors-and-type-page__e-text-type-name-h1 {
+  @extend .h1;
+  @extend %b-colors-and-type-page__e-text-type-name
+}
+
+.b-colors-and-type-page__e-text-type-name-h2 {
+  @extend .h2;
+  @extend %b-colors-and-type-page__e-text-type-name
+}
+
+.b-colors-and-type-page__e-text-type-name-h3 {
+  @extend .h3;
+  @extend %b-colors-and-type-page__e-text-type-name
+}
+
+.b-colors-and-type-page__e-text-type-name-body {
+  @extend .body-text;
+  @extend %b-colors-and-type-page__e-text-type-name
+}
+
+
+
+.b-colors-and-type-page__e-text-type-exapmle-h1 {
+  @extend .h1;
+}
+
+.b-colors-and-type-page__e-text-type-exapmle-h2 {
+  @extend .h2;
+}
+
+.b-colors-and-type-page__e-text-type-exapmle-h3 {
+  @extend .h3;
+}
+
+.b-colors-and-type-page__e-text-type-exapmle-body-text {
+  @extend .body-text;
+}

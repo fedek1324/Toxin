@@ -35,26 +35,32 @@ b-logo/
 	
 b-button
 
-	
-#in detail here
-b-text-field(head-text, placeholder-text = "")
-	head-text? e-head
-	e-rectange
-		e-placeholder	
-b-text-field/
-	__e-head/
-		b-text-field__e-head.pug
-		b-text-field__e-head.scss
-	__e-rectange/
-		b-text-field__e-rectange.pug
-		b-text-field__e-rectange.scss
-	__e-placeholder/
-		b-text-field__e-placeholder.pug
-		b-text-field__e-placeholder.scss
-	_hover-focus/
-		b-text-field_hover-focus.scss
-	b-text-field.pug
-	b-text-field.scss
-	
+text field - rectange - 25 text 25
+text-field hover/focus - rectange 50 text 75 + image darken
+dropdown - rectange 25 text 75 + image + dropdown
+dropdown expanded = dropdown hover/focus = dropdown + rec 50 + image darken
+date dropdown = dropdown
+subscripcion text field = text-field + image
+email text-field = text-field BUT WITHOUT head
 
+b-input-field/
+	_text-field/ (by default) rec 25 text 25 img 100
+	_dropdown/ rec 25 text 75 img 50
+	_expanded-hover-focus/ rec 50 text 75 (img 75 if dropdown) dropdown visible
+mixin b-input-field(head-text, second-head-text, placeholder-text = "", image)
+	- modfier-classes = "text-field"
+	if dropdown
+		- modfier-classes = "dropdown"
+	
+	b-input-field
+		# here we can set elements modificators depending on arguments
+		e-head ? .LABEL.e-head-text
+		e-second-head ? .SPAN.e-second-head-text
+		input-wrapper.DIV
+			.INPUT.e-input(class=hasIcon?, typ=xxx, placeholder=placeholder-text, id=head-text,...)
+			.SPAN.e-icon(class=Icon?, ...)
+		e-dropdown
+			block
+
+	
 	

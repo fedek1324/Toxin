@@ -1,5 +1,6 @@
 include ../logo/logo.pug
 include  ../spacer/spacer
+include  ../form-elements-blocks/input-field/b-input-field
 
 +b.b-form-elements-page
     link(rel='stylesheet', href=require('./form-elements-page.scss'))
@@ -8,3 +9,4 @@ include  ../spacer/spacer
         +b-spacer({height: "67px"})
     +e.e-content-container
         +b-spacer({width: "120px", height: "1px"})
+        +b-input-field({type: "dropdown", headText: "Hi", secondHeadText: "hellio", placeholder: "AADADA", image: "chevron"})

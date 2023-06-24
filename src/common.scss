@@ -19,11 +19,32 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 1 – Delete rules */
+/* 2 – Delete margin in Firefox and Safari */
+input {
+  font-family: inherit; /* 1 */
+  font-size: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  margin: 0; /* 2 */
+}
+
+button, input[type="submit"], input[type="reset"] {
+  font: inherit;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+}
+
 body {
   margin: 0 auto;
   font-family: Montserrat, sans-serif;
-
-  @extend .body-text
 }
 
 .h1 {

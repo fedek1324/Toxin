@@ -1,0 +1,35 @@
+mixin b-input-field(options)
+    //-- type, headText, secondHeadText, placeholder = "", image
+    -let modfierClasses = ""
+    case options.type
+        when "text"
+            - modfierClasses += "_is-text-field"
+        when "dropdown"
+            - modfierClasses += "_is-dropdown"
+        default
+            - modfierClasses += "_is-text-field"
+    -let imgClass = options.image ? "_is-"+ options.image + "-icon" : ""
+    -let additionalInputClass = options.image ? "_has-icon" : ""
+    -let chevronOpacity = ""
+    if options.image == "chevron"
+        case options.type
+            when "text"
+                - chevronOpacity += "_is-not-transparent"
+            when "dropdown"
+                - chevronOpacity += "_is-half-transparent"
+            default
+                - chevronOpacity += "_is-not-transparent"
+    if dropdown
+        - modfierClasses = "dropdown"
+    +b.b-input-field(class=modfierClasses)&attributes(attributes)
+        link(rel='stylesheet', href=require('./b-input-field.scss'))
+        +e.e-header-container
+            if options.headText
+                +e.LABEL.e-head 1Head
+            if options.secondHeadText
+                +e.SPAN.e-second-head second Head
+        +e.e-input-wrapper
+            +e.INPUT.e-input(class=additionalInputClass, class=modfierClasses, type="text", placeholder=options.placeholder)
+            +e.SPAN.e-icon(class=imgClass, class= chevronOpacity)
+        +e.e-dropdown
+            block

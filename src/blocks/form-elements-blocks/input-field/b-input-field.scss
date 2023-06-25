@@ -6,7 +6,6 @@
 }
 
 
-
 /* стили для label */
 .b-input-field__e-head {
   @extend .h3;
@@ -35,30 +34,32 @@
   @extend .body-text;
   font-size: 14px;
   line-height: 18px;
-  color: common.$dark25;
-  //height: calc(2.25rem + 2px);
-  //padding: 0.375rem 0.75rem;
-  //font-size: 1rem;
-  //font-weight: 400;
-  //line-height: 1.5;
-  //color: #212529;
-  //background-color: #fff;
+  color: common.$dark75;
   background-clip: padding-box;
   border: 1px solid common.$dark25;
   border-radius: 4px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  outline:none;
 }
 
-.b-input-field__e-input_is-text-field {
-  border: 1px solid common.$dark25;
+.b-input-field__e-input::placeholder {
   color: common.$dark25;
 }
 
-.b-input-field__e-input_is-dropdown {
-  border: 1px solid common.$dark25;
-  color: common.$dark75;
+.b-input-field__e-input_is-text-field:hover {
+  border: 1px solid common.$dark50;
+}
+.b-input-field__e-input_is-text-field:focus {
+  border: 1px solid common.$dark50;
 }
 
+.b-input-field__e-input_expanded {
+  border: 1px solid common.$dark50;
+}
+.b-input-field__e-input_is-dropdown:disabled {
+  background-color: inherit;
+}
 
 .b-input-field__e-input-wrapper {
   position: relative;

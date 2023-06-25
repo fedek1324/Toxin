@@ -1,5 +1,5 @@
 mixin b-input-field(options)
-    //-- type, headText, secondHeadText, placeholder = "", image
+    //-- type, headText, secondHeadText, value, placeholder = "", image
     -let modfierClasses = ""
     case options.type
         when "text"
@@ -29,7 +29,9 @@ mixin b-input-field(options)
             if options.secondHeadText
                 +e.SPAN.e-second-head second Head
         +e.e-input-wrapper
-            +e.INPUT.e-input(class=additionalInputClass, class=modfierClasses, type="text", placeholder=options.placeholder)
+            +e.INPUT.e-input(class=additionalInputClass, class=modfierClasses,
+                type="text", placeholder=options.placeholder, value=options.value, disabled=(options.type === "dropdown"))
             +e.SPAN.e-icon(class=imgClass, class= chevronOpacity)
         +e.e-dropdown
             block
+        script(src=require('./b-input-field.js'))

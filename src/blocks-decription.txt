@@ -43,10 +43,14 @@ date dropdown = dropdown
 subscripcion text field = text-field + image
 email text-field = text-field BUT WITHOUT head
 
+to do
+set dropdown expanded modifier
+
 b-input-field/
-	_text-field/ (by default) rec 25 text 25 img 100
-	_dropdown/ rec 25 text 75 img 50
-	_expanded-hover-focus/ rec 50 text 75 (img 75 if dropdown) dropdown visible
+	(by default - rec 25 placeholder 25 text 75)
+	_text-field/ img 100
+	_dropdown/ img 50 not editable
+	_expanded-focus/ rec 50 (if dropdown img 75 dropdown visible)
 mixin b-input-field(head-text, second-head-text, placeholder-text = "", image)
 	- modfier-classes = "text-field"
 	if dropdown

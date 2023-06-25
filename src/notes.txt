@@ -1,12 +1,12 @@
 TODO
-add chevron proper modificator names in input block
-add chevron opacity input block
 add focus expanded hover change to input
 
 Fix double fonts import (doubled files in dist)
 Fix multiple style import in each block
 text spacing b-color __description
 used positon absolute in input block
+
+split input block to dropdown and input
 
 interesting example: colors and type page
 1) There are 2 spacers (flex inline blocks) who have

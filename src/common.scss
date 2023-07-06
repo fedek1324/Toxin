@@ -12,6 +12,7 @@ $dark75: rgba($dark, 0.75);
 $dark50: rgba($dark, 0.50);
 $dark25: rgba($dark, 0.25);
 $dark5: rgba($dark, 0.05);
+$white: #FFFFFF;
 
 @each $grad in $grads {
   $opacity: calc($grad / 100); // Calculate the opacity based on the percentage

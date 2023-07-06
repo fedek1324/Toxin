@@ -6,6 +6,7 @@ mixin b-input-field(options)
             - modfierClasses += "_is-text-field"
         when "dropdown"
             - modfierClasses += "_is-dropdown"
+            - options.image = "chevron"
         default
             - modfierClasses += "_is-text-field"
     -let imgClass = options.image ? "_is-"+ options.image + "-icon" : ""
@@ -25,13 +26,14 @@ mixin b-input-field(options)
         link(rel='stylesheet', href=require('./b-input-field.scss'))
         +e.e-header-container
             if options.headText
-                +e.LABEL.e-head 1Head
+                +e.LABEL.e-head #{options.headText}
             if options.secondHeadText
-                +e.SPAN.e-second-head second Head
+                +e.SPAN.e-second-head #{options.secondHeadText}
         +e.e-input-wrapper
             +e.INPUT.e-input(class=additionalInputClass, class=modfierClasses,
                 type="text", placeholder=options.placeholder, value=options.value, disabled=(options.type === "dropdown"))
             +e.SPAN.e-icon(class=imgClass, class= chevronOpacity)
-        +e.e-dropdown
-            block
-        script(src=require('./b-input-field.js'))
+        if options.type == "dropdown"
+            +e.e-dropdown
+                block
+        script(type="module" src=require('./b-input-field.js'))

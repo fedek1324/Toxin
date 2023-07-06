@@ -1,0 +1,35 @@
+include ../../blocks/logo/logo
+include  ../../blocks/spacer/spacer
+include  ../../blocks/form-elements-blocks/input-field/b-input-field
+
++b.b-form-elements-page
+    link(rel='stylesheet', href=require('./form-elements-page.scss'))
+    +e.DIV.e-header
+        +b-logo("watermark")
+        +b-spacer({height: "67px"})
+    +e.e-content-container
+        +b-spacer({width: "111px", height: "1px"})
+        +e.e-column-1
+            +b-input-field({type: "text", headText: "Text Field", secondHeadText: "Default",
+                placeholder: "Email"})
+            +b-input-field({type: "text", headText: "Text Field", secondHeadText: "Hover / Focus",
+                value: "This is pretty awesome", placeholder: ""})(style="margin-top: 20px;")
+            +b-input-field({
+                type: "dropdown", headText: "Dropdown",
+                value: "Сколько гостей"})(style="margin-top: 20px;")
+                p Dropdown
+            +b-input-field({
+                type: "text", headText: "masked text field",
+                value: "", placeholder: "ДД.ММ.ГГГГ"
+            })(style="margin-top: 20px;")
+
+            +b-input-field({
+                type: "dropdown", headText: "date Dropdown",
+                value: "ДД.ММ.ГГГГ"
+            })(style="width: 150px; margin-top: 40px; margin-right: 20px;")
+                p Dropdown
+            +b-input-field({
+                type: "dropdown", headText: "date Dropdown",
+                value: "19.08.2019"
+            })(style="width: 150px; margin-top: 40px;")
+                p Dropdown

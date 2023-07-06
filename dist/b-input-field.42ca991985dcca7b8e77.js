@@ -15,7 +15,7 @@
   \******************************************************************/
 /***/ (() => {
 
-eval("console.log('hi im input')\r\n\r\n// const dropdown = document.getElementsByClassName('b-input-field__e-dropdown')[0];\r\nconst dropdownIcon = document.getElementsByClassName('b-input-field__e-icon_is-chevron-icon')[0];\r\nconst dropdownContent = document.getElementsByClassName('b-input-field__e-dropdown')[0];\r\nlet enabled = false;\r\ndropdownIcon.onclick = function() {\r\n    enabled = !enabled;\r\n    dropdownContent.style.display = enabled ? '' : 'none';\r\n};\n\n//# sourceURL=webpack:///./blocks/form-elements-blocks/input-field/b-input-field.js?");
+eval("console.log('hi im input')\r\n\r\nfor (let i = 0; i < document.getElementsByClassName(\"b-input-field__e-input_is-dropdown\").length; i++) {\r\n    const dropdownIcon = document.getElementsByClassName('b-input-field__e-icon_is-chevron-icon')[i];\r\n    const dropdownContent = document.getElementsByClassName('b-input-field__e-dropdown')[i];\r\n    const input = document.getElementsByClassName(\"b-input-field__e-input_is-dropdown\")[i];\r\n    dropdownContent.hidden = true;\r\n\r\n    let enabled = false;\r\n    dropdownContent.style.width = input.offsetWidth + \"px\";\r\n    dropdownIcon.onclick = function(event) {\r\n        event.preventDefault();\r\n        enabled = !enabled;\r\n        // dropdownContent.style.display = enabled ? '' : 'none';\r\n        input.classList.toggle(\"b-input-field__e-input_expanded\");\r\n        dropdownContent.hidden = !enabled;\r\n    };\r\n\r\n}\r\n\n\n//# sourceURL=webpack:///./blocks/form-elements-blocks/input-field/b-input-field.js?");
 
 /***/ })
 

@@ -20,6 +20,19 @@ for (let i = 0; i < document.getElementsByClassName("b-input-field_is-dropdown")
         // dropdownContent.style.display = enabled ? '' : 'none';
         input.classList.toggle("b-input-field__e-input_active-dropdown");
         dropdownContent.hidden = !enabled;
+
+        document.addEventListener("pointerdown", handleDocumentClick, {passive: true})
     };
 
+    function handleDocumentClick(event) {
+        let isInside = inputBlock.contains(event.target);
+        if (!isInside) {
+            enabled = false;
+            input.classList.remove("b-input-field__e-input_active-dropdown");
+            dropdownContent.hidden = true;
+            document.removeEventListener("pointerdown", handleDocumentClick, {passive: true});
+        }
+    }
 }
+
+

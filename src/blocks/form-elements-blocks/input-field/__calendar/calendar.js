@@ -7,7 +7,7 @@ class Calendar {
         this.startDate = null;
         this.endDate = null;
         this.calendar = null;
-        this.datepicker = null;
+        this.datePickerBlock = null;
         this.inputWrapper = null;
         this.input = null;
 
@@ -17,106 +17,125 @@ class Calendar {
         // Generate the calendar for the current month
         this.generateCalendar(this.currentYear, this.currentMonth);
 
-        this.addOnClick();
+        this.addCellOnClick();
     }
+
+    addCloseOnDocumentClickHandlers() {
+        const handleDocumentClick = event => {
+            let isInside = this.datePickerBlock.contains(event.target);
+            if (!isInside) {
+                console.log('outer of input block click detected. closing block')
+                this.input.classList.remove('b-input-field__e-input_active-date-picker');
+                this.calendar.classList.remove('b-input-field__e-calendar_active');
+                document.removeEventListener("pointerdown", handleDocumentClick, {passive: true});
+            }
+        }
+
+        document.addEventListener("pointerdown", handleDocumentClick, {passive: true})
+    }
+
 
     initCalendar(datePicker) {
         // Get the datepicker input element
-        this.datepicker = datePicker;
+        this.datePickerBlock = datePicker;
         this.inputWrapper = datePicker.querySelector('.b-input-field__e-input-wrapper');
         this.input = datePicker.querySelector('.b-input-field__e-input');
 
         // Create a date picker calendar
         this.calendar = document.createElement('div');
         this.calendar.classList.add('b-input-field__e-calendar');
-        this.datepicker.append(this.calendar);
+        this.datePickerBlock.append(this.calendar);
 
         // Event listener to toggle the calendar visibility
         this.inputWrapper.addEventListener('pointerdown', event => {
             event.preventDefault();
             this.input.classList.toggle('b-input-field__e-input_active-date-picker');
             this.calendar.classList.toggle('b-input-field__e-calendar_active');
+            this.addCloseOnDocumentClickHandlers();
         });
     }
 
     // Function to generate the calendar HTML
     generateCalendar(year, month) {
-        const firstDay = new Date(year, month - 1, 1).getDay();
-        const lastDate = new Date(year, month, 0).getDate();
-        const daysInPreviousMonth = new Date(year, month - 1, 0).getDate();
+        // waiting for addCloseOnDocumentClickHandlers proof that click was on input block
+        setTimeout(() => {
+            const firstDay = new Date(year, month - 1, 1).getDay();
+            const lastDate = new Date(year, month, 0).getDate();
+            const daysInPreviousMonth = new Date(year, month - 1, 0).getDate();
 
-        const dayIndexMap = [6, 0, 1, 2, 3, 4, 5]; // Mapping for day index, where Monday is 0 and Sunday is 6
+            const dayIndexMap = [6, 0, 1, 2, 3, 4, 5]; // Mapping for day index, where Monday is 0 and Sunday is 6
 
-        let dayCounter = 0;
-        let tbodyContent = '';
-        let weekRow = '';
+            let dayCounter = 0;
+            let tbodyContent = '';
+            let weekRow = '';
 
-        // Loop for the previous month dates
-        for (let i = dayIndexMap[firstDay] - 1; i >= 0; i--) {
-            const date = daysInPreviousMonth - i;
-            weekRow += `<td class="b-input-field__e-date b-input-field__e-date_disabled">${date}</td>`;
-            dayCounter++;
-        }
-
-        // Loop for the current month dates
-        for (let i = 1; i <= lastDate; i++) {
-            const date = i;
-            const currentDate = new Date(year, month - 1, date);
-            const isCurrentDate = currentDate.toDateString() === new Date().toDateString(); // Check if it's the current date
-            let dateCellClass = 'b-input-field__e-date';
-            dateCellClass += isCurrentDate ? 'b-input-field__e-date_current-date' : '';
-            weekRow += `<td class="${dateCellClass}">${date}</td>`;
-            dayCounter++;
-
-            if (dayCounter === 7) {
-                tbodyContent += `<tr class="b-input-field__e-week-row" >${weekRow}</tr>`;
-                weekRow = '';
-                dayCounter = 0;
+            // Loop for the previous month dates
+            for (let i = dayIndexMap[firstDay] - 1; i >= 0; i--) {
+                const date = daysInPreviousMonth - i;
+                weekRow += `<td class="b-input-field__e-date b-input-field__e-date_disabled">${date}</td>`;
+                dayCounter++;
             }
-        }
 
-        // Loop for the next month dates
-        let nextMonthDate = 1;
-        while (dayCounter < 7) {
-            weekRow += `<td class="b-input-field__e-date b-input-field__e-date_disabled">${nextMonthDate}</td>`;
-            dayCounter++;
-            nextMonthDate++;
-        }
+            // Loop for the current month dates
+            for (let i = 1; i <= lastDate; i++) {
+                const date = i;
+                const currentDate = new Date(year, month - 1, date);
+                const isCurrentDate = currentDate.toDateString() === new Date().toDateString(); // Check if it's the current date
+                let dateCellClass = 'b-input-field__e-date';
+                dateCellClass += isCurrentDate ? 'b-input-field__e-date_current-date' : '';
+                weekRow += `<td class="${dateCellClass}">${date}</td>`;
+                dayCounter++;
 
-        // Add the last row if it is not empty
-        if (weekRow !== '') {
-            tbodyContent += `<tr class="b-input-field__e-week-row">${weekRow}</tr>`;
-        }
+                if (dayCounter === 7) {
+                    tbodyContent += `<tr class="b-input-field__e-week-row" >${weekRow}</tr>`;
+                    weekRow = '';
+                    dayCounter = 0;
+                }
+            }
 
-        const monthName = new Date(year, month - 1, 1).toLocaleString('default', { month: 'long' });
-        const formattedTitle = `${monthName} ${year}`;
+            // Loop for the next month dates
+            let nextMonthDate = 1;
+            while (dayCounter < 7) {
+                weekRow += `<td class="b-input-field__e-date b-input-field__e-date_disabled">${nextMonthDate}</td>`;
+                dayCounter++;
+                nextMonthDate++;
+            }
 
-        this.calendar.innerHTML = `
-          <table class="b-input-field__e-table">
-            <thead class="b-input-field__e-t-head">
-              <tr class="b-input-field__e-first-tr">
-                <th colspan="7" class="b-input-field__e-th">
-                  <button class="b-input-field__e-prev-month-btn">&lt;</button>
-                  ${formattedTitle}
-                  <button class="b-input-field__e-next-month-btn">&gt;</button>
-                </th>
-              </tr>
-              <tr class="b-input-field__e-weekdays">
-                <th class="b-input-field__e-weekday">Пн</th>
-                <th class="b-input-field__e-weekday">Вт</th>
-                <th class="b-input-field__e-weekday">Ср</th>
-                <th class="b-input-field__e-weekday">Чт</th>
-                <th class="b-input-field__e-weekday">Пт</th>
-                <th class="b-input-field__e-weekday">Сб</th>
-                <th class="b-input-field__e-weekday">Вс</th>
-              </tr>
-            </thead>
-            <tbody class="b-input-field__e-t-body">
-              ${tbodyContent}
-            </tbody>
-          </table>
-        `;
-        this.addMonthNavigationHandlers();
+            // Add the last row if it is not empty
+            if (weekRow !== '') {
+                tbodyContent += `<tr class="b-input-field__e-week-row">${weekRow}</tr>`;
+            }
+
+            const monthName = new Date(year, month - 1, 1).toLocaleString('default', { month: 'long' });
+            const formattedTitle = `${monthName} ${year}`;
+
+            this.calendar.innerHTML = `
+              <table class="b-input-field__e-table">
+                <thead class="b-input-field__e-t-head">
+                  <tr class="b-input-field__e-first-tr">
+                    <th colspan="7" class="b-input-field__e-th">
+                      <button class="b-input-field__e-prev-month-btn">&lt;</button>
+                      ${formattedTitle}
+                      <button class="b-input-field__e-next-month-btn">&gt;</button>
+                    </th>
+                  </tr>
+                  <tr class="b-input-field__e-weekdays">
+                    <th class="b-input-field__e-weekday">Пн</th>
+                    <th class="b-input-field__e-weekday">Вт</th>
+                    <th class="b-input-field__e-weekday">Ср</th>
+                    <th class="b-input-field__e-weekday">Чт</th>
+                    <th class="b-input-field__e-weekday">Пт</th>
+                    <th class="b-input-field__e-weekday">Сб</th>
+                    <th class="b-input-field__e-weekday">Вс</th>
+                  </tr>
+                </thead>
+                <tbody class="b-input-field__e-t-body">
+                  ${tbodyContent}
+                </tbody>
+              </table>
+            `;
+            this.addMonthNavigationHandlers();
+        });
     }
 
     addMonthNavigationHandlers() {
@@ -124,15 +143,16 @@ class Calendar {
         const prevMonthBtn = this.calendar.querySelector('.b-input-field__e-prev-month-btn');
         const nextMonthBtn = this.calendar.querySelector('.b-input-field__e-next-month-btn');
 
-        prevMonthBtn.addEventListener('pointerdown', (event) => {
+        prevMonthBtn.addEventListener('pointerdown', event => {
             event.preventDefault();
             const newMonth = this.currentMonth === 1 ? 12 : this.currentMonth - 1;
             const newYear = this.currentMonth === 1 ? this.currentYear - 1 : this.currentYear;
             this.updateCalendar(newYear, newMonth);
         });
 
-        nextMonthBtn.addEventListener('pointerdown', (event) => {
+        nextMonthBtn.addEventListener('pointerdown', event => {
             event.preventDefault();
+            // waiting for addCloseOnDocumentClickHandlers proof that click was on input block
             const newMonth = this.currentMonth === 12 ? 1 : this.currentMonth + 1;
             const newYear = this.currentMonth === 12 ? this.currentYear + 1 : this.currentYear;
             this.updateCalendar(newYear, newMonth);
@@ -147,7 +167,7 @@ class Calendar {
         this.generateCalendar(year, month);
     }
 
-    addOnClick() {
+    addCellOnClick() {
         // Event listener for date selection using event delegation
         this.calendar.addEventListener('pointerdown', (event) => {
             const cell = event.target;
@@ -196,7 +216,6 @@ class Calendar {
     }
 
     handleClickIfOneDate(selectedDate) {
-        console.log(selectedDate);
         const formattedDate = this.formatDate(selectedDate);
         this.input.value = formattedDate;
         // this.calendar.classList.remove('b-input-field__e-calendar_active');

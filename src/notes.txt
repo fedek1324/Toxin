@@ -1,4 +1,5 @@
 TODO
+chevron doesnt open date select
 make dropdowns alaivable for select from inside it
 js can import css
 analyze flat starter kit project

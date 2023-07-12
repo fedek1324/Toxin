@@ -1,9 +1,11 @@
 TODO
+make dropdowns alaivable for select from inside it
 js can import css
 analyze flat starter kit project
 add masked functionality
 add auto style and js import check flat ui metalamp
 change chevron to symbol smth like &#8249;
+make calendar rows constant mb
 
 Fix double fonts import (doubled files in dist)
 Fix multiple style import in each block

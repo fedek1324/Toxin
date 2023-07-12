@@ -7,6 +7,12 @@ mixin b-input-field(options)
         when "dropdown"
             - modfierClasses += "_is-dropdown"
             - options.image = "chevron"
+        when "single-date-picker"
+            - modfierClasses += "_is-single-date-picker"
+            - options.image = "chevron"
+        when "range-date-picker"
+            - modfierClasses += "_is-range-date-picker"
+            - options.image = "chevron"
         default
             - modfierClasses += "_is-text-field"
     -let imgClass = options.image ? "_is-"+ options.image + "-icon" : ""
@@ -18,12 +24,17 @@ mixin b-input-field(options)
                 - chevronOpacity += "_is-not-transparent"
             when "dropdown"
                 - chevronOpacity += "_is-half-transparent"
+            when "one-date-picker"
+                - chevronOpacity += "_is-half-transparent"
+            when "range-date-picker"
+                - chevronOpacity += "_is-half-transparent"
             default
                 - chevronOpacity += "_is-not-transparent"
     if dropdown
         - modfierClasses = "dropdown"
     +b.b-input-field(class=modfierClasses)&attributes(attributes)
         link(rel='stylesheet', href=require('./b-input-field.scss'))
+        link(rel='stylesheet', href=require('./__calendar/calendar.scss'))
         +e.e-header-container
             if options.headText
                 +e.LABEL.e-head #{options.headText}
@@ -31,7 +42,7 @@ mixin b-input-field(options)
                 +e.SPAN.e-second-head #{options.secondHeadText}
         +e.e-input-wrapper
             +e.INPUT.e-input(class=additionalInputClass, class=modfierClasses,
-                type="text", placeholder=options.placeholder, value=options.value, disabled=(options.type === "dropdown"))
+                type="text", placeholder=options.placeholder, value=options.value)
             +e.SPAN.e-icon(class=imgClass, class= chevronOpacity)
         if options.type == "dropdown"
             +e.e-dropdown

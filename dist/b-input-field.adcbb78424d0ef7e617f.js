@@ -15,7 +15,7 @@
   \******************************************************************/
 /***/ (() => {
 
-eval("console.log('hi im input')\r\n\r\nfor (let i = 0; i < document.getElementsByClassName(\"b-input-field__e-input_is-dropdown\").length; i++) {\r\n    const dropdownIcon = document.getElementsByClassName('b-input-field__e-icon_is-chevron-icon')[i];\r\n    const dropdownContent = document.getElementsByClassName('b-input-field__e-dropdown')[i];\r\n    const input = document.getElementsByClassName(\"b-input-field__e-input_is-dropdown\")[i];\r\n    dropdownContent.hidden = true;\r\n\r\n    let enabled = false;\r\n    dropdownContent.style.width = input.offsetWidth + \"px\";\r\n    dropdownIcon.onclick = function(event) {\r\n        event.preventDefault();\r\n        enabled = !enabled;\r\n        // dropdownContent.style.display = enabled ? '' : 'none';\r\n        input.classList.toggle(\"b-input-field__e-input_expanded\");\r\n        dropdownContent.hidden = !enabled;\r\n    };\r\n\r\n}\r\n\n\n//# sourceURL=webpack:///./blocks/form-elements-blocks/input-field/b-input-field.js?");
+eval("throw new Error(\"Module parse failed: Unexpected token (8:10)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n|     let inputBlock = document.getElementsByClassName(\\\"b-input-field_is-dropdown\\\")[i];\\n|     inputBlock.\\n>     const dropdownIcon = document.getElementsByClassName('b-input-field__e-icon_is-chevron-icon')[i];\\n|     const dropdownContent = document.getElementsByClassName('b-input-field__e-dropdown')[i];\\n|     const input = document.getElementsByClassName(\\\"b-input-field__e-input_is-dropdown\\\")[i];\");\n\n//# sourceURL=webpack:///./blocks/form-elements-blocks/input-field/b-input-field.js?");
 
 /***/ })
 
@@ -24,7 +24,7 @@ eval("console.log('hi im input')\r\n\r\nfor (let i = 0; i < document.getElements
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
 /******/ 	var __webpack_exports__ = {};
 /******/ 	__webpack_modules__["./blocks/form-elements-blocks/input-field/b-input-field.js"]();
 /******/ 	

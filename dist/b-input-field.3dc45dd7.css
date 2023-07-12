@@ -306,14 +306,27 @@ body {
   border: 1px solid rgba(31, 32, 65, 0.5);
 }
 
-.b-input-field__e-input_expanded {
+.b-input-field__e-input_active-dropdown {
   border: 1px solid rgba(31, 32, 65, 0.5);
   border-radius: 4px 4px 0 0;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05); /* Add box shadow */
 }
 
-.b-input-field__e-input_is-dropdown:disabled {
+.b-input-field__e-input_active-date-picker {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05); /* Add box shadow */
+}
+
+.b-input-field__e-input_is-dropdown:disabled,
+.b-input-field__e-input_is-single-date-picker:disabled,
+.b-input-field__e-input_is-range-date-picker:disabled {
   background-color: inherit;
+}
+
+.b-input-field__e-input_is-dropdown,
+.b-input-field__e-input_is-single-date-picker,
+.b-input-field__e-input_is-range-date-picker {
+  cursor: pointer;
 }
 
 .b-input-field__e-input-wrapper {
@@ -358,7 +371,6 @@ body {
   background-size: 9px auto;
   background-repeat: no-repeat;
   background-position: center;
-  cursor: pointer;
 }
 
 .b-input-field__e-icon_is-half-transparent {

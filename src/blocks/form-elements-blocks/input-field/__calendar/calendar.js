@@ -61,8 +61,8 @@ class Calendar {
       const firstDay = new Date(year, month - 1, 1).getDay();
       const lastDate = new Date(year, month, 0).getDate();
       const daysInPreviousMonth = new Date(year, month - 1, 0).getDate();
-
-      const dayIndexMap = [6, 0, 1, 2, 3, 4, 5]; // Mapping for day index, where Monday is 0 and Sunday is 6
+      // Mapping for day index, where Monday is 0 and Sunday is 6
+      const dayIndexMap = [6, 0, 1, 2, 3, 4, 5];
 
       let dayCounter = 0;
       let tbodyContent = '';
@@ -72,18 +72,19 @@ class Calendar {
       for (let i = dayIndexMap[firstDay] - 1; i >= 0; i--) {
         const date = daysInPreviousMonth - i;
         weekRow += `<td class="b-input-field__e-date b-input-field__e-date_disabled">${date}</td>`;
-        dayCounter++;
+        dayCounter += 1;
       }
 
       // Loop for the current month dates
       for (let i = 1; i <= lastDate; i++) {
         const date = i;
         const currentDate = new Date(year, month - 1, date);
-        const isCurrentDate = currentDate.toDateString() === new Date().toDateString(); // Check if it's the current date
+        // Check if it's the current date
+        const isCurrentDate = currentDate.toDateString() === new Date().toDateString();
         let dateCellClass = 'b-input-field__e-date';
         dateCellClass += isCurrentDate ? ' b-input-field__e-date_current-date' : '';
         weekRow += `<td class="${dateCellClass}">${date}</td>`;
-        dayCounter++;
+        dayCounter += 1;
 
         if (dayCounter === 7) {
           tbodyContent += `<tr class="b-input-field__e-week-row" >${weekRow}</tr>`;
@@ -96,8 +97,8 @@ class Calendar {
       let nextMonthDate = 1;
       while (dayCounter < 7) {
         weekRow += `<td class="b-input-field__e-date b-input-field__e-date_disabled">${nextMonthDate}</td>`;
-        dayCounter++;
-        nextMonthDate++;
+        dayCounter += 1;
+        nextMonthDate += 1;
       }
 
       // Add the last row if it is not empty
@@ -168,7 +169,7 @@ class Calendar {
     this.calendar.addEventListener('pointerdown', (event) => {
       const cell = event.target;
       if (cell.tagName === 'TD' && !cell.classList.contains('b-input-field__e-date_disabled')) {
-        const date = parseInt(cell.textContent);
+        const date = parseInt(cell.textContent, 10);
         const selectedDate = new Date(this.currentYear, this.currentMonth - 1, date);
         if (this.isRange) {
           this.handleClickIfRange(selectedDate, event);
@@ -185,19 +186,22 @@ class Calendar {
     if (!this.startDate) {
       this.startDate = selectedDate;
       this.endDate = null;
-    }
-    // Check if only start date is set
-    else if (this.startDate && !this.endDate) {
-      this.endDate = new Date(Math.max(this.startDate, selectedDate));
-      this.startDate = new Date(Math.min(this.startDate, selectedDate));
-    }
-    // Check if both start and end dates are set
-    else if (this.startDate && this.endDate) {
+      cell.classList.add('b-input-field__e-date_picked');
+      // cell.classList.add('b-input-field__e-date_first');
+    } else if (this.startDate && !this.endDate) { // Check if only start date is set
+      if (this.startDate < selectedDate) { // ok. no swap
+        this.endDate = selectedDate;
+        cell.classList.add('b-input-field__e-date_picked');
+      } else {
+        cell.classList.add('b-input-field__e-date_picked');
+        this.endDate = this.startDate;
+        this.startDate = selectedDate;
+      }
+    } else if (this.startDate && this.endDate) { // Check if both start and end dates are set
       this.startDate = selectedDate;
       this.endDate = null;
-
-      // Repaint calendar so it is without range
-      this.updateCalendar(this.currentYear, this.currentMonth);
+      this.removeRangeAndPickedDates();
+      cell.classList.add('b-input-field__e-date_picked');
     }
 
     // Check if both start and end dates are set
@@ -212,21 +216,37 @@ class Calendar {
     }
   }
 
+  removeRangeAndPickedDates() {
+    const highlightedCells = this.calendar.querySelectorAll('.b-input-field__e-date_selected');
+    // Dehighlight the selected date range
+    const firstPickedCell = highlightedCells[0];
+    firstPickedCell.classList.remove('b-input-field__e-date_first');
+    firstPickedCell.classList.remove('b-input-field__e-date_picked');
+
+    const secondPickedCell = highlightedCells[highlightedCells.length - 1];
+    secondPickedCell.classList.remove('b-input-field__e-date_last');
+    secondPickedCell.classList.remove('b-input-field__e-date_picked');
+
+    highlightedCells.forEach((cell) => {
+      cell.classList.remove('b-input-field__e-date_selected');
+    });
+  }
+
   handleClickIfOneDate(selectedDate, event) {
     const cell = event.target;
-    const pickedDate = document.querySelector('.b-input-field__e-picked-date');
+    const pickedDate = document.querySelector('.b-input-field__e-date_picked');
     if (pickedDate) {
-      pickedDate.classList.remove('b-input-field__e-picked-date');
+      pickedDate.classList.remove('b-input-field__e-date_picked');
     }
     const formattedDate = this.formatDate(selectedDate);
     this.input.value = formattedDate;
-    cell.classList.add('b-input-field__e-picked-date');
+    cell.classList.add('b-input-field__e-date_picked');
   }
 
   highlightRange() {
     // Highlight the selected date range
     const cells = this.calendar.querySelectorAll('td');
-    for (let i = 0; i < cells.length; i++) {
+    for (let i = 0; i < cells.length; i += 1) {
       const cell = cells[i];
       const cellDate = cell.textContent;
       const startDateNum = this.startDate.getDate();
@@ -234,12 +254,13 @@ class Calendar {
       if (cellDate >= startDateNum && cellDate <= endDateNum
         && (Math.abs(cellDate - i) < 15)) { // filter other month
         cell.classList.add('b-input-field__e-date_selected');
+        if (+cellDate === startDateNum) {
+          cell.classList.add('b-input-field__e-date_first');
+        } else if (+cellDate === endDateNum) {
+          cell.classList.add('b-input-field__e-date_last');
+        }
       }
     }
-  }
-
-  test() {
-
   }
 
   // Function to format the date as "dd.mm.yyyy"
@@ -252,14 +273,14 @@ class Calendar {
 }
 
 const singleDatePickers = document.getElementsByClassName('b-input-field_is-single-date-picker');
-for (let i = 0; i < singleDatePickers.length; i++) {
+for (let i = 0; i < singleDatePickers.length; i += 1) {
   const singleDatePicker = singleDatePickers[i];
   singleDatePicker.disabled = true;
   new Calendar(singleDatePicker, false);
 }
 
 const rangeDatePickers = document.getElementsByClassName('b-input-field_is-range-date-picker');
-for (let i = 0; i < rangeDatePickers.length; i++) {
+for (let i = 0; i < rangeDatePickers.length; i += 1) {
   const rangeDatePicker = rangeDatePickers[i];
   rangeDatePicker.disabled = true;
   new Calendar(rangeDatePicker, true);

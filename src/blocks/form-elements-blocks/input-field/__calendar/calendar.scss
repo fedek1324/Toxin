@@ -106,13 +106,7 @@
   //background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(188, 156, 255, 0.25) 0.01%, rgba(139, 164, 249, 0.25) 100%);
 }
 
-.b-input-field__e-date_first {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='41' height='40' viewBox='0 0 41 40' fill='none'><path d='M0.695312 20C0.695312 8.98872 9.62173 0 20.633 0C31.6443 0 40.5707 8.98872 40.5707 20C40.5707 31.0113 31.6443 40 20.633 40C9.62173 40 0.695312 31.0113 0.695312 20Z' fill='url(%23paint0_linear_18442_192)'/><defs><linearGradient id='paint0_linear_18442_192' x1='20.633' y1='0' x2='20.633' y2='40' gradientUnits='userSpaceOnUse'><stop stop-color='%23BC9CFF'/><stop offset='1' stop-color='%238BA4F9'/></linearGradient></defs></svg>");
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.b-input-field__e-picked-date {
+.b-input-field__e-date_picked {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='41' height='40' viewBox='0 0 41 40' fill='none'><path d='M0.195312 20C0.195312 8.98872 9.12173 0 20.133 0C31.1443 0 40.0707 8.98872 40.0707 20C40.0707 31.0113 31.1443 40 20.133 40C9.12173 40 0.195312 31.0113 0.195312 20Z' fill='url(%23paint0_linear_18442_180)'/><defs><linearGradient id='paint0_linear_18442_180' x1='20.133' y1='0' x2='20.133' y2='40' gradientUnits='userSpaceOnUse'><stop stop-color='%23BC9CFF'/><stop offset='1' stop-color='%238BA4F9'/></linearGradient></defs></svg>");
   background-position: center;
   background-repeat: no-repeat;
@@ -121,8 +115,15 @@
   font-weight: 700;
 }
 
-.b-input-field__e-date_first-of-range {
-  background: linear-gradient(to right, transparent 50%, #FF0000 50%);
-  background-position: center;
-  background-repeat: no-repeat;
+
+.b-input-field__e-date_first {
+  background-color: transparent;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='41' height='40' viewBox='0 0 41 40' fill='none'><path d='M0.195312 20C0.195312 8.98872 9.12173 0 20.133 0C31.1443 0 40.0707 8.98872 40.0707 20C40.0707 31.0113 31.1443 40 20.133 40C9.12173 40 0.195312 31.0113 0.195312 20Z' fill='url(%23paint0_linear_18442_180)'/><defs><linearGradient id='paint0_linear_18442_180' x1='20.133' y1='0' x2='20.133' y2='40' gradientUnits='userSpaceOnUse'><stop stop-color='%23BC9CFF'/><stop offset='1' stop-color='%238BA4F9'/></linearGradient></defs></svg>"),
+    linear-gradient(to right, transparent, transparent 49.9%, common.$light-purple 50%);
+}
+
+.b-input-field__e-date_last {
+  background-color: transparent;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='41' height='40' viewBox='0 0 41 40' fill='none'><path d='M0.195312 20C0.195312 8.98872 9.12173 0 20.133 0C31.1443 0 40.0707 8.98872 40.0707 20C40.0707 31.0113 31.1443 40 20.133 40C9.12173 40 0.195312 31.0113 0.195312 20Z' fill='url(%23paint0_linear_18442_180)'/><defs><linearGradient id='paint0_linear_18442_180' x1='20.133' y1='0' x2='20.133' y2='40' gradientUnits='userSpaceOnUse'><stop stop-color='%23BC9CFF'/><stop offset='1' stop-color='%238BA4F9'/></linearGradient></defs></svg>"),
+  linear-gradient(to right, common.$light-purple, common.$light-purple 49.9%, transparent 50%);
 }

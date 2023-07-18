@@ -1,4 +1,5 @@
 TODO
+fix calendar style when there are multiple lines selected
 mb add highlight on calendar on hover (like avito)
 right after loading one can see calender without material icons and with text instead it looks bad
 set correct tab indexes, now dropdowns doesnt consider. Add onblur handler instead of document click in calendar block

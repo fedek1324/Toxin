@@ -1,5 +1,5 @@
 // ALERT    ALERT    ALERT    ALERT    ALERT
-// Changing this file will affect many page elemtns
+// Changing this file will affect many page elements
 // changing h1-h6, p, body text will affect all elements that use this rules set
 // change h1-h6, p, body text in blocks style files
 
@@ -8,11 +8,15 @@
 
 $grads: 100, 75, 50, 25, 5;
 $dark: #1F2041;
+$dark100: #1F2041;
 $dark75: rgba($dark, 0.75);
 $dark50: rgba($dark, 0.50);
 $dark25: rgba($dark, 0.25);
 $dark5: rgba($dark, 0.05);
 $white: #FFFFFF;
+$purple: #BC9CFF;
+
+$light-purple: #EBE7FD; // for data selection
 
 @each $grad in $grads {
   $opacity: calc($grad / 100); // Calculate the opacity based on the percentage
@@ -85,3 +89,51 @@ body {
 
   color: $dark75;
 }
+
+/* material-icons-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/material-icons-v140-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }

@@ -1,11 +1,15 @@
 TODO
-chevron doesnt open date select
+mb add highlight on calendar on hover (like avito)
+right after loading one can see calender without material icons and with text instead it looks bad
+set correct tab indexes, now dropdowns doesnt consider. Add onblur handler instead of document click in calendar block
+make calendar pug file
+chevron doesnt open date select and doesnt have poiner
 make dropdowns alaivable for select from inside it
 js can import css
 analyze flat starter kit project
 add masked functionality
 add auto style and js import check flat ui metalamp
-change chevron to symbol smth like &#8249;
+change chevron to symbol smth like &#8249; or cvehron using material icons
 make calendar rows constant mb
 
 Fix double fonts import (doubled files in dist)

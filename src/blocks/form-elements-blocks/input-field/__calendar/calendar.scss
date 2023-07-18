@@ -1,3 +1,5 @@
+@use "./src/common";
+
 .b-input-field__e-input_is-single-date-picker,
 .b-input-field__e-input_is-range-date-picker {
   position: relative;
@@ -10,9 +12,9 @@
   z-index: 1;
   background-color: #fff;
 
-  border: 1px solid black;
+  border: 1px solid common.$dark25;
   border-radius: 4px;
-  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  box-shadow: 0 10px 20px common.$dark5;
 
   display: none;
 
@@ -38,8 +40,47 @@
   font-weight: bold;
 }
 
+.b-input-field__e-current-month-header {
+  display: flex;
+  justify-content: space-between;
+
+  padding-bottom: 30px;
+}
+
+.b-input-field__e-current-month {
+  @extend .h2;
+}
+
+.b-input-field__e-prev-month-btn,
+.b-input-field__e-next-month-btn,
+{
+  @extend .material-icons;
+  @extend .md-24;
+
+  color: common.$purple;
+}
+
+.b-input-field__e-weekday {
+  @extend .body-text;
+  line-height: normal;
+  font-weight: 700;
+  color: common.$purple;
+
+
+  height: 40px;
+  width: 40px;
+}
+
+.b-input-field__e-date {
+  @extend .body-text;
+  color: common.$dark50;
+
+  width: 40px;
+  height: 40px;
+}
+
 .b-input-field__e-date:not(.b-input-field__e-date_disabled):hover {
-  background-color: #f5f5f5;
+  //background-color: #f5f5f5;
   cursor: pointer;
 }
 
@@ -48,13 +89,40 @@
 }
 
 .b-input-field__e-date_current-date {
-  background-color: coral;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='41' height='40' viewBox='0 0 41 40' fill='none'><path d='M0.823608 20C0.823608 8.98872 9.75002 0 20.7613 0C31.7726 0 40.699 8.98872 40.699 20C40.699 31.0113 31.7726 40 20.7613 40C9.75002 40 0.823608 31.0113 0.823608 20Z' fill='url(%23paint0_linear_18379_91)'/><defs><linearGradient id='paint0_linear_18379_91' x1='20.7613' y1='0' x2='20.7613' y2='40' gradientUnits='userSpaceOnUse'><stop stop-color='%236FCF97'/><stop offset='1' stop-color='%2366D2EA'/></linearGradient></defs></svg>");
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: common.$white;
+    font-weight: 700;
 }
 
 .b-input-field__e-date_current-date:hover {
-  background-color: coral;
+  //background-color: coral;
 }
 
 .b-input-field__e-date_selected {
-  background-color: lightgreen;
+  background-color: common.$light-purple;
+  //background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(188, 156, 255, 0.25) 0.01%, rgba(139, 164, 249, 0.25) 100%);
+}
+
+.b-input-field__e-date_first {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='41' height='40' viewBox='0 0 41 40' fill='none'><path d='M0.695312 20C0.695312 8.98872 9.62173 0 20.633 0C31.6443 0 40.5707 8.98872 40.5707 20C40.5707 31.0113 31.6443 40 20.633 40C9.62173 40 0.695312 31.0113 0.695312 20Z' fill='url(%23paint0_linear_18442_192)'/><defs><linearGradient id='paint0_linear_18442_192' x1='20.633' y1='0' x2='20.633' y2='40' gradientUnits='userSpaceOnUse'><stop stop-color='%23BC9CFF'/><stop offset='1' stop-color='%238BA4F9'/></linearGradient></defs></svg>");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.b-input-field__e-picked-date {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='41' height='40' viewBox='0 0 41 40' fill='none'><path d='M0.195312 20C0.195312 8.98872 9.12173 0 20.133 0C31.1443 0 40.0707 8.98872 40.0707 20C40.0707 31.0113 31.1443 40 20.133 40C9.12173 40 0.195312 31.0113 0.195312 20Z' fill='url(%23paint0_linear_18442_180)'/><defs><linearGradient id='paint0_linear_18442_180' x1='20.133' y1='0' x2='20.133' y2='40' gradientUnits='userSpaceOnUse'><stop stop-color='%23BC9CFF'/><stop offset='1' stop-color='%238BA4F9'/></linearGradient></defs></svg>");
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: common.$white;
+  font-weight: 700;
+}
+
+.b-input-field__e-date_first-of-range {
+  background: linear-gradient(to right, transparent 50%, #FF0000 50%);
+  background-position: center;
+  background-repeat: no-repeat;
 }

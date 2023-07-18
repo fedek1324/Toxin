@@ -21,19 +21,18 @@ class Calendar {
   }
 
   addCloseOnDocumentClickHandlers() {
-    const handleDocumentClick = event => {
-      let isInside = this.datePickerBlock.contains(event.target);
+    const handleDocumentClick = (event) => {
+      const isInside = this.datePickerBlock.contains(event.target);
       if (!isInside) {
         // console.log('outer of input block click detected. closing block')
         this.input.classList.remove('b-input-field__e-input_active-date-picker');
         this.calendar.classList.remove('b-input-field__e-calendar_active');
-        document.removeEventListener("pointerdown", handleDocumentClick, {passive: true});
+        document.removeEventListener('pointerdown', handleDocumentClick, { passive: true });
       }
-    }
+    };
 
-    document.addEventListener("pointerdown", handleDocumentClick, {passive: true})
+    document.addEventListener('pointerdown', handleDocumentClick, { passive: true });
   }
-
 
   initCalendar(datePicker) {
     // Get the datepicker input element
@@ -47,7 +46,7 @@ class Calendar {
     this.datePickerBlock.append(this.calendar);
 
     // Event listener to toggle the calendar visibility
-    this.inputWrapper.addEventListener('pointerdown', event => {
+    this.inputWrapper.addEventListener('pointerdown', (event) => {
       event.preventDefault();
       this.input.classList.toggle('b-input-field__e-input_active-date-picker');
       this.calendar.classList.toggle('b-input-field__e-calendar_active');
@@ -141,14 +140,14 @@ class Calendar {
     const prevMonthBtn = this.calendar.querySelector('.b-input-field__e-prev-month-btn');
     const nextMonthBtn = this.calendar.querySelector('.b-input-field__e-next-month-btn');
 
-    prevMonthBtn.addEventListener('pointerdown', event => {
+    prevMonthBtn.addEventListener('pointerdown', (event) => {
       event.preventDefault();
       const newMonth = this.currentMonth === 1 ? 12 : this.currentMonth - 1;
       const newYear = this.currentMonth === 1 ? this.currentYear - 1 : this.currentYear;
       this.updateCalendar(newYear, newMonth);
     });
 
-    nextMonthBtn.addEventListener('pointerdown', event => {
+    nextMonthBtn.addEventListener('pointerdown', (event) => {
       event.preventDefault();
       // waiting for addCloseOnDocumentClickHandlers proof that click was on input block
       const newMonth = this.currentMonth === 12 ? 1 : this.currentMonth + 1;
@@ -156,7 +155,6 @@ class Calendar {
       this.updateCalendar(newYear, newMonth);
     });
   }
-
 
   // Function to update the calendar body for the given month and year
   updateCalendar(year, month) {
@@ -167,7 +165,7 @@ class Calendar {
 
   addCellOnClick() {
     // Event listener for date selection using event delegation
-    this.calendar.addEventListener('pointerdown', event => {
+    this.calendar.addEventListener('pointerdown', (event) => {
       const cell = event.target;
       if (cell.tagName === 'TD' && !cell.classList.contains('b-input-field__e-date_disabled')) {
         const date = parseInt(cell.textContent);
@@ -178,7 +176,7 @@ class Calendar {
           this.handleClickIfOneDate(selectedDate, event);
         }
       }
-    })
+    });
   }
 
   handleClickIfRange(selectedDate, event) {
@@ -190,7 +188,7 @@ class Calendar {
     }
     // Check if only start date is set
     else if (this.startDate && !this.endDate) {
-      this.endDate =  new Date(Math.max(this.startDate, selectedDate));
+      this.endDate = new Date(Math.max(this.startDate, selectedDate));
       this.startDate = new Date(Math.min(this.startDate, selectedDate));
     }
     // Check if both start and end dates are set
@@ -231,17 +229,16 @@ class Calendar {
     for (let i = 0; i < cells.length; i++) {
       const cell = cells[i];
       const cellDate = cell.textContent;
-      let startDateNum = this.startDate.getDate();
-      let endDateNum  = this.endDate.getDate();
+      const startDateNum = this.startDate.getDate();
+      const endDateNum = this.endDate.getDate();
       if (cellDate >= startDateNum && cellDate <= endDateNum
-        && (Math.abs(cellDate - i) < 15 ) ) { // filter other month
+        && (Math.abs(cellDate - i) < 15)) { // filter other month
         cell.classList.add('b-input-field__e-date_selected');
       }
     }
   }
 
-  test()
-  {
+  test() {
 
   }
 
@@ -254,14 +251,14 @@ class Calendar {
   }
 }
 
-let singleDatePickers = document.getElementsByClassName("b-input-field_is-single-date-picker");
+const singleDatePickers = document.getElementsByClassName('b-input-field_is-single-date-picker');
 for (let i = 0; i < singleDatePickers.length; i++) {
   const singleDatePicker = singleDatePickers[i];
   singleDatePicker.disabled = true;
   new Calendar(singleDatePicker, false);
 }
 
-let rangeDatePickers = document.getElementsByClassName("b-input-field_is-range-date-picker");
+const rangeDatePickers = document.getElementsByClassName('b-input-field_is-range-date-picker');
 for (let i = 0; i < rangeDatePickers.length; i++) {
   const rangeDatePicker = rangeDatePickers[i];
   rangeDatePicker.disabled = true;

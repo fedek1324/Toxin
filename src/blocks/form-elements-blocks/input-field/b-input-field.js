@@ -10,7 +10,7 @@ for (let i = 0; i < document.getElementsByClassName('b-input-field_is-dropdown')
   const dropdownContent = inputBlock.querySelector('.b-input-field__e-dropdown');
   const input = inputBlock.querySelector('.b-input-field__e-input_is-dropdown');
   dropdownContent.hidden = true;
-  input.disabled = true;
+  // input.disabled = true;
 
   let enabled = false;
   dropdownContent.style.width = `${input.offsetWidth}px`;

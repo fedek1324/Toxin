@@ -1,7 +1,7 @@
 TODO
-fix calendar style when there are multiple lines selected
+fix calendar style when there are multiple lines selected or one date in range
 mb add highlight on calendar on hover (like avito)
-right after loading one can see calender without material icons and with text instead it looks bad
+right after loading one can see calendar without material icons and with text instead it looks bad so add onload event handler - enable dropdown
 set correct tab indexes, now dropdowns doesnt consider. Add onblur handler instead of document click in calendar block
 make calendar pug file
 chevron doesnt open date select and doesnt have poiner

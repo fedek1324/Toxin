@@ -1,0 +1,18 @@
+mixin b-counter(options)
+    // text, maxValue = int.MaxValue, min-value = 0, initial-value
+    -
+        let maxValue;
+        let minValue;
+        if (!options.maxValue) {
+            maxValue = 10e10;
+        }
+        minValue = 0;
+    +b.b-counter(data-max-value= maxValue, data-min-value= minValue)&attributes(attributes)
+        link(rel='stylesheet', href=require('./b-counter.scss'))
+        +e.e-text-container
+            +e.SPAN.e-text #{options.text}
+        +e.e-buttons-container
+            +e.BUTTON.e-button_is-minus -
+            +e.SPAN.e-value #{options.initialValue}
+            +e.BUTTON.e-button_is-plus +
+        script(type="module" src=require('./b-counter.js'))

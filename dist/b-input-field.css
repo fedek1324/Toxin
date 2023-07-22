@@ -80,7 +80,7 @@ body {
   color: rgba(31, 32, 65, 0.75);
 }
 
-.material-icons {
+.material-icons, .b-input-field__e-icon_is-chevron-icon, .b-input-field__e-icon_is-arrow-forward-icon {
   font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
@@ -103,42 +103,45 @@ body {
 }
 
 /* Rules for sizing the icon. */
-.material-icons.md-18 {
+.material-icons.md-18, .md-18.b-input-field__e-icon_is-chevron-icon, .md-18.b-input-field__e-icon_is-arrow-forward-icon {
   font-size: 18px;
 }
 
-.material-icons.md-24 {
+.material-icons.md-24, .md-24.b-input-field__e-icon_is-chevron-icon, .md-24.b-input-field__e-icon_is-arrow-forward-icon {
   font-size: 24px;
 }
 
-.material-icons.md-36 {
+.material-icons.md-36, .md-36.b-input-field__e-icon_is-chevron-icon, .md-36.b-input-field__e-icon_is-arrow-forward-icon {
   font-size: 36px;
 }
 
-.material-icons.md-48 {
+.material-icons.md-48, .md-48.b-input-field__e-icon_is-chevron-icon, .md-48.b-input-field__e-icon_is-arrow-forward-icon {
   font-size: 48px;
 }
 
 /* Rules for using icons as black on a light background. */
-.material-icons.md-dark {
+.material-icons.md-dark, .md-dark.b-input-field__e-icon_is-chevron-icon, .md-dark.b-input-field__e-icon_is-arrow-forward-icon {
   color: rgba(0, 0, 0, 0.54);
 }
 
-.material-icons.md-dark.md-inactive {
+.material-icons.md-dark.md-inactive, .md-dark.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-dark.md-inactive.b-input-field__e-icon_is-arrow-forward-icon {
   color: rgba(0, 0, 0, 0.26);
 }
 
 /* Rules for using icons as white on a dark background. */
-.material-icons.md-light {
+.material-icons.md-light, .md-light.b-input-field__e-icon_is-chevron-icon, .md-light.b-input-field__e-icon_is-arrow-forward-icon {
   color: rgb(255, 255, 255);
 }
 
-.material-icons.md-light.md-inactive {
+.material-icons.md-light.md-inactive, .md-light.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-light.md-inactive.b-input-field__e-icon_is-arrow-forward-icon {
   color: rgba(255, 255, 255, 0.3);
 }
 
 .b-input-field {
   width: 100%;
+}
+.b-input-field__e-row {
+  margin-bottom: 7px;
 }
 
 /* стили для label */
@@ -242,13 +245,22 @@ body {
   cursor: pointer;
 }
 
-/* иконка лупы */
+/* иконка */
 .b-input-field__e-icon_is-chevron-icon {
-  width: 1rem;
-  background-image: url(assets/images/chevron.801219b4.png);
-  background-size: 9px auto;
-  background-repeat: no-repeat;
-  background-position: center;
+  color: rgba(31, 32, 65, 0.5);
+}
+
+.b-input-field__e-icon_is-chevron-icon::before {
+  content: "expand_more";
+}
+
+/* иконка лупы */
+.b-input-field__e-icon_is-arrow-forward-icon::before {
+  content: "arrow_forward";
+}
+
+.b-input-field__e-icon_is-arrow-forward-icon {
+  color: #BC9CFF;
 }
 
 .b-input-field__e-icon_is-half-transparent {

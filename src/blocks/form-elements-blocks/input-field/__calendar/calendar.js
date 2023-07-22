@@ -1,6 +1,4 @@
-// import './calendar.scss';
-
-class Calendar {
+export class Calendar {
   constructor(datePicker, isRange) {
     this.today = new Date();
     this.currentMonth = this.today.getMonth() + 1; // like people count
@@ -46,6 +44,7 @@ class Calendar {
     this.calendar = document.createElement('div');
     this.calendar.classList.add('b-input-field__e-calendar');
     this.datePickerBlock.append(this.calendar);
+    this.input.setAttribute('readonly', '');
 
     // Event listener to toggle the calendar visibility
     this.inputWrapper.addEventListener('pointerdown', (event) => {
@@ -297,20 +296,30 @@ class Calendar {
     const day = String(date.getDate()).padStart(2, '0');
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const year = date.getFullYear();
+
+    const formattedDate = date.toLocaleString('ru', {
+      day: '2-digit',
+      month: 'short',
+    });
+    if (this.isRange) {
+      return formattedDate.slice(0, -1);
+    }
     return `${day}.${month}.${year}`;
   }
-}
 
-const singleDatePickers = document.getElementsByClassName('b-input-field_is-single-date-picker');
-for (let i = 0; i < singleDatePickers.length; i += 1) {
-  const singleDatePicker = singleDatePickers[i];
-  singleDatePicker.disabled = true;
-  new Calendar(singleDatePicker, false);
-}
+  static initCalendars() {
+    const singleDatePickers = document.getElementsByClassName('b-input-field_is-single-date-picker');
+    for (let i = 0; i < singleDatePickers.length; i += 1) {
+      const singleDatePicker = singleDatePickers[i];
+      singleDatePicker.disabled = true;
+      new Calendar(singleDatePicker, false);
+    }
 
-const rangeDatePickers = document.getElementsByClassName('b-input-field_is-range-date-picker');
-for (let i = 0; i < rangeDatePickers.length; i += 1) {
-  const rangeDatePicker = rangeDatePickers[i];
-  rangeDatePicker.disabled = true;
-  new Calendar(rangeDatePicker, true);
+    const rangeDatePickers = document.getElementsByClassName('b-input-field_is-range-date-picker');
+    for (let i = 0; i < rangeDatePickers.length; i += 1) {
+      const rangeDatePicker = rangeDatePickers[i];
+      rangeDatePicker.disabled = true;
+      new Calendar(rangeDatePicker, true);
+    }
+  }
 }

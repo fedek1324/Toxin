@@ -1,0 +1,43 @@
+@use "@/common.scss";
+
+
+.b-counter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__e-text-container {
+    flex: 1;
+  }
+
+  &__e-text {
+    @extend .h3;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  &__e-button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid common.$dark25;
+    border-radius: 22px;
+    color: common.$dark50;
+  }
+
+  &__e-value {
+    //margin: 0 12px;
+    @extend .h3;
+    display: inline-block;
+    min-width: 32px;
+    text-align: center;
+    line-height: normal;
+    text-transform: uppercase;
+    color: common.$dark100;
+  }
+}
+
+.b-counter__e-button_disabled {
+  opacity: 0.38;
+  color: red;
+}
+

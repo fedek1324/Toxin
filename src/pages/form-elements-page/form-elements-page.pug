@@ -3,6 +3,7 @@ extends ../../template.pug
 include ../../blocks/logo/logo
 include  ../../blocks/spacer/spacer
 include  ../../blocks/form-elements-blocks/input-field/b-input-field
+include  ../../blocks/form-elements-blocks/counter/b-counter
 
 block head
     title Form elements
@@ -35,6 +36,32 @@ block content
                     value: "ДД.ММ.ГГГГ"
                 })(style="width: 150px; margin-top: 40px; margin-right: 20px;")
                 +b-input-field({
-                    type: "range-date-picker", headText: "date Dropdown",
+                    type: "single-date-picker", headText: "date Dropdown",
                     value: "19.08.2019"
                 })(style="width: 150px; margin-top: 40px;")
+
+                +b-input-field({
+                  type: "range-date-picker", headText: "filter date dropdown",
+                  value: "19 авг - 23 авг"
+                })(style="width: 266px; margin-top: 40.5px;")
+
+                +b-input-field({
+                  type: "text", headText: "subscription text field",
+                  value: "", placeholder: "Email", image: "arrow-forward"
+                })(style="width: 266px; margin-top: 41px;")
+
+                +b-input-field({
+                  type: "dropdown", headText: "Dropdown", secondHeadText: "Default",
+                  value: "2 спальни, 2 кровати..."
+                })(style="width: 266px; margin-top: 100px;")
+                    +b-counter({text: "спальни", minValue: 0, initialValue: 0}).__e-row
+                    +b-counter({text: "кровати", minValue: 0, initialValue: 0}).__e-row
+                    +b-counter({text: "ванные комнаты", minValue: 0, initialValue: 0}).__e-row
+
+                +b-input-field({
+                  type: "dropdown", headText: "Dropdown", secondHeadText: "Expanded",
+                  value: "2 спальни, 2 кровати..."
+                })(style="width: 266px; margin-top: 20px;" data-open-by-default)
+                    +b-counter({text: "спальни", minValue: 0, initialValue: 0}).__e-row
+                    +b-counter({text: "кровати", minValue: 0, initialValue: 0}).__e-row
+                    +b-counter({text: "ванные комнаты", minValue: 0, initialValue: 0}).__e-row

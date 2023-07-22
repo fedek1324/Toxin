@@ -2,6 +2,10 @@
 
 .b-input-field {
   width: 100%;
+
+  &__e-row {
+    margin-bottom: 7px;
+  }
 }
 
 /* стили для label */
@@ -117,14 +121,26 @@
   cursor: pointer;
 }
 
-/* иконка лупы */
+/* иконка */
 .b-input-field__e-icon_is-chevron-icon {
-  width: 1rem;
-  background-image: url("/assets/images/chevron.png");
-  background-size: 9px auto;
-  background-repeat: no-repeat;
-  background-position: center;
+  @extend .material-icons;
+  color: common.$dark50;
 
+  //cursor: pointer;
+}
+
+.b-input-field__e-icon_is-chevron-icon::before {
+  content: "expand_more";
+}
+
+/* иконка лупы */
+.b-input-field__e-icon_is-arrow-forward-icon::before {
+  content: "arrow_forward";
+}
+
+.b-input-field__e-icon_is-arrow-forward-icon {
+  @extend .material-icons;
+  color: common.$purple;
   //cursor: pointer;
 }
 

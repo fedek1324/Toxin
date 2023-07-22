@@ -1,4 +1,6 @@
 TODO
+padding added to date dpopdown move elements on bottom
+open calendars and dropdowns on focus - on tab click
 fix calendar style when there are multiple lines selected or one date in range
 mb add highlight on calendar on hover (like avito)
 right after loading one can see calendar without material icons and with text instead it looks bad so add onload event handler - enable dropdown

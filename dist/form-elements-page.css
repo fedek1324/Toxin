@@ -5,6 +5,7 @@
 .b-form-elements-page__e-content-container {
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 131px;
 }
 
 .b-form-elements-page__e-column-1 {

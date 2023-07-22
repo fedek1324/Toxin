@@ -118,13 +118,13 @@ class Calendar {
         <table class="b-input-field__e-table">
           <thead class="b-input-field__e-t-head">
             <tr class="b-input-field__e-weekdays">
-              <th class="b-input-field__e-weekday">Пн</th>
-              <th class="b-input-field__e-weekday">Вт</th>
-              <th class="b-input-field__e-weekday">Ср</th>
-              <th class="b-input-field__e-weekday">Чт</th>
-              <th class="b-input-field__e-weekday">Пт</th>
-              <th class="b-input-field__e-weekday">Сб</th>
-              <th class="b-input-field__e-weekday">Вс</th>
+              <th class="b-input-field__e-weekday" scope="col">Пн</th>
+              <th class="b-input-field__e-weekday" scope="col">Вт</th>
+              <th class="b-input-field__e-weekday" scope="col">Ср</th>
+              <th class="b-input-field__e-weekday" scope="col">Чт</th>
+              <th class="b-input-field__e-weekday" scope="col">Пт</th>
+              <th class="b-input-field__e-weekday" scope="col">Сб</th>
+              <th class="b-input-field__e-weekday" scope="col">Вс</th>
             </tr>
           </thead>
           <tbody class="b-input-field__e-t-body">

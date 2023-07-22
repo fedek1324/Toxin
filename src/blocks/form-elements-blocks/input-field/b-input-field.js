@@ -1,3 +1,6 @@
+import './b-input-field.scss';
+import './__calendar/calendar.scss';
+
 import './__calendar/calendar';
 
 console.log('hi im input');
@@ -6,7 +9,7 @@ for (let i = 0; i < document.getElementsByClassName('b-input-field_is-dropdown')
   const inputBlock = document.getElementsByClassName('b-input-field_is-dropdown')[i];
 
   const inputWrapper = inputBlock.querySelector('.b-input-field__e-input-wrapper');
-  const dropdownIcon = inputBlock.querySelector('.b-input-field__e-icon_is-chevron-icon');
+  // const dropdownIcon = inputBlock.querySelector('.b-input-field__e-icon_is-chevron-icon');
   const dropdownContent = inputBlock.querySelector('.b-input-field__e-dropdown');
   const input = inputBlock.querySelector('.b-input-field__e-input_is-dropdown');
   dropdownContent.hidden = true;

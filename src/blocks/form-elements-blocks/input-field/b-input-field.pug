@@ -33,8 +33,8 @@ mixin b-input-field(options)
     if dropdown
         - modfierClasses = "dropdown"
     +b.b-input-field(class=modfierClasses)&attributes(attributes)
-        link(rel='stylesheet', href=require('./b-input-field.scss'))
-        link(rel='stylesheet', href=require('./__calendar/calendar.scss'))
+        //link(rel='stylesheet', href=require('./b-input-field.scss'))
+        //link(rel='stylesheet', href=require('./__calendar/calendar.scss'))
         +e.e-header-container
             if options.headText
                 +e.LABEL.e-head #{options.headText}

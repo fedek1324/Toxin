@@ -1,0 +1,433 @@
+@charset "UTF-8";
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 300;
+  src: url(assets/fonts/quicksand-v30-latin-300.b6d21e21.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* quicksand-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 400;
+  src: url(assets/fonts/quicksand-v30-latin-regular.cef2e580.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  src: url(assets/fonts/quicksand-v30-latin-500.23257612.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 600;
+  src: url(assets/fonts/quicksand-v30-latin-600.83100914.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 700;
+  src: url(assets/fonts/quicksand-v30-latin-700.81492e5c.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-100 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 100;
+  src: url(assets/fonts/montserrat-v25-cyrillic_latin-100.0778673f.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-100italic - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 100;
+  src: url(assets/fonts/montserrat-v25-cyrillic_latin-100italic.ffa9732a.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-200 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 200;
+  src: url(assets/fonts/montserrat-v25-cyrillic_latin-200.1a6b262a.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-200italic - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 200;
+  src: url(assets/fonts/montserrat-v25-cyrillic_latin-200italic.6a595dee.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-300 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 300;
+  src: url(assets/fonts/montserrat-v25-cyrillic_latin-300.d6324367.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-300italic - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 300;
+  src: url(assets/fonts/montserrat-v25-cyrillic_latin-300italic.6c8474b9.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-regular - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url(assets/fonts/montserrat-v25-cyrillic_latin-regular.62c0f043.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-italic - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 400;
+  src: url(assets/fonts/montserrat-v25-cyrillic_latin-italic.38fe8b3b.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-500 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  src: url(assets/fonts/montserrat-v25-cyrillic_latin-500.6bba3d8a.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-500italic - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 500;
+  src: url(assets/fonts/montserrat-v25-cyrillic_latin-500italic.d5bcb04b.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-600 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  src: url(assets/fonts/montserrat-v25-cyrillic_latin-600.57bef0d4.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-600italic - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 600;
+  src: url(assets/fonts/montserrat-v25-cyrillic_latin-600italic.63b9a8ab.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-700 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: url(assets/fonts/montserrat-v25-cyrillic_latin-700.31b571dc.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-700italic - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 700;
+  src: url(assets/fonts/montserrat-v25-cyrillic_latin-700italic.13ff4dc9.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-800 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 800;
+  src: url(assets/fonts/montserrat-v25-cyrillic_latin-800.8cc071a9.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-800italic - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 800;
+  src: url(assets/fonts/montserrat-v25-cyrillic_latin-800italic.9d5638bf.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-900 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 900;
+  src: url(assets/fonts/montserrat-v25-cyrillic_latin-900.eca3463e.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-900italic - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 900;
+  src: url(assets/fonts/montserrat-v25-cyrillic_latin-900italic.84167029.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+.dark-100 {
+  background-color: #1f2041;
+}
+
+.dark-75 {
+  background-color: rgba(31, 32, 65, 0.75);
+}
+
+.dark-50 {
+  background-color: rgba(31, 32, 65, 0.5);
+}
+
+.dark-25 {
+  background-color: rgba(31, 32, 65, 0.25);
+}
+
+.dark-5 {
+  background-color: rgba(31, 32, 65, 0.05);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 1 – Delete rules */
+/* 2 – Delete margin in Firefox and Safari */
+input {
+  font-family: inherit; /* 1 */
+  font-size: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  margin: 0; /* 2 */
+}
+
+button, input[type=submit], input[type=reset] {
+  font: inherit;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+}
+
+body {
+  margin: 0 auto;
+  font-family: Montserrat, sans-serif;
+}
+
+.h1 {
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  color: #1F2041;
+}
+
+.h2, .b-input-field__e-current-month {
+  font-size: 19px;
+  font-weight: 700;
+  color: #1F2041;
+}
+
+.h3 {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 128%;
+  color: #1F2041;
+}
+
+.body-text, .b-input-field__e-weekday, .b-input-field__e-date {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+}
+
+/* material-icons-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url(assets/fonts/material-icons-v140-latin-regular.0c35d18b.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+.material-icons, .b-input-field__e-prev-month-btn,
+.b-input-field__e-next-month-btn {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18, .md-18.b-input-field__e-prev-month-btn,
+.md-18.b-input-field__e-next-month-btn {
+  font-size: 18px;
+}
+
+.material-icons.md-24, .b-input-field__e-prev-month-btn,
+.b-input-field__e-next-month-btn {
+  font-size: 24px;
+}
+
+.material-icons.md-36, .md-36.b-input-field__e-prev-month-btn,
+.md-36.b-input-field__e-next-month-btn {
+  font-size: 36px;
+}
+
+.material-icons.md-48, .md-48.b-input-field__e-prev-month-btn,
+.md-48.b-input-field__e-next-month-btn {
+  font-size: 48px;
+}
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark, .md-dark.b-input-field__e-prev-month-btn,
+.md-dark.b-input-field__e-next-month-btn {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.material-icons.md-dark.md-inactive, .md-dark.md-inactive.b-input-field__e-prev-month-btn,
+.md-dark.md-inactive.b-input-field__e-next-month-btn {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light, .md-light.b-input-field__e-prev-month-btn,
+.md-light.b-input-field__e-next-month-btn {
+  color: rgb(255, 255, 255);
+}
+
+.material-icons.md-light.md-inactive, .md-light.md-inactive.b-input-field__e-prev-month-btn,
+.md-light.md-inactive.b-input-field__e-next-month-btn {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.b-input-field__e-input_is-single-date-picker,
+.b-input-field__e-input_is-range-date-picker {
+  position: relative;
+}
+
+.b-input-field__e-calendar {
+  position: absolute;
+  z-index: 1;
+  background-color: #fff;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  display: none;
+  padding: 20px;
+}
+
+.b-input-field__e-calendar_active {
+  display: block;
+}
+
+.b-input-field__e-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.b-input-field__e-th,
+.b-input-field__e-date {
+  padding: 8px;
+  text-align: center;
+}
+
+.b-input-field__e-th {
+  font-weight: bold;
+}
+
+.b-input-field__e-current-month-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+
+.b-input-field__e-prev-month-btn,
+.b-input-field__e-next-month-btn {
+  color: #BC9CFF;
+}
+
+.b-input-field__e-weekday {
+  line-height: normal;
+  font-weight: 700;
+  color: #BC9CFF;
+  height: 40px;
+  width: 40px;
+}
+
+.b-input-field__e-date {
+  color: rgba(31, 32, 65, 0.5);
+  width: 40px;
+  height: 40px;
+}
+
+.b-input-field__e-date:not(.b-input-field__e-date_disabled):hover {
+  cursor: pointer;
+}
+
+.b-input-field__e-date_disabled {
+  opacity: 0.5; /* Set the opacity for disabled cells */
+}
+
+.b-input-field__e-date_current-date {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%2741%27 height=%2740%27 viewBox=%270 0 41 40%27 fill=%27none%27><path d=%27M0.823608 20C0.823608 8.98872 9.75002 0 20.7613 0C31.7726 0 40.699 8.98872 40.699 20C40.699 31.0113 31.7726 40 20.7613 40C9.75002 40 0.823608 31.0113 0.823608 20Z%27 fill=%27url%28%23paint0_linear_18379_91%29%27/><defs><linearGradient id=%27paint0_linear_18379_91%27 x1=%2720.7613%27 y1=%270%27 x2=%2720.7613%27 y2=%2740%27 gradientUnits=%27userSpaceOnUse%27><stop stop-color=%27%236FCF97%27/><stop offset=%271%27 stop-color=%27%2366D2EA%27/></linearGradient></defs></svg>");
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.b-input-field__e-date_selected {
+  background-color: #EBE7FD;
+}
+
+.b-input-field__e-date_picked {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%2741%27 height=%2740%27 viewBox=%270 0 41 40%27 fill=%27none%27><path d=%27M0.195312 20C0.195312 8.98872 9.12173 0 20.133 0C31.1443 0 40.0707 8.98872 40.0707 20C40.0707 31.0113 31.1443 40 20.133 40C9.12173 40 0.195312 31.0113 0.195312 20Z%27 fill=%27url%28%23paint0_linear_18442_180%29%27/><defs><linearGradient id=%27paint0_linear_18442_180%27 x1=%2720.133%27 y1=%270%27 x2=%2720.133%27 y2=%2740%27 gradientUnits=%27userSpaceOnUse%27><stop stop-color=%27%23BC9CFF%27/><stop offset=%271%27 stop-color=%27%238BA4F9%27/></linearGradient></defs></svg>");
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.b-input-field__e-date_first {
+  background-color: transparent;
+  background: url("data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%2741%27 height=%2740%27 viewBox=%270 0 41 40%27 fill=%27none%27><path d=%27M0.195312 20C0.195312 8.98872 9.12173 0 20.133 0C31.1443 0 40.0707 8.98872 40.0707 20C40.0707 31.0113 31.1443 40 20.133 40C9.12173 40 0.195312 31.0113 0.195312 20Z%27 fill=%27url%28%23paint0_linear_18442_180%29%27/><defs><linearGradient id=%27paint0_linear_18442_180%27 x1=%2720.133%27 y1=%270%27 x2=%2720.133%27 y2=%2740%27 gradientUnits=%27userSpaceOnUse%27><stop stop-color=%27%23BC9CFF%27/><stop offset=%271%27 stop-color=%27%238BA4F9%27/></linearGradient></defs></svg>"), linear-gradient(to right, transparent, transparent 49.9%, #EBE7FD 50%);
+}
+
+.b-input-field__e-date_last {
+  background-color: transparent;
+  background: url("data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%2741%27 height=%2740%27 viewBox=%270 0 41 40%27 fill=%27none%27><path d=%27M0.195312 20C0.195312 8.98872 9.12173 0 20.133 0C31.1443 0 40.0707 8.98872 40.0707 20C40.0707 31.0113 31.1443 40 20.133 40C9.12173 40 0.195312 31.0113 0.195312 20Z%27 fill=%27url%28%23paint0_linear_18442_180%29%27/><defs><linearGradient id=%27paint0_linear_18442_180%27 x1=%2720.133%27 y1=%270%27 x2=%2720.133%27 y2=%2740%27 gradientUnits=%27userSpaceOnUse%27><stop stop-color=%27%23BC9CFF%27/><stop offset=%271%27 stop-color=%27%238BA4F9%27/></linearGradient></defs></svg>"), linear-gradient(to right, #EBE7FD, #EBE7FD 49.9%, transparent 50%);
+}

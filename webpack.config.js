@@ -1,5 +1,4 @@
 const path = require('path');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -27,7 +26,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   resolve: {
-    extensions: ['.js', '.png'], // теперь можно писать import '../jsFile' без .js в конце
+    extensions: ['', '.js', '.jsx', '.css', '.png'], // теперь можно писать import '../jsFile' без .js в конце
     // (но на самом деле это стандартная конфигуряция для .js)
     alias: {
       '@models': path.resolve(__dirname, 'src/models'),
@@ -48,6 +47,10 @@ module.exports = {
     open: true,
     port: 4200,
     hot: isDev,
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    compress: true,
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -67,7 +70,7 @@ module.exports = {
       filename: '[name].[contenthash].css',
     }),
     new PugPlugin({
-      extractCss: {
+      css: {
         // output filename of CSS files
         filename: '[name].[contenthash:8].css',
       },
@@ -92,40 +95,13 @@ module.exports = {
       },
       {
         test: /\.scss$/,
+        // include: [
+        //   path.resolve(__dirname, "not_exist_path")
+        // ],
         use: [
-          'style-loader',
-          'css-loader?importLoaders=1',
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: function () {
-                return [
-                  autoprefixer({browsers: ['last 2 versions']}),
-                ];
-              },
-            },
-          },
+          // 'style-loader',
+          'css-loader',
           'sass-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              syntax: postcssSCSS,
-              plugins: function () {
-                return [
-                  stylelint(),
-                  doiuse({
-                    browsers:['ie >= 11', 'last 2 versions'],
-                    ignore: ['flexbox', 'rem', 'css-resize', 'css-masks', 'object-fit'],
-                    ignoreFiles: ['**/normalize.css'],
-                  }),
-                  postcssReporter({
-                    clearReportedMessages: true,
-                    throwError: true,
-                  }),
-                ];
-              },
-            },
-          },
         ],
       },
       {

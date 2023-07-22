@@ -9,8 +9,8 @@ html(lang="en")
     link(href=require('./common.scss') rel='stylesheet')
     block head
   body
-    script(src=require('./index.js'))
     block content
+    script(type="module" src=require('./index.js'))
 
 
 

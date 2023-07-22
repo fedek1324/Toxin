@@ -1,3 +1,5 @@
+// import './calendar.scss';
+
 class Calendar {
   constructor(datePicker, isRange) {
     this.today = new Date();
@@ -106,7 +108,7 @@ class Calendar {
       tbodyContent += `<tr class="b-input-field__e-week-row">${weekRow}</tr>`;
     }
 
-    const monthName = new Date(year, month - 1, 1).toLocaleString('default', {month: 'long'});
+    const monthName = new Date(year, month - 1, 1).toLocaleString('default', { month: 'long' });
     const formattedTitle = `${monthName[0].toUpperCase() + monthName.slice(1)} ${year}`;
 
     this.calendar.innerHTML = `

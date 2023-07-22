@@ -1,0 +1,17 @@
+// ALERT    ALERT    ALERT    ALERT    ALERT
+// Changing this file will affect many page elements
+// changing h1-h6, p, body text will affect all elements that use this rules set
+// change h1-h6, p, body text in blocks style files
+
+@use "font-face-Quicksand";
+@use "font-face-Montserrat";
+
+
+/* material-icons-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/material-icons-v140-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}

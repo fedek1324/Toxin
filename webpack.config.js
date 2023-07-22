@@ -7,11 +7,11 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const PugPlugin = require('pug-plugin');
 
-const postcssReporter = require('postcss-reporter');
-const postcssSCSS = require('postcss-scss');
-const autoprefixer = require('autoprefixer');
-const stylelint = require('stylelint');
-const doiuse = require('doiuse');
+// const postcssReporter = require('postcss-reporter');
+// const postcssSCSS = require('postcss-scss');
+// const autoprefixer = require('autoprefixer');
+// const stylelint = require('stylelint');
+// const doiuse = require('doiuse');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;

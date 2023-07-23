@@ -1,0 +1,537 @@
+@charset "UTF-8";
+.dark-100 {
+  background-color: #1f2041;
+}
+
+.dark-75 {
+  background-color: rgba(31, 32, 65, 0.75);
+}
+
+.dark-50 {
+  background-color: rgba(31, 32, 65, 0.5);
+}
+
+.dark-25 {
+  background-color: rgba(31, 32, 65, 0.25);
+}
+
+.dark-5 {
+  background-color: rgba(31, 32, 65, 0.05);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 1 – Delete rules */
+/* 2 – Delete margin in Firefox and Safari */
+input {
+  font-family: inherit; /* 1 */
+  font-size: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  margin: 0; /* 2 */
+}
+
+button, input[type=submit], input[type=reset] {
+  font: inherit;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+}
+
+body {
+  margin: 0 auto;
+  font-family: Montserrat, sans-serif;
+}
+
+.h1 {
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  color: #1F2041;
+}
+
+.h2, .b-input-field__e-current-month {
+  font-size: 19px;
+  font-weight: 700;
+  color: #1F2041;
+}
+
+.h3, .b-input-field__e-head {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 128%;
+  color: #1F2041;
+}
+
+.body-text, .b-input-field__e-date, .b-input-field__e-weekday, .b-input-field__e-second-head, .b-input-field__e-input {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.material-icons, .b-input-field__e-prev-month-btn,
+.b-input-field__e-next-month-btn, .b-input-field__e-icon_is-chevron-icon, .b-input-field__e-icon_is-arrow-forward-icon {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18, .md-18.b-input-field__e-prev-month-btn,
+.md-18.b-input-field__e-next-month-btn, .md-18.b-input-field__e-icon_is-chevron-icon, .md-18.b-input-field__e-icon_is-arrow-forward-icon {
+  font-size: 18px;
+}
+
+.material-icons.md-24, .b-input-field__e-prev-month-btn,
+.b-input-field__e-next-month-btn, .md-24.b-input-field__e-icon_is-chevron-icon, .md-24.b-input-field__e-icon_is-arrow-forward-icon {
+  font-size: 24px;
+}
+
+.material-icons.md-36, .md-36.b-input-field__e-prev-month-btn,
+.md-36.b-input-field__e-next-month-btn, .md-36.b-input-field__e-icon_is-chevron-icon, .md-36.b-input-field__e-icon_is-arrow-forward-icon {
+  font-size: 36px;
+}
+
+.material-icons.md-48, .md-48.b-input-field__e-prev-month-btn,
+.md-48.b-input-field__e-next-month-btn, .md-48.b-input-field__e-icon_is-chevron-icon, .md-48.b-input-field__e-icon_is-arrow-forward-icon {
+  font-size: 48px;
+}
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark, .md-dark.b-input-field__e-prev-month-btn,
+.md-dark.b-input-field__e-next-month-btn, .md-dark.b-input-field__e-icon_is-chevron-icon, .md-dark.b-input-field__e-icon_is-arrow-forward-icon {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.material-icons.md-dark.md-inactive, .md-dark.md-inactive.b-input-field__e-prev-month-btn,
+.md-dark.md-inactive.b-input-field__e-next-month-btn, .md-dark.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-dark.md-inactive.b-input-field__e-icon_is-arrow-forward-icon {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light, .md-light.b-input-field__e-prev-month-btn,
+.md-light.b-input-field__e-next-month-btn, .md-light.b-input-field__e-icon_is-chevron-icon, .md-light.b-input-field__e-icon_is-arrow-forward-icon {
+  color: rgb(255, 255, 255);
+}
+
+.material-icons.md-light.md-inactive, .md-light.md-inactive.b-input-field__e-prev-month-btn,
+.md-light.md-inactive.b-input-field__e-next-month-btn, .md-light.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-light.md-inactive.b-input-field__e-icon_is-arrow-forward-icon {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.b-input-field {
+  width: 100%;
+}
+.b-input-field__e-row {
+  margin-bottom: 7px;
+}
+
+/* стили для label */
+.b-input-field__e-second-head {
+  color: rgba(31, 32, 65, 0.5);
+  font-size: 12px;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.b-input-field__e-header-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+/* стили для input */
+.b-input-field__e-input {
+  display: block;
+  width: 100%;
+  height: 44px;
+  padding: 13px 15px;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(31, 32, 65, 0.75);
+  background-clip: padding-box;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  outline: none;
+}
+
+.b-input-field__e-input::placeholder {
+  color: rgba(31, 32, 65, 0.25);
+}
+
+.b-input-field__e-input_is-text-field:hover {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+}
+
+.b-input-field__e-input_is-text-field:focus {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+}
+
+.b-input-field__e-input_active-dropdown {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05); /* Add box shadow */
+}
+
+.b-input-field__e-input_active-date-picker {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05); /* Add box shadow */
+  margin-bottom: 5.56px;
+}
+
+.b-input-field__e-input_is-dropdown:disabled,
+.b-input-field__e-input_is-single-date-picker:disabled,
+.b-input-field__e-input_is-range-date-picker:disabled {
+  background-color: inherit;
+}
+
+.b-input-field__e-input_is-dropdown,
+.b-input-field__e-input_is-single-date-picker,
+.b-input-field__e-input_is-range-date-picker {
+  cursor: pointer;
+}
+
+.b-input-field__e-input-wrapper {
+  position: relative;
+}
+
+.b-input-field__e-icon {
+  content: "";
+  color: #bdbdbd;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  right: 0.625rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.b-input-field__e-input_has-icon {
+  padding-right: 2rem;
+}
+
+/* email значок */
+.b-input-field__e-icon_email-icon::before {
+  content: "@";
+}
+
+/* иконка лупы */
+.b-input-field__e-icon_is-search-icon {
+  width: 1rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2716%27 height=%2716%27 fill=%27%23bdbdbd%27 viewBox=%270 0 16 16%27%3E%3Cpath d=%27M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z%27%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+/* иконка */
+.b-input-field__e-icon_is-chevron-icon {
+  color: rgba(31, 32, 65, 0.5);
+}
+
+.b-input-field__e-icon_is-chevron-icon::before {
+  content: "expand_more";
+}
+
+/* иконка лупы */
+.b-input-field__e-icon_is-arrow-forward-icon::before {
+  content: "arrow_forward";
+}
+
+.b-input-field__e-icon_is-arrow-forward-icon {
+  color: #BC9CFF;
+}
+
+.b-input-field__e-icon_is-half-transparent {
+  opacity: 0.5;
+}
+
+.b-input-field__e-icon_is-not-transparent {
+  opacity: 1;
+}
+
+.b-input-field__e-dropdown {
+  background-color: #FFFFFF;
+  z-index: 1000;
+  position: absolute;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  padding: 7px 7px 7px 15px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.dark-100 {
+  background-color: #1f2041;
+}
+
+.dark-75 {
+  background-color: rgba(31, 32, 65, 0.75);
+}
+
+.dark-50 {
+  background-color: rgba(31, 32, 65, 0.5);
+}
+
+.dark-25 {
+  background-color: rgba(31, 32, 65, 0.25);
+}
+
+.dark-5 {
+  background-color: rgba(31, 32, 65, 0.05);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 1 – Delete rules */
+/* 2 – Delete margin in Firefox and Safari */
+input {
+  font-family: inherit; /* 1 */
+  font-size: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  margin: 0; /* 2 */
+}
+
+button, input[type=submit], input[type=reset] {
+  font: inherit;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+}
+
+body {
+  margin: 0 auto;
+  font-family: Montserrat, sans-serif;
+}
+
+.h1 {
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  color: #1F2041;
+}
+
+.h2, .b-input-field__e-current-month {
+  font-size: 19px;
+  font-weight: 700;
+  color: #1F2041;
+}
+
+.h3, .b-input-field__e-head {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 128%;
+  color: #1F2041;
+}
+
+.body-text, .b-input-field__e-second-head, .b-input-field__e-input, .b-input-field__e-weekday, .b-input-field__e-date {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.material-icons, .b-input-field__e-icon_is-chevron-icon, .b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
+.b-input-field__e-next-month-btn {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18, .md-18.b-input-field__e-icon_is-chevron-icon, .md-18.b-input-field__e-icon_is-arrow-forward-icon, .md-18.b-input-field__e-prev-month-btn,
+.md-18.b-input-field__e-next-month-btn {
+  font-size: 18px;
+}
+
+.material-icons.md-24, .md-24.b-input-field__e-icon_is-chevron-icon, .md-24.b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
+.b-input-field__e-next-month-btn {
+  font-size: 24px;
+}
+
+.material-icons.md-36, .md-36.b-input-field__e-icon_is-chevron-icon, .md-36.b-input-field__e-icon_is-arrow-forward-icon, .md-36.b-input-field__e-prev-month-btn,
+.md-36.b-input-field__e-next-month-btn {
+  font-size: 36px;
+}
+
+.material-icons.md-48, .md-48.b-input-field__e-icon_is-chevron-icon, .md-48.b-input-field__e-icon_is-arrow-forward-icon, .md-48.b-input-field__e-prev-month-btn,
+.md-48.b-input-field__e-next-month-btn {
+  font-size: 48px;
+}
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark, .md-dark.b-input-field__e-icon_is-chevron-icon, .md-dark.b-input-field__e-icon_is-arrow-forward-icon, .md-dark.b-input-field__e-prev-month-btn,
+.md-dark.b-input-field__e-next-month-btn {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.material-icons.md-dark.md-inactive, .md-dark.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-dark.md-inactive.b-input-field__e-icon_is-arrow-forward-icon, .md-dark.md-inactive.b-input-field__e-prev-month-btn,
+.md-dark.md-inactive.b-input-field__e-next-month-btn {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light, .md-light.b-input-field__e-icon_is-chevron-icon, .md-light.b-input-field__e-icon_is-arrow-forward-icon, .md-light.b-input-field__e-prev-month-btn,
+.md-light.b-input-field__e-next-month-btn {
+  color: rgb(255, 255, 255);
+}
+
+.material-icons.md-light.md-inactive, .md-light.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-light.md-inactive.b-input-field__e-icon_is-arrow-forward-icon, .md-light.md-inactive.b-input-field__e-prev-month-btn,
+.md-light.md-inactive.b-input-field__e-next-month-btn {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.b-input-field__e-input_is-single-date-picker,
+.b-input-field__e-input_is-range-date-picker {
+  position: relative;
+}
+
+.b-input-field__e-calendar {
+  position: absolute;
+  z-index: 1;
+  background-color: #fff;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  display: none;
+  padding: 20px;
+}
+
+.b-input-field__e-calendar_active {
+  display: block;
+}
+
+.b-input-field__e-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.b-input-field__e-th,
+.b-input-field__e-date {
+  padding: 8px;
+  text-align: center;
+}
+
+.b-input-field__e-th {
+  font-weight: bold;
+}
+
+.b-input-field__e-current-month-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+
+.b-input-field__e-prev-month-btn,
+.b-input-field__e-next-month-btn {
+  color: #BC9CFF;
+}
+
+.b-input-field__e-weekday {
+  line-height: normal;
+  font-weight: 700;
+  color: #BC9CFF;
+  height: 40px;
+  width: 40px;
+}
+
+.b-input-field__e-date {
+  color: rgba(31, 32, 65, 0.5);
+  width: 40px;
+  height: 40px;
+}
+
+.b-input-field__e-date:not(.b-input-field__e-date_disabled):hover {
+  cursor: pointer;
+}
+
+.b-input-field__e-date_disabled {
+  opacity: 0.5; /* Set the opacity for disabled cells */
+}
+
+.b-input-field__e-date_current-date {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%2741%27 height=%2740%27 viewBox=%270 0 41 40%27 fill=%27none%27><path d=%27M0.823608 20C0.823608 8.98872 9.75002 0 20.7613 0C31.7726 0 40.699 8.98872 40.699 20C40.699 31.0113 31.7726 40 20.7613 40C9.75002 40 0.823608 31.0113 0.823608 20Z%27 fill=%27url%28%23paint0_linear_18379_91%29%27/><defs><linearGradient id=%27paint0_linear_18379_91%27 x1=%2720.7613%27 y1=%270%27 x2=%2720.7613%27 y2=%2740%27 gradientUnits=%27userSpaceOnUse%27><stop stop-color=%27%236FCF97%27/><stop offset=%271%27 stop-color=%27%2366D2EA%27/></linearGradient></defs></svg>");
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.b-input-field__e-date_selected {
+  background-color: #EBE7FD;
+}
+
+.b-input-field__e-date_picked {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%2741%27 height=%2740%27 viewBox=%270 0 41 40%27 fill=%27none%27><path d=%27M0.195312 20C0.195312 8.98872 9.12173 0 20.133 0C31.1443 0 40.0707 8.98872 40.0707 20C40.0707 31.0113 31.1443 40 20.133 40C9.12173 40 0.195312 31.0113 0.195312 20Z%27 fill=%27url%28%23paint0_linear_18442_180%29%27/><defs><linearGradient id=%27paint0_linear_18442_180%27 x1=%2720.133%27 y1=%270%27 x2=%2720.133%27 y2=%2740%27 gradientUnits=%27userSpaceOnUse%27><stop stop-color=%27%23BC9CFF%27/><stop offset=%271%27 stop-color=%27%238BA4F9%27/></linearGradient></defs></svg>");
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.b-input-field__e-date_first {
+  background-color: transparent;
+  background: url("data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%2741%27 height=%2740%27 viewBox=%270 0 41 40%27 fill=%27none%27><path d=%27M0.195312 20C0.195312 8.98872 9.12173 0 20.133 0C31.1443 0 40.0707 8.98872 40.0707 20C40.0707 31.0113 31.1443 40 20.133 40C9.12173 40 0.195312 31.0113 0.195312 20Z%27 fill=%27url%28%23paint0_linear_18442_180%29%27/><defs><linearGradient id=%27paint0_linear_18442_180%27 x1=%2720.133%27 y1=%270%27 x2=%2720.133%27 y2=%2740%27 gradientUnits=%27userSpaceOnUse%27><stop stop-color=%27%23BC9CFF%27/><stop offset=%271%27 stop-color=%27%238BA4F9%27/></linearGradient></defs></svg>"), linear-gradient(to right, transparent, transparent 49.9%, #EBE7FD 50%);
+}
+
+.b-input-field__e-date_last {
+  background-color: transparent;
+  background: url("data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%2741%27 height=%2740%27 viewBox=%270 0 41 40%27 fill=%27none%27><path d=%27M0.195312 20C0.195312 8.98872 9.12173 0 20.133 0C31.1443 0 40.0707 8.98872 40.0707 20C40.0707 31.0113 31.1443 40 20.133 40C9.12173 40 0.195312 31.0113 0.195312 20Z%27 fill=%27url%28%23paint0_linear_18442_180%29%27/><defs><linearGradient id=%27paint0_linear_18442_180%27 x1=%2720.133%27 y1=%270%27 x2=%2720.133%27 y2=%2740%27 gradientUnits=%27userSpaceOnUse%27><stop stop-color=%27%23BC9CFF%27/><stop offset=%271%27 stop-color=%27%238BA4F9%27/></linearGradient></defs></svg>"), linear-gradient(to right, #EBE7FD, #EBE7FD 49.9%, transparent 50%);
+}

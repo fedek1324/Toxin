@@ -1,2 +1,18 @@
-@import "../blocks/form-elements-blocks/input-field/b-input-field";
-@import "../blocks/form-elements-blocks/input-field/__calendar/calendar";
+@use "./fonts";
+
+@use "../blocks/colors-and-type-blocks/b-color/b-color-and-elements";
+@use "../blocks/colors-and-type-blocks/body-text/body-text";
+@use "../blocks/colors-and-type-blocks/h1/h1";
+@use "../blocks/colors-and-type-blocks/h2/h2";
+@use "../blocks/colors-and-type-blocks/h3/h3";
+
+@use "../blocks/form-elements-blocks/counter/b-counter";
+@use "../blocks/form-elements-blocks/input-field/__calendar/calendar";
+@use "../blocks/form-elements-blocks/input-field/b-input-field";
+
+@use "../blocks/logo/logo";
+@use "../blocks/logo/logo_type_full";
+@use "../blocks/logo/logo_type_watermark";
+
+@use "../pages/colors-and-type-page/colors-and-type-page";
+@use "../pages/form-elements-page/form-elements-page";

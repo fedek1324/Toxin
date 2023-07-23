@@ -1,5 +1,14 @@
+@use "@/styles/common.scss";
+
 .b-form-elements-page {
   padding: 30px 30px 0;
+}
+
+.b-form-elements-page__e-title {
+  @extend .h3;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  width: 100%;
 }
 
 .b-form-elements-page__e-content-container {
@@ -8,11 +17,20 @@
   padding-bottom: 131px;
 }
 
-.b-form-elements-page__e-column-1 {
+.b-form-elements-page__e-column {
+  display: flex;
+  flex-direction: column;
+  //flex-wrap: wrap;
+  width: 320px;
+  //align-content: flex-start;
+}
+
+.b-form-elements-page__e-row {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  width: 320px;
+  //flex-wrap: wrap;
+  //width: 320px;
+  //align-content: flex-start;
 }
 
 

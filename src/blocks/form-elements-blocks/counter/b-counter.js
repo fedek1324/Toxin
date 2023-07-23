@@ -10,7 +10,6 @@ export class Counter {
       const plusBtn = counter.querySelector('.b-counter__e-button_is-plus');
 
       value.textContent = newValue.toString(); // Convert the newValue back to string
-
       minusBtn.disabled = newValue <= counterMin;
       minusBtn.style.opacity = newValue <= counterMin ? '0.38' : '1';
       minusBtn.classList.toggle('b-counter__e-button_disabled', newValue <= counterMin);

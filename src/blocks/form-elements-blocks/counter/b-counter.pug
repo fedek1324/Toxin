@@ -5,9 +5,14 @@ mixin b-counter(options)
         let minValue;
         if (options.maxValue === "" || !options.maxValue) {
             maxValue = 10e10;
+        } else {
+            maxValue = options.maxValue;
         }
-        minValue = 0;
-        maxValue = options.maxValue;
+        if (options.minValue === "" || !options.minValue) {
+            minValue = 0;
+        } else {
+            minValue = options.minValue;
+        }
     +b.b-counter(data-max-value= maxValue, data-min-value= minValue)&attributes(attributes)
         //link(rel='stylesheet', href=require('./b-counter.scss'))
         +e.e-text-container

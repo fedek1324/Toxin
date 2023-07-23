@@ -1,0 +1,121 @@
+@use "@/styles/common";
+
+.b-button {
+  display: flex;
+  // https://stackoverflow.com/questions/38591895/prevent-elements-from-stretching-to-100-width-of-their-flex-container
+  align-self: flex-start;
+  position: relative;
+
+  &_is-primary {
+    background-color: common.$purple;
+    border-radius: 22px;
+    padding: 14px 19px 15px;
+    color: common.$white;
+
+    &.b-button_disabled {
+      background-color: common.$button-disabled-purple;
+    }
+
+    &:hover {
+      background-color: common.$button-disabled-purple;
+    }
+
+    & .b-button__e-text{
+      @extend .h3;
+      color: common.$white;
+      line-height: normal;
+    }
+  }
+
+
+  &_is-secondary {
+    --b-w: 2px; /* Set the border width as a CSS variable */
+    background-color: common.$white;
+    border: var(--b-w) solid common.$purple;
+    border-radius: 22px;
+    padding: calc(14px - var(--b-w)) calc(19px - var(--b-w)) calc(15px - var(--b-w));
+
+    &.b-button_disabled {
+      border-color: common.$button-disabled-purple;
+    }
+
+    &:hover {
+      border-color: common.$button-disabled-purple;
+    }
+
+    & .b-button__e-text {
+      @extend .h3;
+      color: common.$purple;
+      line-height: normal;
+    }
+  }
+
+
+
+  &_is-text {
+    color: common.$purple;
+
+    & .b-button__e-text{
+      @extend .h3;
+      color: common.$purple;
+      line-height: normal;
+    }
+
+    &.b-button_disabled .b-button__e-text{
+      color: common.$dark50;
+    }
+
+    &:hover .b-button__e-text {
+      color: common.$dark50;
+    }
+  }
+
+
+  &_is-wide {
+    width: 100%;
+
+    background-color: common.$purple;
+    border-radius: 22px;
+    padding: 14px 19px 15px;
+    color: common.$white;
+    justify-content: center;
+
+    & .b-button__e-text{
+      @extend .h3;
+      color: common.$white;
+      line-height: normal;
+    }
+
+  }
+
+  /* иконка лупы */
+  &__e-icon_is-arrow-forward-icon::before {
+    content: "arrow_forward";
+  }
+
+  &__e-icon_is-arrow-forward-icon {
+    @extend .material-icons;
+    color: common.$purple;
+    //cursor: pointer;
+  }
+
+
+  &__e-icon {
+    content: '';
+    color: common.$white;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    right: 0.625rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+
+  &_has-icon {
+    padding-right: 2rem;
+  }
+}
+

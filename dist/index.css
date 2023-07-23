@@ -253,7 +253,7 @@ body {
   color: #1F2041;
 }
 
-.h3, .b-colors-and-type-page__e-text-type-name-h3, .b-colors-and-type-page__e-text-type-exapmle-h3, .b-input-field__e-head, .b-counter__e-text, .b-counter__e-value, .b-h3 {
+.h3, .b-form-elements-page__e-title, .b-colors-and-type-page__e-text-type-name-h3, .b-colors-and-type-page__e-text-type-exapmle-h3, .b-button_is-primary .b-button__e-text, .b-button_is-secondary .b-button__e-text, .b-button_is-text .b-button__e-text, .b-button_is-wide .b-button__e-text, .b-input-field__e-head, .b-counter__e-text, .b-counter__e-value, .b-h3 {
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -268,7 +268,7 @@ body {
   color: rgba(31, 32, 65, 0.75);
 }
 
-.material-icons, .b-input-field__e-icon_is-chevron-icon, .b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
+.material-icons, .b-button__e-icon_is-arrow-forward-icon, .b-input-field__e-icon_is-chevron-icon, .b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
 .b-input-field__e-next-month-btn {
   font-family: "Material Icons";
   font-weight: normal;
@@ -292,44 +292,44 @@ body {
 }
 
 /* Rules for sizing the icon. */
-.material-icons.md-18, .md-18.b-input-field__e-icon_is-chevron-icon, .md-18.b-input-field__e-icon_is-arrow-forward-icon, .md-18.b-input-field__e-prev-month-btn,
+.material-icons.md-18, .md-18.b-button__e-icon_is-arrow-forward-icon, .md-18.b-input-field__e-icon_is-chevron-icon, .md-18.b-input-field__e-icon_is-arrow-forward-icon, .md-18.b-input-field__e-prev-month-btn,
 .md-18.b-input-field__e-next-month-btn {
   font-size: 18px;
 }
 
-.material-icons.md-24, .md-24.b-input-field__e-icon_is-chevron-icon, .md-24.b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
+.material-icons.md-24, .md-24.b-button__e-icon_is-arrow-forward-icon, .md-24.b-input-field__e-icon_is-chevron-icon, .md-24.b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
 .b-input-field__e-next-month-btn {
   font-size: 24px;
 }
 
-.material-icons.md-36, .md-36.b-input-field__e-icon_is-chevron-icon, .md-36.b-input-field__e-icon_is-arrow-forward-icon, .md-36.b-input-field__e-prev-month-btn,
+.material-icons.md-36, .md-36.b-button__e-icon_is-arrow-forward-icon, .md-36.b-input-field__e-icon_is-chevron-icon, .md-36.b-input-field__e-icon_is-arrow-forward-icon, .md-36.b-input-field__e-prev-month-btn,
 .md-36.b-input-field__e-next-month-btn {
   font-size: 36px;
 }
 
-.material-icons.md-48, .md-48.b-input-field__e-icon_is-chevron-icon, .md-48.b-input-field__e-icon_is-arrow-forward-icon, .md-48.b-input-field__e-prev-month-btn,
+.material-icons.md-48, .md-48.b-button__e-icon_is-arrow-forward-icon, .md-48.b-input-field__e-icon_is-chevron-icon, .md-48.b-input-field__e-icon_is-arrow-forward-icon, .md-48.b-input-field__e-prev-month-btn,
 .md-48.b-input-field__e-next-month-btn {
   font-size: 48px;
 }
 
 /* Rules for using icons as black on a light background. */
-.material-icons.md-dark, .md-dark.b-input-field__e-icon_is-chevron-icon, .md-dark.b-input-field__e-icon_is-arrow-forward-icon, .md-dark.b-input-field__e-prev-month-btn,
+.material-icons.md-dark, .md-dark.b-button__e-icon_is-arrow-forward-icon, .md-dark.b-input-field__e-icon_is-chevron-icon, .md-dark.b-input-field__e-icon_is-arrow-forward-icon, .md-dark.b-input-field__e-prev-month-btn,
 .md-dark.b-input-field__e-next-month-btn {
   color: rgba(0, 0, 0, 0.54);
 }
 
-.material-icons.md-dark.md-inactive, .md-dark.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-dark.md-inactive.b-input-field__e-icon_is-arrow-forward-icon, .md-dark.md-inactive.b-input-field__e-prev-month-btn,
+.material-icons.md-dark.md-inactive, .md-dark.md-inactive.b-button__e-icon_is-arrow-forward-icon, .md-dark.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-dark.md-inactive.b-input-field__e-icon_is-arrow-forward-icon, .md-dark.md-inactive.b-input-field__e-prev-month-btn,
 .md-dark.md-inactive.b-input-field__e-next-month-btn {
   color: rgba(0, 0, 0, 0.26);
 }
 
 /* Rules for using icons as white on a dark background. */
-.material-icons.md-light, .md-light.b-input-field__e-icon_is-chevron-icon, .md-light.b-input-field__e-icon_is-arrow-forward-icon, .md-light.b-input-field__e-prev-month-btn,
+.material-icons.md-light, .md-light.b-button__e-icon_is-arrow-forward-icon, .md-light.b-input-field__e-icon_is-chevron-icon, .md-light.b-input-field__e-icon_is-arrow-forward-icon, .md-light.b-input-field__e-prev-month-btn,
 .md-light.b-input-field__e-next-month-btn {
   color: rgb(255, 255, 255);
 }
 
-.material-icons.md-light.md-inactive, .md-light.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-light.md-inactive.b-input-field__e-icon_is-arrow-forward-icon, .md-light.md-inactive.b-input-field__e-prev-month-btn,
+.material-icons.md-light.md-inactive, .md-light.md-inactive.b-button__e-icon_is-arrow-forward-icon, .md-light.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-light.md-inactive.b-input-field__e-icon_is-arrow-forward-icon, .md-light.md-inactive.b-input-field__e-prev-month-btn,
 .md-light.md-inactive.b-input-field__e-next-month-btn {
   color: rgba(255, 255, 255, 0.3);
 }
@@ -603,7 +603,6 @@ body {
   content: "expand_more";
 }
 
-/* иконка лупы */
 .b-input-field__e-icon_is-arrow-forward-icon::before {
   content: "arrow_forward";
 }
@@ -629,6 +628,92 @@ body {
   border-radius: 0 0 4px 4px;
   padding: 7px 7px 7px 15px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.b-button {
+  display: flex;
+  align-self: flex-start;
+  position: relative;
+  /* иконка лупы */
+}
+.b-button_is-primary {
+  background-color: #BC9CFF;
+  border-radius: 22px;
+  padding: 14px 19px 15px;
+  color: #FFFFFF;
+}
+.b-button_is-primary.b-button_disabled {
+  background-color: #D1CFFC;
+}
+.b-button_is-primary:hover {
+  background-color: #D1CFFC;
+}
+.b-button_is-primary .b-button__e-text {
+  color: #FFFFFF;
+  line-height: normal;
+}
+.b-button_is-secondary {
+  --b-w: 2px; /* Set the border width as a CSS variable */
+  background-color: #FFFFFF;
+  border: var(--b-w) solid #BC9CFF;
+  border-radius: 22px;
+  padding: calc(14px - var(--b-w)) calc(19px - var(--b-w)) calc(15px - var(--b-w));
+}
+.b-button_is-secondary.b-button_disabled {
+  border-color: #D1CFFC;
+}
+.b-button_is-secondary:hover {
+  border-color: #D1CFFC;
+}
+.b-button_is-secondary .b-button__e-text {
+  color: #BC9CFF;
+  line-height: normal;
+}
+.b-button_is-text {
+  color: #BC9CFF;
+}
+.b-button_is-text .b-button__e-text {
+  color: #BC9CFF;
+  line-height: normal;
+}
+.b-button_is-text.b-button_disabled .b-button__e-text {
+  color: rgba(31, 32, 65, 0.5);
+}
+.b-button_is-text:hover .b-button__e-text {
+  color: rgba(31, 32, 65, 0.5);
+}
+.b-button_is-wide {
+  width: 100%;
+  background-color: #BC9CFF;
+  border-radius: 22px;
+  padding: 14px 19px 15px;
+  color: #FFFFFF;
+  justify-content: center;
+}
+.b-button_is-wide .b-button__e-text {
+  color: #FFFFFF;
+  line-height: normal;
+}
+.b-button__e-icon_is-arrow-forward-icon::before {
+  content: "arrow_forward";
+}
+.b-button__e-icon_is-arrow-forward-icon {
+  color: #BC9CFF;
+}
+.b-button__e-icon {
+  content: "";
+  color: #FFFFFF;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  right: 0.625rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.b-button_has-icon {
+  padding-right: 2rem;
 }
 
 .b-logo {
@@ -702,17 +787,27 @@ body {
   padding: 30px 30px 0;
 }
 
+.b-form-elements-page__e-title {
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
 .b-form-elements-page__e-content-container {
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 131px;
 }
 
-.b-form-elements-page__e-column-1 {
+.b-form-elements-page__e-column {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+}
+
+.b-form-elements-page__e-row {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  width: 320px;
 }
 
 @media (max-width: 800px) {

@@ -1,4 +1,8 @@
 TODO
+mb dont use extra modifier classes in input but use parent-child selector like it button bcs its  element not bloc its ok to use parent selector
+use gradient on map and mb on calendar selected cells
+add buttons to calendar
+add ... on input overflow
 padding added to date dpopdown move elements on bottom
 open calendars and dropdowns on focus - on tab click
 fix calendar style when there are multiple lines selected or one date in range

@@ -4,6 +4,7 @@ include ../../blocks/logo/logo
 include  ../../blocks/spacer/spacer
 include  ../../blocks/form-elements-blocks/input-field/b-input-field
 include  ../../blocks/form-elements-blocks/counter/b-counter
+include  ../../blocks/form-elements-blocks/button/button
 
 block head
     title Form elements
@@ -16,8 +17,11 @@ block content
             +b-logo("watermark")
             +b-spacer({height: "67px"})
         +e.e-content-container
+            // 3 spacer divide free space between them. so to make
+            // 3 correct cols in both e-content-containers we need 3 spacers in each on
+            // so space will divide equally
             +b-spacer({width: "111px", height: "1px"})
-            +e.e-column-1
+            +e.e-column
                 +b-input-field({type: "text", headText: "Text Field", secondHeadText: "Default",
                     placeholder: "Email"})
                 +b-input-field({type: "text", headText: "Text Field", secondHeadText: "Hover / Focus",
@@ -31,14 +35,15 @@ block content
                     value: "", placeholder: "ДД.ММ.ГГГГ"
                 })(style="margin-top: 20px;")
 
-                +b-input-field({
-                    type: "single-date-picker", headText: "date Dropdown",
-                    value: "ДД.ММ.ГГГГ"
-                })(style="width: 150px; margin-top: 40px; margin-right: 20px;")
-                +b-input-field({
-                    type: "single-date-picker", headText: "date Dropdown",
-                    value: "19.08.2019"
-                })(style="width: 150px; margin-top: 40px;")
+                +e.e-row
+                    +b-input-field({
+                        type: "single-date-picker", headText: "date Dropdown",
+                        value: "ДД.ММ.ГГГГ"
+                    })(style="width: 150px; margin-top: 40px; margin-right: 20px;")
+                    +b-input-field({
+                        type: "single-date-picker", headText: "date Dropdown",
+                        value: "19.08.2019"
+                    })(style="width: 150px; margin-top: 40px;")
 
                 +b-input-field({
                   type: "range-date-picker", headText: "filter date dropdown",
@@ -51,17 +56,53 @@ block content
                 })(style="width: 266px; margin-top: 41px;")
 
                 +b-input-field({
-                  type: "dropdown", headText: "Dropdown", secondHeadText: "Default",
-                  value: "2 спальни, 2 кровати..."
+                  type: "counters-no-buttons", headText: "Dropdown", secondHeadText: "Default",
+                  value: ""
                 })(style="width: 266px; margin-top: 100px;")
-                    +b-counter({text: "спальни", minValue: 0, initialValue: 0}).__e-row
-                    +b-counter({text: "кровати", minValue: 0, initialValue: 0}).__e-row
-                    +b-counter({text: "ванные комнаты", minValue: 0, initialValue: 0}).__e-row
+                    +b-counter({text: "спальни", initialValue: 2}).__e-row
+                    +b-counter({text: "кровати", initialValue: 2}).__e-row
+                    +b-counter({text: "ванные комнаты", initialValue: 0}).__e-row
 
                 +b-input-field({
-                  type: "dropdown", headText: "Dropdown", secondHeadText: "Expanded",
-                  value: "2 спальни, 2 кровати..."
+                  type: "counters-apply-button", headText: "Dropdown", secondHeadText: "Expanded",
+                  value: "Default text"
                 })(style="width: 266px; margin-top: 20px;" data-open-by-default)
-                    +b-counter({text: "спальни", minValue: 0, maxValue: 5, initialValue: 1}).__e-row
-                    +b-counter({text: "кровати", minValue: 0, maxValue: 5, initialValue: 1}).__e-row
-                    +b-counter({text: "ванные комнаты", minValue: 0, maxValue: 5, initialValue: 0}).__e-row
+                    +b-counter({text: "спальни", maxValue: 5, initialValue: 2}).__e-row
+                    +b-counter({text: "кровати", maxValue: 5, initialValue: 2}).__e-row
+                    +b-counter({text: "ванные комнаты", maxValue: 5, initialValue: 0}).__e-row
+
+            +b-spacer({width: "126", height: "1px"})
+            +e.e-column
+                p empty
+            +e.e-column
+                +e.e-title Buttons
+                +e.e-row
+                    +b-button({type: "primary", text: "Click me"})(
+                        style="margin-right: 19px; margin-bottom: 30px;")
+                    +b-button({type: "primary", text: "Click me", disabled: "true"})
+
+                +e.e-row
+                    +b-button({type: "secondary", text: "Click me"})(
+                        style="margin-right: 19px; margin-bottom: 30px;")
+                    +b-button({type: "secondary", text: "Click me", disabled: "true"})
+
+                +e.e-row
+                    +b-button({type: "text", text: "Click me"})(
+                        style="margin-right: 19px; margin-bottom: 30px;")
+                    +b-button({type: "text", text: "Click me", disabled: "true"})
+
+                +e.e-row
+                    +b-button({type: "wide", text: "перейти к оплате",
+                      disabled: "true", icon: "arrow-forward"})
+
+            +b-spacer({width: "72px", height: "1px"})
+        +e.e-content-container
+            +b-spacer({width: "111px", height: "1px"})
+            +e.e-column
+                p first new col
+            +b-spacer({width: "111px", height: "1px"})
+            +e.e-column
+                p sec new col
+            +b-spacer({width: "111px", height: "1px"})
+            +e.e-column
+                p third new col

@@ -1,6 +1,7 @@
 mixin b-input-field(options)
     //-- type, headText, secondHeadText, value, placeholder = "", image
     -let modfierClasses = ""
+    -let counerTypeClasses = ""
     case options.type
         when "text"
             - modfierClasses += "_is-text-field"
@@ -13,6 +14,18 @@ mixin b-input-field(options)
         when "range-date-picker"
             - modfierClasses += "_is-range-date-picker"
             - options.image = "chevron"
+        when "counters-no-buttons"
+          - modfierClasses += "_is-dropdown"
+          - counerTypeClasses += "_has-counters-text-no-buttons"
+          - options.image = "chevron"
+        when "counters-apply-button"
+          - modfierClasses += "_is-dropdown"
+          - counerTypeClasses += "_has-counters-text-apply-button"
+          - options.image = "chevron"
+        when "counters-apply-clear-buttons"
+          - modfierClasses += "_is-dropdown"
+          - counerTypeClasses += "_has-counters-text-apply-clear-buttons"
+          - options.image = "chevron"
         default
             - modfierClasses += "_is-text-field"
     -let imgClass = options.image ? "_is-"+ options.image + "-icon" : ""
@@ -32,9 +45,7 @@ mixin b-input-field(options)
                 - chevronOpacity += "_is-not-transparent"
     if dropdown
         - modfierClasses = "dropdown"
-    +b.b-input-field(class=modfierClasses)&attributes(attributes)
-        //link(rel='stylesheet', href=require('./b-input-field.scss'))
-        //link(rel='stylesheet', href=require('./__calendar/calendar.scss'))
+    +b.b-input-field(class=modfierClasses, class=counerTypeClasses)&attributes(attributes)
         +e.e-header-container
             if options.headText
                 +e.LABEL.e-head #{options.headText}
@@ -44,7 +55,6 @@ mixin b-input-field(options)
             +e.INPUT.e-input(class=additionalInputClass, class=modfierClasses,
                 type="text", placeholder=options.placeholder, value=options.value)
             +e.SPAN.e-icon(class=imgClass, class= chevronOpacity)
-        if options.type == "dropdown"
+        if (options.type == "dropdown" || options.type == "counters-apply-button" || options.type == "counters-no-buttons" || options.type == "counters-apply-clear-buttons")
             +e.e-dropdown
                 block
-        //script(type="module" src=require('./b-input-field.js'))

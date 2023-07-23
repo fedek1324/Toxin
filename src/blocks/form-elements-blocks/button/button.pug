@@ -1,0 +1,26 @@
+mixin b-button(options)
+    //-- type, text, icon, disabled
+    -let modifierClasses = ""
+    case options.type
+        when "primary"
+          - modifierClasses += "_is-primary"
+        when "secondary"
+          - modifierClasses += "_is-secondary"
+        when "text"
+          - modifierClasses += "_is-text"
+        when "wide"
+          - modifierClasses += "_is-wide"
+          - options.image = "arrow-forward"
+        default
+          - modifierClasses += "_is-primary"
+    -let iconClass = options.icon ? "_is-"+ options.icon + "-icon" : ""
+    -let additionalClass = options.icon ? "_has-icon" : ""
+    -let disabled = false;
+    if (options.disabled || options.disabled === "") && options.disabled != "false"
+        - disabled = true;
+    -let disabledClass = disabled ? "_disabled" : "";
+    +b.BUTTON.b-button(class=modifierClasses,
+        class=additionalClass class=disabledClass)&attributes(attributes)
+        +e.SPAN.e-text #{options.text}
+        if (options.icon)
+            +e.SPAN.e-icon(class=iconClass)

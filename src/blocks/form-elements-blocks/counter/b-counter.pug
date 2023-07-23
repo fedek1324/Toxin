@@ -3,10 +3,11 @@ mixin b-counter(options)
     -
         let maxValue;
         let minValue;
-        if (!options.maxValue) {
+        if (options.maxValue === "" || !options.maxValue) {
             maxValue = 10e10;
         }
         minValue = 0;
+        maxValue = options.maxValue;
     +b.b-counter(data-max-value= maxValue, data-min-value= minValue)&attributes(attributes)
         //link(rel='stylesheet', href=require('./b-counter.scss'))
         +e.e-text-container

@@ -1,49 +1,41 @@
 export class Counter {
   static initCounters() {
-    function checkEdgeValues() {
+    // Helper function to disable buttons and update value
+    function updateCounterValue(counter, value, amount) {
+      const counterMax = +counter.dataset.maxValue;
+      const counterMin = +counter.dataset.minValue;
+      const currentValue = +value.textContent; // Parse the current value as a number
+      const newValue = Math.min(Math.max(currentValue + amount, counterMin), counterMax);
+      const minusBtn = counter.querySelector('.b-counter__e-button_is-minus');
+      const plusBtn = counter.querySelector('.b-counter__e-button_is-plus');
 
+      value.textContent = newValue.toString(); // Convert the newValue back to string
+
+      minusBtn.disabled = newValue <= counterMin;
+      minusBtn.style.opacity = newValue <= counterMin ? '0.38' : '1';
+      minusBtn.classList.toggle('b-counter__e-button_disabled', newValue <= counterMin);
+
+      plusBtn.disabled = newValue >= counterMax;
+      plusBtn.classList.toggle('b-counter__e-button_disabled', newValue >= counterMax);
     }
-    // TODO FIX CHECKS
+
     const counters = document.querySelectorAll('.b-counter');
     counters.forEach((counter) => {
       const minusBtn = counter.querySelector('.b-counter__e-button_is-minus');
       const plusBtn = counter.querySelector('.b-counter__e-button_is-plus');
       const value = counter.querySelector('.b-counter__e-value');
-      const counterMax = counter.dataset.maxValue;
-      const counterMin = counter.dataset.minValue;
-      if (+value.textContent <= counterMin) {
-        value.textContent = counterMin;
-        minusBtn.classList.add('.b-counter__e-button_disabled');
-        minusBtn.style.opacity = "0.38";
-        minusBtn.disabled = true;
-      }
-      if (+value.textContent >= counterMax) {
-        value.textContent = counterMax;
-        minusBtn.classList.add('.b-counter__e-button_disabled');
-        minusBtn.disabled = true;
-      }
+      const initialValue = +value.textContent; // Parse the initial value as a number
+
       minusBtn.onpointerdown = () => {
-        if (+value.textContent <= counterMin) {
-          value.textContent = counterMin;
-          minusBtn.classList.add('b-counter__e-button_disabled');
-          minusBtn.disabled = true;
-        } else {
-          value.textContent = +value.textContent - 1;
-          minusBtn.classList.remove('b-counter__e-button_disabled');
-          minusBtn.disabled = false;
-        }
+        updateCounterValue(counter, value, -1);
       };
+
       plusBtn.onpointerdown = () => {
-        if (+value.textContent >= counterMax) {
-          value.textContent = counterMax;
-          plusBtn.classList.add('b-counter__e-button_disabled');
-          plusBtn.disabled = true;
-        } else {
-          value.textContent = +value.textContent + 1;
-          plusBtn.classList.remove('b-counter__e-button_disabled');
-          plusBtn.disabled = false;
-        }
+        updateCounterValue(counter, value, 1);
       };
+
+      // Initialize counter value based on initial value and limits
+      updateCounterValue(counter, value, 0);
     });
   }
 }

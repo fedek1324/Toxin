@@ -8,15 +8,12 @@ set correct tab indexes, now dropdowns doesnt consider. Add onblur handler inste
 make calendar pug file
 chevron doesnt open date select and doesnt have poiner
 make dropdowns alaivable for select from inside it
-js can import css
 analyze flat starter kit project
 add masked functionality
 add auto style and js import check flat ui metalamp
 change chevron to symbol smth like &#8249; or cvehron using material icons
 make calendar rows constant mb
 
-Fix double fonts import (doubled files in dist)
-Fix multiple style import in each block
 text spacing b-color __description
 used positon absolute in input block
 

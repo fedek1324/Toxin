@@ -1,23 +1,7 @@
-@charset "UTF-8";
-.dark-100 {
-  background-color: #1f2041;
-}
-
-.dark-75 {
-  background-color: rgba(31, 32, 65, 0.75);
-}
-
-.dark-50 {
-  background-color: rgba(31, 32, 65, 0.5);
-}
-
-.dark-25 {
-  background-color: rgba(31, 32, 65, 0.25);
-}
-
-.dark-5 {
-  background-color: rgba(31, 32, 65, 0.05);
-}
+// ALERT    ALERT    ALERT    ALERT    ALERT
+// Changing this file will affect many page elements
+// changing h1-h6, p, body text will affect all elements that use this rules set
+// change h1-h6, p, body text in blocks style files
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
@@ -36,7 +20,7 @@ input {
   margin: 0; /* 2 */
 }
 
-button, input[type=submit], input[type=reset] {
+button, input[type="submit"], input[type="reset"] {
   font: inherit;
   background: none;
   color: inherit;
@@ -56,35 +40,39 @@ body {
   font-size: 24px;
   font-weight: 700;
   line-height: 29px;
-  color: #1F2041;
+
+  color: $dark;
 }
 
 .h2 {
   font-size: 19px;
   font-weight: 700;
-  color: #1F2041;
+
+  color: $dark;
 }
 
 .h3 {
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
-  line-height: 128%;
-  color: #1F2041;
+  line-height: 128%; // depending on pixel perfect page text types
+
+  color: $dark;
 }
 
 .body-text {
   font-size: 14px;
   font-weight: normal;
   line-height: 24px;
-  color: rgba(31, 32, 65, 0.75);
+
+  color: $dark75;
 }
 
 .material-icons {
-  font-family: "Material Icons";
+  font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 24px; /* Preferred icon size */
+  font-size: 24px;  /* Preferred icon size */
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -92,47 +80,29 @@ body {
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
+
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
   /* Support for Safari and Chrome. */
   text-rendering: optimizeLegibility;
+
   /* Support for Firefox. */
   -moz-osx-font-smoothing: grayscale;
+
   /* Support for IE. */
-  font-feature-settings: "liga";
+  font-feature-settings: 'liga';
 }
 
 /* Rules for sizing the icon. */
-.material-icons.md-18 {
-  font-size: 18px;
-}
-
-.material-icons.md-24 {
-  font-size: 24px;
-}
-
-.material-icons.md-36 {
-  font-size: 36px;
-}
-
-.material-icons.md-48 {
-  font-size: 48px;
-}
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
 
 /* Rules for using icons as black on a light background. */
-.material-icons.md-dark {
-  color: rgba(0, 0, 0, 0.54);
-}
-
-.material-icons.md-dark.md-inactive {
-  color: rgba(0, 0, 0, 0.26);
-}
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
 
 /* Rules for using icons as white on a dark background. */
-.material-icons.md-light {
-  color: rgb(255, 255, 255);
-}
-
-.material-icons.md-light.md-inactive {
-  color: rgba(255, 255, 255, 0.3);
-}
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }

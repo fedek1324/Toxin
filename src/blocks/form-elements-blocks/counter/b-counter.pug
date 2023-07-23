@@ -8,7 +8,7 @@ mixin b-counter(options)
         }
         minValue = 0;
     +b.b-counter(data-max-value= maxValue, data-min-value= minValue)&attributes(attributes)
-        link(rel='stylesheet', href=require('./b-counter.scss'))
+        //link(rel='stylesheet', href=require('./b-counter.scss'))
         +e.e-text-container
             +e.SPAN.e-text #{options.text}
         +e.e-buttons-container

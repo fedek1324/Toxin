@@ -26,7 +26,8 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.css', '.scss', '.png'],
+    extensions: ['', '.js', '.jsx', '.css', '.png'], // теперь можно писать import '../jsFile' без .js в конце
+    // (но на самом деле это стандартная конфигуряция для .js)
     alias: {
       '@models': path.resolve(__dirname, 'src/models'),
       '@': path.resolve(__dirname, 'src'),
@@ -78,35 +79,30 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: [
-          /node_modules/,
+        test: /\.css/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+              sourceMap: false,
+            },
+          },
         ],
       },
-      // {
-      //   test: /\.css/,
-      //   exclude: /node_modules/,
-      //   use: [
-      //     {
-      //       loader: 'style-loader',
-      //     },
-      //     {
-      //       loader: 'css-loader',
-      //       options: {
-      //         importLoaders: 2,
-      //         sourceMap: false,
-      //       },
-      //     },
-      //   ],
-      // },
       {
         test: /\.scss$/,
         // include: [
         //   path.resolve(__dirname, "not_exist_path")
         // ],
-        exclude: /node_modules/,
-        use: ['css-loader', 'postcss-loader', 'sass-loader'],
+        use: [
+          // 'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.(png|jpg|svg|gif)$/,

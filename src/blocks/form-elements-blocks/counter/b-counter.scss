@@ -1,3 +1,5 @@
+@use "@/common.scss";
+
 
 .b-counter {
   display: flex;
@@ -17,9 +19,9 @@
   &__e-button {
     width: 30px;
     height: 30px;
-    border: 1px solid $dark25;
+    border: 1px solid common.$dark25;
     border-radius: 22px;
-    color: $dark50;
+    color: common.$dark50;
   }
 
   &__e-value {
@@ -30,7 +32,7 @@
     text-align: center;
     line-height: normal;
     text-transform: uppercase;
-    color: $dark100;
+    color: common.$dark100;
   }
 }
 

@@ -1,3 +1,4 @@
+@use "./src/common";
 
 .b-input-field {
   width: 100%;
@@ -14,7 +15,7 @@
 
 .b-input-field__e-second-head {
   @extend .body-text;
-  color: $dark50;
+  color: common.$dark50;
   font-size: 12px;
   line-height: normal;
   text-transform: uppercase;
@@ -37,9 +38,9 @@
   @extend .body-text;
   font-size: 14px;
   line-height: 18px;
-  color: $dark75;
+  color: common.$dark75;
   background-clip: padding-box;
-  border: 1px solid $dark25;
+  border: 1px solid common.$dark25;
   border-radius: 4px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
@@ -47,25 +48,25 @@
 }
 
 .b-input-field__e-input::placeholder {
-  color: $dark25;
+  color: common.$dark25;
 }
 
 .b-input-field__e-input_is-text-field:hover {
-  border: 1px solid $dark50;
+  border: 1px solid common.$dark50;
 }
 .b-input-field__e-input_is-text-field:focus {
-  border: 1px solid $dark50;
+  border: 1px solid common.$dark50;
 }
 
 .b-input-field__e-input_active-dropdown {
-  border: 1px solid $dark50;
+  border: 1px solid common.$dark50;
   border-radius: 4px 4px 0 0;
-  box-shadow: 0px 10px 20px rgba($dark50, 0.05); /* Add box shadow */
+  box-shadow: 0px 10px 20px rgba(common.$dark50, 0.05); /* Add box shadow */
 }
 
 .b-input-field__e-input_active-date-picker {
-  border: 1px solid $dark50;
-  box-shadow: 0px 10px 20px rgba($dark50, 0.05); /* Add box shadow */
+  border: 1px solid common.$dark50;
+  box-shadow: 0px 10px 20px rgba(common.$dark50, 0.05); /* Add box shadow */
 
   margin-bottom: 5.56px;
 }
@@ -123,7 +124,7 @@
 /* иконка */
 .b-input-field__e-icon_is-chevron-icon {
   @extend .material-icons;
-  color: $dark50;
+  color: common.$dark50;
 
   //cursor: pointer;
 }
@@ -139,7 +140,7 @@
 
 .b-input-field__e-icon_is-arrow-forward-icon {
   @extend .material-icons;
-  color: $purple;
+  color: common.$purple;
   //cursor: pointer;
 }
 
@@ -152,11 +153,11 @@
 }
 
 .b-input-field__e-dropdown {
-  background-color: $white;
+  background-color: common.$white;
   z-index: 1000;
   position: absolute;
 
-  border: 1px solid $dark50;
+  border: 1px solid common.$dark50;
   border-top: none;
   border-radius: 0 0 4px 4px;
 

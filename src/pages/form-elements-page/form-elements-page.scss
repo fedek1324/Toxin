@@ -1,7 +1,19 @@
 @use "@/styles/common.scss";
 
 .b-form-elements-page {
-  padding: 30px 30px 0;
+  padding: 140px 0 0 141px;
+  margin: 0 auto;
+
+  &__e-header {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+
+  &__e-checkboxes-container {
+    width: 222px;
+  }
+
 }
 
 .b-form-elements-page__e-title {
@@ -12,30 +24,48 @@
 }
 
 .b-form-elements-page__e-content-container {
-  display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 131px;
+  display: grid;
+  grid-template-columns: calc(320px + 126px) calc(320px + 72px) 320px;
+}
+@media (max-width: 1440px) {
+  // width = padding-l + col1+col2+col3 + padding-r
+  .b-form-elements-page__e-content-container {
+    display: grid;
+    grid-template-columns: calc(320px + 126px) 320px;
+  }
+}
+@media (max-width: calc(140px + 320px + 126px + 320px + 141px)) {
+  // width = padding-l + col1+col2 + padding-r
+  .b-form-elements-page__e-content-container {
+    display: grid;
+    grid-template-columns: 320px;
+  }
+}
+@media (max-width: calc(140px + 320px + 141px)) {
+  // width = padding-l + col1 + padding-r
+  .b-form-elements-page__e-content-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
 
 .b-form-elements-page__e-column {
   display: flex;
   flex-direction: column;
-  //flex-wrap: wrap;
   width: 320px;
-  //align-content: flex-start;
+  padding-bottom: 100px;
 }
 
 .b-form-elements-page__e-row {
   display: flex;
   flex-direction: row;
-  //flex-wrap: wrap;
-  //width: 320px;
-  //align-content: flex-start;
 }
 
 
-@media (max-width: 800px) {
-  .b-form-elements-page__e-content-container {
-    flex-direction: column;
+
+@media (max-width: calc(140px + 320px + 141px)) {
+  // width = padding-l + col1 + padding-r
+  .b-form-elements-page {
+    padding: 140px 16px 0 16px;
   }
 }

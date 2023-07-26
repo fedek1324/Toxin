@@ -1,4 +1,8 @@
 TODO
+cb click works only on label
+rewrite check box with header (should be like table) but not using table use css grid
+add postcss maybe
+add cursor poiner where it needed
 mb dont use extra modifier classes in input but use parent-child selector like it button bcs its  element not bloc its ok to use parent selector
 use gradient on map and mb on calendar selected cells
 add buttons to calendar

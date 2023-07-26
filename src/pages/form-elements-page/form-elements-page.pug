@@ -1,10 +1,11 @@
 extends ../../template.pug
 
 include ../../blocks/logo/logo
-include  ../../blocks/spacer/spacer
-include  ../../blocks/form-elements-blocks/input-field/b-input-field
-include  ../../blocks/form-elements-blocks/counter/b-counter
-include  ../../blocks/form-elements-blocks/button/button
+include ../../blocks/spacer/spacer
+include ../../blocks/form-elements-blocks/input-field/b-input-field
+include ../../blocks/form-elements-blocks/counter/b-counter
+include ../../blocks/form-elements-blocks/button/button
+include ../../blocks/form-elements-blocks/checkbox/checkbox
 
 block head
     title Form elements
@@ -12,20 +13,17 @@ block head
     meta(name="description" content="Form Elements")
 block content
     +b.b-form-elements-page
-        //link(rel='stylesheet', href=require('./form-elements-page.scss'))
         +e.DIV.e-header
             +b-logo("watermark")
-            +b-spacer({height: "67px"})
         +e.e-content-container
-            // 3 spacer divide free space between them. so to make
-            // 3 correct cols in both e-content-containers we need 3 spacers in each on
-            // so space will divide equally
-            +b-spacer({width: "111px", height: "1px"})
             +e.e-column
-                +b-input-field({type: "text", headText: "Text Field", secondHeadText: "Default",
-                    placeholder: "Email"})
-                +b-input-field({type: "text", headText: "Text Field", secondHeadText: "Hover / Focus",
-                    value: "This is pretty awesome", placeholder: ""})(style="margin-top: 20px;")
+                +b-input-field({type: "text", headText: "Text Field",
+                  secondHeadText: "Default",
+                  placeholder: "Email"})
+                +b-input-field({type: "text", headText: "Text Field",
+                  secondHeadText: "Hover / Focus",
+                  value: "This is pretty awesome",
+                  placeholder: ""})(style="margin-top: 20px;")
                 +b-input-field({
                     type: "dropdown", headText: "Dropdown",
                     value: "Сколько гостей"})(style="margin-top: 20px;")
@@ -56,24 +54,48 @@ block content
                 })(style="width: 266px; margin-top: 41px;")
 
                 +b-input-field({
-                  type: "counters-no-buttons", headText: "Dropdown", secondHeadText: "Default",
+                  type: "counters-no-buttons", headText: "Dropdown",
+                  secondHeadText: "Default",
                   value: ""
                 })(style="width: 266px; margin-top: 100px;")
-                    +b-counter({text: "спальни", initialValue: 2}).__e-row
-                    +b-counter({text: "кровати", initialValue: 2}).__e-row
-                    +b-counter({text: "ванные комнаты", initialValue: 0}).__e-row
+                    +b-counter({text: "спальни",
+                      initialValue: 2}).__e-row
+                    +b-counter({text: "кровати",
+                      initialValue: 2}).__e-row
+                    +b-counter({text: "ванные комнаты",
+                      initialValue: 0}).__e-row
 
                 +b-input-field({
-                  type: "counters-apply-button", headText: "Dropdown", secondHeadText: "Expanded",
+                  type: "counters-apply-button",
+                  headText: "Dropdown", secondHeadText: "Expanded",
                   value: "Default text"
-                })(style="width: 266px; margin-top: 20px;" data-open-by-default)
-                    +b-counter({text: "спальни", maxValue: 5, initialValue: 2}).__e-row
-                    +b-counter({text: "кровати", maxValue: 5, initialValue: 2}).__e-row
-                    +b-counter({text: "ванные комнаты", maxValue: 5, initialValue: 0}).__e-row
+                })(style="width: 266px; margin-top: 20px; margin-bottom: 160px;"
+                    data-open-by-default)
+                    +b-counter({text: "спальни",
+                      maxValue: 5, initialValue: 2}).__e-row
+                    +b-counter({text: "кровати",
+                      maxValue: 5, initialValue: 2}).__e-row
+                    +b-counter({text: "ванные комнаты",
+                      maxValue: 5, initialValue: 0}).__e-row
 
-            +b-spacer({width: "126", height: "1px"})
             +e.e-column
-                p empty
+                +e.e-checkboxes-container
+                    +e.e-title Checkbox Buttons
+                    +b-checkbox({
+                      id: "cb1",
+                      text: "Можно курить",
+                      active: "false"})(style="margin-bottom: 10px")
+
+                    +b-checkbox({
+                      id: "cb2",
+                      text: "Можно с питомцами",
+                      active: "true"})(style="margin-bottom: 10px")
+
+                    +b-checkbox({
+                      id: "cb4",
+                      text: "Можно пригласить гостей (до 10 человек)",
+                      active: "true"
+                    })(style="margin-bottom: 10px")
             +e.e-column
                 +e.e-title Buttons
                 +e.e-row
@@ -91,18 +113,12 @@ block content
                         style="margin-right: 19px; margin-bottom: 30px;")
                     +b-button({type: "text", text: "Click me", disabled: "true"})
 
-                +e.e-row
-                    +b-button({type: "wide", text: "перейти к оплате",
-                      disabled: "true", icon: "arrow-forward"})
+                +b-button({type: "wide", text: "перейти к оплате",
+                  disabled: "true", icon: "arrow-forward"})
 
-            +b-spacer({width: "72px", height: "1px"})
-        +e.e-content-container
-            +b-spacer({width: "111px", height: "1px"})
             +e.e-column
                 p first new col
-            +b-spacer({width: "111px", height: "1px"})
             +e.e-column
                 p sec new col
-            +b-spacer({width: "111px", height: "1px"})
             +e.e-column
                 p third new col

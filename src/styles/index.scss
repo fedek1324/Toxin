@@ -9,8 +9,8 @@
 @use "../blocks/form-elements-blocks/counter/b-counter";
 @use "../blocks/form-elements-blocks/input-field/__calendar/calendar";
 @use "../blocks/form-elements-blocks/input-field/b-input-field";
-
-@use "../blocks/form-elements-blocks/button/button.scss";
+@use "../blocks/form-elements-blocks/button/button";
+@use "../blocks/form-elements-blocks/checkbox/checkbox";
 
 @use "../blocks/logo/logo";
 @use "../blocks/logo/logo_type_full";

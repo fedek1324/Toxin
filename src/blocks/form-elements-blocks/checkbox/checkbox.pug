@@ -1,0 +1,22 @@
+mixin b-checkbox(options)
+    // {id, text, header, active}
+    - let textClass = ""
+    if options.header
+        - textClass = "_small"
+    else
+        - textClass = "_big"
+    - let active = (options.active && options.active !== "false") ? "" : undefined;
+    +b.b-checkbox&attributes(attributes)
+        if options.header
+            +e.e-label-and-check-container
+                +e.INPUT.e-legacy-checkbox(type="checkbox" checked=active name=options.id id=options.id)
+                +e.SPAN.e-new-checkbox
+                +e.LABEL.e-label(for=options.id)
+                    +e.SPAN.e-header #{options.header}
+            +e.SPAN.e-description-text(class=textClass) #{options.text}
+        else
+            +e.e-label-and-check-container
+                +e.INPUT.e-legacy-checkbox(type="checkbox" checked=active name=options.id id=options.id)
+                +e.SPAN.e-new-checkbox
+                +e.LABEL.e-label(for=options.id)
+                    +e.SPAN.e-label-text(class=textClass) #{options.text}

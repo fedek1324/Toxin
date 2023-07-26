@@ -1,0 +1,72 @@
+// useful link https://itchief.ru/html-and-css/styling-checkbox-and-radio
+@use "@/styles/common";
+
+.b-checkbox {
+  --cb-width: 20px;
+  --cb-mr: 10px;
+
+  &__e-legacy-checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &__e-new-checkbox {
+    content: '';
+    display: inline-block;
+    width: var(--cb-width);
+    height: 20px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid common.$dark25;
+    border-radius: 0.25em;
+    margin-right: var(--cb-mr);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+
+  &__e-legacy-checkbox:checked + &__e-new-checkbox {
+    border-color: common.$purple;
+    background-image: url("@/assets/images/checkmark.svg");
+  }
+
+  &__e-label-and-check-container {
+    display: flex;
+  }
+
+  &__e-label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+  }
+
+  &__e-header {
+    color: common.$dark75;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px; /* 128.571% */
+  }
+
+  &__e-description-text {
+    display: flex;
+    margin-top: 4px;
+
+    color: common.$dark50;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px; /* 116.667% */
+
+    margin-left: calc(var(--cb-width) + var(--cb-mr));
+  }
+
+  &__e-label-text {
+    color: common.$dark50;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 128.571% */
+  }
+}

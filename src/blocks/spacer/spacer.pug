@@ -1,9 +1,9 @@
 mixin b-spacer(options)
     - let inlineStyle
     - let styleStr = "flex: 1;height: " + options.height + ";"
-    if options.width
+    if options.maxWidth
         // no px
-        - inlineStyle = "display: inline-block;max-width: " + options.width + ";"
+        - inlineStyle = "display: inline-block;max-width: " + options.maxWidth + ";"
     else
         - inlineStyle = ""
     +b.b-spacer(style= inlineStyle + styleStr)

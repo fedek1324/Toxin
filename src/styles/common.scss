@@ -22,6 +22,18 @@ $button-disabled-purple: #D1CFFC;
   }
 }
 
+
+html {
+  margin: 0 0;
+  font-family: Montserrat, sans-serif;
+  border-color: #FFFFFF;
+  color: $dark75;
+}
+
+body {
+  margin: 0 0;
+}
+
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
@@ -49,10 +61,6 @@ button, input[type="submit"], input[type="reset"] {
   outline: inherit;
 }
 
-body {
-  margin: 0 auto;
-  font-family: Montserrat, sans-serif;
-}
 
 .h1 {
   font-style: normal;

@@ -8,7 +8,6 @@ export class Slider {
     this.width = sliderElement.querySelector('.b-slider__e-slider').offsetWidth;
 
     this.thumbsPositions = [0.30, 0.60]; // for initial position and calculations
-    // this.thumbsPositionsPx = [0, 0];
 
     this.initThumb(sliderElement, 0);
     this.initThumb(sliderElement, 1);
@@ -19,23 +18,26 @@ export class Slider {
     thumb.style.left = `${this.thumbsPositions[num] * this.width}px`;
     let shiftX;
 
-    const handleThumbPointerUp = (event) => {
-      thumb.removeEventListener('pointermove', handleThumbPointerMove);
-      thumb.removeEventListener('pointerup', handleThumbPointerUp);
-    };
-
     const handleThumbPointerMove = (event) => {
       let newLeft = event.clientX - shiftX - sliderElement.getBoundingClientRect().left;
-      console.log(newLeft);
+
       if (newLeft < 0) {
         newLeft = 0;
       }
-      // if (num === 0) {
-      //   const rightThumb = sliderElement.querySelectorAll('.b-slider__e-thumb')[1];
-      //   if (newLeft > rightThumb.style.left - rightThumb.offsetWidth) {
-      //     newLeft = rightThumb.style.left - rightThumb.offsetWidth;
-      //   }
-      // }
+
+      if (num === 0) {
+        const rightThumb = sliderElement.querySelectorAll('.b-slider__e-thumb')[1];
+        const rightPos = +rightThumb.style.left.slice(0, -2);
+        if (newLeft > rightPos - rightThumb.offsetWidth) {
+          newLeft = rightPos - rightThumb.offsetWidth;
+        }
+      } else if (num === 1) {
+        const leftThumb = sliderElement.querySelectorAll('.b-slider__e-thumb')[0];
+        const leftPos = +leftThumb.style.left.slice(0, -2);
+        if (newLeft < leftPos + leftThumb.offsetWidth) {
+          newLeft = leftPos + leftThumb.offsetWidth;
+        }
+      }
 
       const rightEdge = sliderElement.offsetWidth - thumb.offsetWidth;
       if (newLeft > rightEdge) {
@@ -44,7 +46,14 @@ export class Slider {
 
       thumb.style.left = `${newLeft}px`;
       this.thumbsPositions[num] = newLeft / rightEdge;
+      console.log(this.thumbsPositions)
     };
+
+    const handleThumbPointerUp = (event) => {
+      thumb.removeEventListener('pointermove', handleThumbPointerMove);
+      thumb.removeEventListener('pointerup', handleThumbPointerUp);
+    };
+
 
     const handleThumbPointerDown = (event) => {
       shiftX = event.clientX - thumb.getBoundingClientRect().left;

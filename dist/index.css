@@ -938,6 +938,7 @@ button, input[type=submit], input[type=reset] {
 }
 .b-slider__e-slider {
   display: flex;
+  position: relative;
   width: 266px;
   height: 6px;
   border: 1px solid rgba(31, 32, 65, 0.25);
@@ -945,12 +946,12 @@ button, input[type=submit], input[type=reset] {
   background-color: #FFFFFF;
 }
 .b-slider__e-thumb {
+  position: absolute;
   touch-action: none;
   width: 14px;
   height: 14px;
   border: 2px solid #FFFFFF;
   border-radius: 10px;
-  position: relative;
   left: 10px;
   top: -5px;
   background: #6FCF97;

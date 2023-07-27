@@ -26,6 +26,7 @@
 
   &__e-slider {
     display: flex;
+    position: relative;
 
     width: 266px;
     height: 6px;
@@ -37,13 +38,13 @@
   }
 
   &__e-thumb {
+    position: absolute;
     touch-action: none;
 
     width: 14px;
     height: 14px;
     border: 2px solid #FFFFFF;
     border-radius: 10px;
-    position: relative;
     left: 10px;
     top: -5px;
     background: common.$green;

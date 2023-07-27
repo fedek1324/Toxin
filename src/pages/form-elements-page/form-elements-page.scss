@@ -12,6 +12,7 @@
 
   &__e-checkboxes-container {
     width: 222px;
+    margin-bottom: 41px;
   }
 
 }
@@ -52,6 +53,7 @@
 .b-form-elements-page__e-column {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   width: 320px;
   padding-bottom: 100px;
 }

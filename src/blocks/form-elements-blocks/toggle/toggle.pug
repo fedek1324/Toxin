@@ -1,0 +1,8 @@
+mixin b-toggle(options)
+    // {id, text, active}
+    - let active = (options.active && options.active !== "false") ? "" : undefined;
+    +b.b-toggle&attributes(attributes)
+        +e.INPUT.e-legacy-checkbox(type="checkbox" checked=active name=options.id id=options.id)
+        +e.e-toggle
+        +e.IMAGE.e-circle(alt ="circle")
+        +e.LABEL.e-label(for=options.id) #{options.text}

@@ -6,6 +6,11 @@ include ../../blocks/form-elements-blocks/input-field/b-input-field
 include ../../blocks/form-elements-blocks/counter/b-counter
 include ../../blocks/form-elements-blocks/button/button
 include ../../blocks/form-elements-blocks/checkbox/checkbox
+include ../../blocks/form-elements-blocks/radio-button/radio-button
+include ../../blocks/form-elements-blocks/toggle/toggle
+include ../../blocks/form-elements-blocks/like-button/like-button
+include ../../blocks/form-elements-blocks/rate-button/rate-button
+include ../../blocks/form-elements-blocks/slider/slider
 
 block head
     title Form elements
@@ -85,18 +90,46 @@ block content
                       id: "cb1",
                       text: "Можно курить",
                       active: "false"})(style="margin-bottom: 10px")
-
                     +b-checkbox({
                       id: "cb2",
                       text: "Можно с питомцами",
                       active: "true"})(style="margin-bottom: 10px")
-
                     +b-checkbox({
                       id: "cb4",
                       text: "Можно пригласить гостей (до 10 человек)",
                       active: "true"
                     })(style="margin-bottom: 10px")
+
+                +e.e-title Radio Buttons
+                +e.e-row(style="margin-bottom: 36.5px")
+                    +b-radio-button({id: "rb1", name: "gender",
+                      text: "Мужчина", active: ""})(style="margin-right: 20px")
+                    +b-radio-button({id: "rb2", name: "gender",
+                      text: "Женщина"})
+
+                +e.e-title Toggle
+                +b-toggle({
+                  id: "tg1",
+                  text: "Получать спецпредложения",
+                  active: "true"
+                })(style="margin-bottom: 10px")
+                +b-toggle({
+                  id: "tg2",
+                  text: "Получать спецпредложения",
+                  active: "false"
+                })(style="margin-bottom: 40.4px")
+
+                +e.e-title Like button
+                +e.e-row(style="margin-bottom: 40px;")
+                    +b-like-button({disabled: "", value: "2"})(style="margin-right: 10px")
+                    +b-like-button({value: "12"})
+
+                +e.e-title Rate button
+                +e.e-row
+                    +b-rate-button({value: "4"})(style="margin-right: 20px")
+                    +b-rate-button({value: "5"})
             +e.e-column
+                +b-slider({})
                 +e.e-title Buttons
                 +e.e-row
                     +b-button({type: "primary", text: "Click me"})(

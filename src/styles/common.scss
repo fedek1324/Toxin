@@ -12,8 +12,9 @@ $dark25: rgba($dark, 0.25);
 $dark5: rgba($dark, 0.05);
 $white: #FFFFFF;
 $purple: #BC9CFF;
-$light-purple: #EBE7FD; // for data selection
+$light-purple: #EBE7FD; // for gradients
 $button-disabled-purple: #D1CFFC;
+$green: #6FCF97;
 
 @each $grad in $grads {
   $opacity: calc($grad / 100); // Calculate the opacity based on the percentage

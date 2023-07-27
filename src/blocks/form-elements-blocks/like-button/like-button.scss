@@ -1,0 +1,51 @@
+@use "@/styles/common";
+
+.b-like-button {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  height: 20px;
+
+  border: 1px solid common.$purple;
+  border-radius: 10px;
+
+
+  &_disabled {
+    border: 1px solid common.$dark25;
+
+    & .b-like-button__e-like-icon {
+      color: common.$dark25;
+    }
+
+    & .b-like-button__e-counter-text {
+      color: common.$dark25;
+    }
+  }
+
+  &__e-like-icon {
+    @extend .material-icons;
+    color: common.$purple;
+    font-size: 10px;
+
+    padding-left: 5px;
+    padding-right: 6px;
+
+    &:before {
+      content: "favorite_border";
+    }
+  }
+
+  &__e-counter-text {
+    box-sizing: content-box;
+    min-width: 9px;
+
+    color: common.$purple;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    padding-right: 9px;
+  }
+}

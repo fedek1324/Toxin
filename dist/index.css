@@ -259,7 +259,7 @@ button, input[type=submit], input[type=reset] {
   color: #1F2041;
 }
 
-.h3, .b-form-elements-page__e-title, .b-colors-and-type-page__e-text-type-name-h3, .b-colors-and-type-page__e-text-type-exapmle-h3, .b-button_is-primary .b-button__e-text, .b-button_is-secondary .b-button__e-text, .b-button_is-text .b-button__e-text, .b-button_is-wide .b-button__e-text, .b-input-field__e-head, .b-counter__e-text, .b-counter__e-value, .b-h3 {
+.h3, .b-form-elements-page__e-title, .b-colors-and-type-page__e-text-type-name-h3, .b-colors-and-type-page__e-text-type-exapmle-h3, .b-slider__e-title, .b-button_is-primary .b-button__e-text, .b-button_is-secondary .b-button__e-text, .b-button_is-text .b-button__e-text, .b-button_is-wide .b-button__e-text, .b-input-field__e-head, .b-counter__e-text, .b-counter__e-value, .b-h3 {
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -274,7 +274,7 @@ button, input[type=submit], input[type=reset] {
   color: rgba(31, 32, 65, 0.75);
 }
 
-.material-icons, .b-button__e-icon_is-arrow-forward-icon, .b-input-field__e-icon_is-chevron-icon, .b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
+.material-icons, .b-rate-button__e-star-button, .b-like-button__e-like-icon, .b-button__e-icon_is-arrow-forward-icon, .b-input-field__e-icon_is-chevron-icon, .b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
 .b-input-field__e-next-month-btn {
   font-family: "Material Icons";
   font-weight: normal;
@@ -298,44 +298,44 @@ button, input[type=submit], input[type=reset] {
 }
 
 /* Rules for sizing the icon. */
-.material-icons.md-18, .md-18.b-button__e-icon_is-arrow-forward-icon, .md-18.b-input-field__e-icon_is-chevron-icon, .md-18.b-input-field__e-icon_is-arrow-forward-icon, .md-18.b-input-field__e-prev-month-btn,
+.material-icons.md-18, .md-18.b-rate-button__e-star-button, .md-18.b-like-button__e-like-icon, .md-18.b-button__e-icon_is-arrow-forward-icon, .md-18.b-input-field__e-icon_is-chevron-icon, .md-18.b-input-field__e-icon_is-arrow-forward-icon, .md-18.b-input-field__e-prev-month-btn,
 .md-18.b-input-field__e-next-month-btn {
   font-size: 18px;
 }
 
-.material-icons.md-24, .md-24.b-button__e-icon_is-arrow-forward-icon, .md-24.b-input-field__e-icon_is-chevron-icon, .md-24.b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
+.material-icons.md-24, .md-24.b-rate-button__e-star-button, .md-24.b-like-button__e-like-icon, .md-24.b-button__e-icon_is-arrow-forward-icon, .md-24.b-input-field__e-icon_is-chevron-icon, .md-24.b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
 .b-input-field__e-next-month-btn {
   font-size: 24px;
 }
 
-.material-icons.md-36, .md-36.b-button__e-icon_is-arrow-forward-icon, .md-36.b-input-field__e-icon_is-chevron-icon, .md-36.b-input-field__e-icon_is-arrow-forward-icon, .md-36.b-input-field__e-prev-month-btn,
+.material-icons.md-36, .md-36.b-rate-button__e-star-button, .md-36.b-like-button__e-like-icon, .md-36.b-button__e-icon_is-arrow-forward-icon, .md-36.b-input-field__e-icon_is-chevron-icon, .md-36.b-input-field__e-icon_is-arrow-forward-icon, .md-36.b-input-field__e-prev-month-btn,
 .md-36.b-input-field__e-next-month-btn {
   font-size: 36px;
 }
 
-.material-icons.md-48, .md-48.b-button__e-icon_is-arrow-forward-icon, .md-48.b-input-field__e-icon_is-chevron-icon, .md-48.b-input-field__e-icon_is-arrow-forward-icon, .md-48.b-input-field__e-prev-month-btn,
+.material-icons.md-48, .md-48.b-rate-button__e-star-button, .md-48.b-like-button__e-like-icon, .md-48.b-button__e-icon_is-arrow-forward-icon, .md-48.b-input-field__e-icon_is-chevron-icon, .md-48.b-input-field__e-icon_is-arrow-forward-icon, .md-48.b-input-field__e-prev-month-btn,
 .md-48.b-input-field__e-next-month-btn {
   font-size: 48px;
 }
 
 /* Rules for using icons as black on a light background. */
-.material-icons.md-dark, .md-dark.b-button__e-icon_is-arrow-forward-icon, .md-dark.b-input-field__e-icon_is-chevron-icon, .md-dark.b-input-field__e-icon_is-arrow-forward-icon, .md-dark.b-input-field__e-prev-month-btn,
+.material-icons.md-dark, .md-dark.b-rate-button__e-star-button, .md-dark.b-like-button__e-like-icon, .md-dark.b-button__e-icon_is-arrow-forward-icon, .md-dark.b-input-field__e-icon_is-chevron-icon, .md-dark.b-input-field__e-icon_is-arrow-forward-icon, .md-dark.b-input-field__e-prev-month-btn,
 .md-dark.b-input-field__e-next-month-btn {
   color: rgba(0, 0, 0, 0.54);
 }
 
-.material-icons.md-dark.md-inactive, .md-dark.md-inactive.b-button__e-icon_is-arrow-forward-icon, .md-dark.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-dark.md-inactive.b-input-field__e-icon_is-arrow-forward-icon, .md-dark.md-inactive.b-input-field__e-prev-month-btn,
+.material-icons.md-dark.md-inactive, .md-dark.md-inactive.b-rate-button__e-star-button, .md-dark.md-inactive.b-like-button__e-like-icon, .md-dark.md-inactive.b-button__e-icon_is-arrow-forward-icon, .md-dark.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-dark.md-inactive.b-input-field__e-icon_is-arrow-forward-icon, .md-dark.md-inactive.b-input-field__e-prev-month-btn,
 .md-dark.md-inactive.b-input-field__e-next-month-btn {
   color: rgba(0, 0, 0, 0.26);
 }
 
 /* Rules for using icons as white on a dark background. */
-.material-icons.md-light, .md-light.b-button__e-icon_is-arrow-forward-icon, .md-light.b-input-field__e-icon_is-chevron-icon, .md-light.b-input-field__e-icon_is-arrow-forward-icon, .md-light.b-input-field__e-prev-month-btn,
+.material-icons.md-light, .md-light.b-rate-button__e-star-button, .md-light.b-like-button__e-like-icon, .md-light.b-button__e-icon_is-arrow-forward-icon, .md-light.b-input-field__e-icon_is-chevron-icon, .md-light.b-input-field__e-icon_is-arrow-forward-icon, .md-light.b-input-field__e-prev-month-btn,
 .md-light.b-input-field__e-next-month-btn {
   color: rgb(255, 255, 255);
 }
 
-.material-icons.md-light.md-inactive, .md-light.md-inactive.b-button__e-icon_is-arrow-forward-icon, .md-light.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-light.md-inactive.b-input-field__e-icon_is-arrow-forward-icon, .md-light.md-inactive.b-input-field__e-prev-month-btn,
+.material-icons.md-light.md-inactive, .md-light.md-inactive.b-rate-button__e-star-button, .md-light.md-inactive.b-like-button__e-like-icon, .md-light.md-inactive.b-button__e-icon_is-arrow-forward-icon, .md-light.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-light.md-inactive.b-input-field__e-icon_is-arrow-forward-icon, .md-light.md-inactive.b-input-field__e-prev-month-btn,
 .md-light.md-inactive.b-input-field__e-next-month-btn {
   color: rgba(255, 255, 255, 0.3);
 }
@@ -735,7 +735,7 @@ button, input[type=submit], input[type=reset] {
   content: "";
   display: inline-block;
   width: var(--cb-width);
-  height: 20px;
+  height: var(--cb-width);
   flex-shrink: 0;
   flex-grow: 0;
   border: 1px solid rgba(31, 32, 65, 0.25);
@@ -780,6 +780,181 @@ button, input[type=submit], input[type=reset] {
   font-style: normal;
   font-weight: 400;
   line-height: 18px; /* 128.571% */
+}
+
+.b-radio-button {
+  --rb-width: 20px;
+  --rb-mr: 10px;
+  display: flex;
+  align-items: center;
+}
+.b-radio-button__e-legacy-radio-button {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.b-radio-button__e-new-radio-button {
+  content: "";
+  display: inline-block;
+  width: var(--rb-width);
+  height: var(--rb-width);
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 10px;
+  margin-right: var(--rb-mr);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+.b-radio-button__e-legacy-radio-button:checked + .b-radio-button__e-new-radio-button {
+  border-color: #BC9CFF;
+  background-image: url(assets/images/circle-purple.4344cd3c.svg);
+}
+.b-radio-button__e-label {
+  color: rgba(31, 32, 65, 0.5);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.b-radio-button__e-legacy-radio-button:checked ~ .b-radio-button__e-label {
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.b-toggle {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.b-toggle__e-legacy-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.b-toggle__e-toggle {
+  content: "";
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 10px;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+.b-toggle__e-circle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 4px;
+  content: url(assets/images/circle-gray.7ac61070.svg);
+  transition: all 70ms;
+}
+.b-toggle__e-legacy-checkbox:checked ~ .b-toggle__e-circle {
+  content: url(assets/images/circle-purple.4344cd3c.svg);
+  left: 24px;
+}
+.b-toggle__e-legacy-checkbox:checked + .b-toggle__e-toggle {
+  border-color: #BC9CFF;
+}
+.b-toggle__e-label {
+  color: rgba(31, 32, 65, 0.5);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+}
+
+.b-like-button {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 20px;
+  border: 1px solid #BC9CFF;
+  border-radius: 10px;
+}
+.b-like-button_disabled {
+  border: 1px solid rgba(31, 32, 65, 0.25);
+}
+.b-like-button_disabled .b-like-button__e-like-icon {
+  color: rgba(31, 32, 65, 0.25);
+}
+.b-like-button_disabled .b-like-button__e-counter-text {
+  color: rgba(31, 32, 65, 0.25);
+}
+.b-like-button__e-like-icon {
+  color: #BC9CFF;
+  font-size: 10px;
+  padding-left: 5px;
+  padding-right: 6px;
+}
+.b-like-button__e-like-icon:before {
+  content: "favorite_border";
+}
+.b-like-button__e-counter-text {
+  box-sizing: content-box;
+  min-width: 9px;
+  color: #BC9CFF;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-right: 9px;
+}
+
+.b-rate-button__e-star-button {
+  color: #BC9CFF;
+  font-size: 24px;
+}
+.b-rate-button__e-star-button:before {
+  content: "star_border";
+}
+.b-rate-button__e-star-button_filled:before {
+  content: "star";
+}
+
+.b-slider {
+  margin-bottom: 40px;
+}
+.b-slider__e-header {
+  display: flex;
+  justify-content: space-between;
+}
+.b-slider__e-title {
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.b-slider__e-current-range-text {
+  color: rgba(31, 32, 65, 0.5);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.b-slider__e-slider {
+  display: flex;
+  width: 266px;
+  height: 6px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 3px;
+  background-color: #FFFFFF;
+}
+.b-slider__e-thumb {
+  touch-action: none;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #FFFFFF;
+  border-radius: 10px;
+  position: relative;
+  left: 10px;
+  top: -5px;
+  background: #6FCF97;
+  cursor: pointer;
 }
 
 .b-logo {
@@ -860,6 +1035,7 @@ button, input[type=submit], input[type=reset] {
 }
 .b-form-elements-page__e-checkboxes-container {
   width: 222px;
+  margin-bottom: 41px;
 }
 
 .b-form-elements-page__e-title {
@@ -894,6 +1070,7 @@ button, input[type=submit], input[type=reset] {
 .b-form-elements-page__e-column {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   width: 320px;
   padding-bottom: 100px;
 }

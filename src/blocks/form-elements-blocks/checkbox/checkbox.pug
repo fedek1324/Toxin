@@ -10,7 +10,7 @@ mixin b-checkbox(options)
         if options.header
             +e.e-label-and-check-container
                 +e.INPUT.e-legacy-checkbox(type="checkbox" checked=active name=options.id id=options.id)
-                +e.SPAN.e-new-checkbox
+                +e.e-new-checkbox
                 +e.LABEL.e-label(for=options.id)
                     +e.SPAN.e-header #{options.header}
             +e.SPAN.e-description-text(class=textClass) #{options.text}

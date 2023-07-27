@@ -1,0 +1,20 @@
+mixin b-rate-button(options)
+    -
+        function isFilledStar(number) {
+          if (!(options.value && Number.isFinite(+options.value))) {
+            return false;
+          }
+          if (number <= options.value) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+    - let n = 0;
+    +b.b-rate-button&attributes(attributes)
+        while n < 5
+            - n++
+            if (isFilledStar(n))
+                +e.BUTTON.e-star-button(class="_filled")
+            else
+                +e.BUTTON.e-star-button

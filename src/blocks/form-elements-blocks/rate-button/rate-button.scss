@@ -1,0 +1,18 @@
+@use "@/styles/common";
+
+.b-rate-button {
+
+  &__e-star-button {
+    @extend .material-icons;
+    color: common.$purple;
+    font-size: 24px;
+
+    &:before {
+      content: "star_border";
+    }
+
+    &_filled:before {
+      content: "star";
+    }
+  }
+}

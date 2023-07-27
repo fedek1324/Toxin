@@ -1,7 +1,7 @@
 export class Calendar {
   constructor(datePicker, isRange) {
     this.today = new Date();
-    this.currentMonth = this.today.getMonth() + 1; // like people count
+    this.currentMonth = this.today.getMonth() + 1; // like-button people count
     this.currentYear = this.today.getFullYear();
 
     this.startDate = null;

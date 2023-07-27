@@ -1,4 +1,8 @@
 TODO
+slider thub position left 0 ois not like left 252 - left max looks different
+i can select last (expanded) dropdown text onpointer down under it and under expanded menu like cursos is on input field
+rewrite input block not add additional classes to several nodes just use complex css selectors
+like button changes its size on click
 cb click works only on label
 rewrite check box with header (should be like table) but not using table use css grid
 add postcss maybe

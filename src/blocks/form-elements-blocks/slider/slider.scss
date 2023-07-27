@@ -1,0 +1,52 @@
+@use "@/styles/common";
+
+.b-slider {
+  margin-bottom: 40px;
+
+  &__e-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__e-title {
+    @extend .h3;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  &__e-current-range-text {
+    color: common.$dark50;
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  &__e-slider {
+    display: flex;
+
+    width: 266px;
+    height: 6px;
+
+    border: 1px solid common.$dark25;
+    border-radius: 3px;
+
+    background-color: #FFFFFF;
+  }
+
+  &__e-thumb {
+    touch-action: none;
+
+    width: 14px;
+    height: 14px;
+    border: 2px solid #FFFFFF;
+    border-radius: 10px;
+    position: relative;
+    left: 10px;
+    top: -5px;
+    background: common.$green;
+    cursor: pointer;
+  }
+}

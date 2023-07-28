@@ -7,6 +7,8 @@ export class Slider {
 
     this.initThumb(sliderElement, 0, defaultStart);
     this.initThumb(sliderElement, 1, defaultEnd);
+    this.setUIValue(defaultStart, 0);
+    this.setUIValue(defaultEnd, 1);
   }
 
   isInt(value) {

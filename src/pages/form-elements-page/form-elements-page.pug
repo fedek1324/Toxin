@@ -11,6 +11,7 @@ include ../../blocks/form-elements-blocks/toggle/toggle
 include ../../blocks/form-elements-blocks/like-button/like-button
 include ../../blocks/form-elements-blocks/rate-button/rate-button
 include ../../blocks/form-elements-blocks/slider/slider
+include ../../blocks/form-elements-blocks/pagination/pagination
 
 block head
     title Form elements
@@ -148,7 +149,11 @@ block content
                     +b-button({type: "text", text: "Click me", disabled: "true"})
 
                 +b-button({type: "wide", text: "перейти к оплате",
-                  disabled: "true", icon: "arrow-forward"})
+                  disabled: "true", icon: "arrow-forward"})(style="margin-bottom: 40px")
+
+                +e.e-title Pagination
+                +b-pagination({defaultPages: "15",
+                  defaultDescription: "1 – 12 из 100+ вариантов аренды"})
 
             +e.e-column
                 p first new col

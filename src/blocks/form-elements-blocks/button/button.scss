@@ -1,8 +1,8 @@
 @use "@/styles/common";
 
+// https://stackoverflow.com/questions/38591895/prevent-elements-from-stretching-to-100-width-of-their-flex-container
 .b-button {
   display: flex;
-  // https://stackoverflow.com/questions/38591895/prevent-elements-from-stretching-to-100-width-of-their-flex-container
   align-self: flex-start;
   position: relative;
 

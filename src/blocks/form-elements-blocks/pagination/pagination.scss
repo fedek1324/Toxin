@@ -1,0 +1,89 @@
+@use "@/styles/common";
+
+.b-pagination {
+
+  &__e-buttons-container {
+    display: flex;
+    margin-bottom: 10.5px;
+  }
+
+  &__e-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    width: 40px;
+    height: 40px;
+
+    color: common.$dark50;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+
+
+    &_selected {
+      background-color: common.$purple;
+      border-radius: 22px;
+      color: common.$white;
+
+      font-size: 12px;
+      font-weight: 700;
+      line-height: normal;
+      color: common.$white;
+
+      &:hover {
+        background-color: common.$button-disabled-purple;
+      }
+    }
+  }
+
+  &__e-next-page-button {
+    @extend .material-icons;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    padding: 12.5px 17px;
+
+    color: common.$white;
+
+    background-color: common.$green;
+    border-radius: 22px;
+
+    &::before {
+      content: "arrow_forward";
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__e-description {
+    color: common.$dark75;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  &__e-three-dots {
+    display: flex;
+    align-self: flex-start;
+    position: relative;
+
+    width: 40px;
+    height: 40px;
+
+    padding: 12.5px 17px;
+
+    color: common.$dark50;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

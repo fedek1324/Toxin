@@ -1,0 +1,17 @@
+mixin b-pagination(options)
+    +b.b-pagination&attributes(attributes)
+        +e.e-buttons-container
+            +e.BUTTON.e-button(class="_selected") 1
+            +e.BUTTON.e-button 2
+            +e.BUTTON.e-button 3
+            +e.SPAN.e-three-dots ...
+            +e.BUTTON.e-button 15
+            +e.BUTTON.e-next-page-button
+        +e.e-description-text
+            if options.defaultDescription
+                +e.SPAN.e-default-description #{options.defaultDescription}
+            else
+                +e.SPAN.e-on-page-elements-count
+                +e.SPAN.e-union-text
+                +e.SPAN.e-total-elements-count
+                +e.SPAN.e-finishing-text

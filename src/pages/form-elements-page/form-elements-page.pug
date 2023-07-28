@@ -129,7 +129,8 @@ block content
                     +b-rate-button({value: "4"})(style="margin-right: 20px")
                     +b-rate-button({value: "5"})
             +e.e-column
-                +b-slider({})
+                +b-slider({title: "Range Slider", minValue: "0", maxValue: "15000",
+                  step: "1000", defaultStart: "5000", defaultEnd: "10000"})
                 +e.e-title Buttons
                 +e.e-row
                     +b-button({type: "primary", text: "Click me"})(

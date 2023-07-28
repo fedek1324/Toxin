@@ -69,7 +69,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \******************************************************/
 /***/ (() => {
 
-eval("throw new Error(\"Module parse failed: Unexpected token (30:31)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n|       if (num === 0) {\\n|         const rightThumb = sliderElement.querySelectorAll('.b-slider__e-thumb')[1];\\n>         console.log(rightThumb)''\\n|         if (newLeft > rightThumb.style.left - rightThumb.offsetWidth) {\\n|           newLeft = rightThumb.style.left - rightThumb.offsetWidth;\");\n\n//# sourceURL=webpack:///./blocks/form-elements-blocks/slider/slider.js?");
+eval("throw new Error(\"Module parse failed: Unexpected token (17:2)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n|     const element = this.sliderElement.querySelector('.b-slider__e-current-range-text');\\n|     element.textContent =\\n>   }\\n| \\n|   convertPxToFraction(valuePx) {\");\n\n//# sourceURL=webpack:///./blocks/form-elements-blocks/slider/slider.js?");
 
 /***/ }),
 

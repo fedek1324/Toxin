@@ -1,7 +1,17 @@
 mixin b-slider(options)
-    +b.b-slider&attributes(attributes)
+    - let arg = options;
+    - let title = "Range Slider";
+    if options.title
+      - title = options.title
+    +b.b-slider(
+        data-min-value=options.minValue
+        data-max-value=options.maxValue
+        data-step=options.step
+        data-default-start=options.defaultStart
+        data-default-end=options.defaultEnd
+        )&attributes(attributes)
         +e.e-header
-            +e.e-title Range Slider
+            +e.e-title #{title}
             +e.e-current-range-text 0 - 0
         +e.e-slider
             +e.e-thumb

@@ -9,6 +9,8 @@ export class InputField {
       const input = inputBlock.querySelector('.b-input-field__e-input_is-dropdown');
       const defaultText = input.value.valueOf();
 
+      input.addEventListener('pointerdown', (e) => input.focus());
+
       if (inputBlock.matches('.b-input-field_has-counters-text-no-buttons')) {
         setCounterValuesAsText();
         dropdownContent.addEventListener('pointerdown', setCounterValuesAsText, { passive: true });
@@ -60,7 +62,7 @@ export class InputField {
       }
 
       dropdownContent.hidden = true;
-      // input.setAttribute('readonly', '');
+      input.setAttribute('readonly', '');
       let enabled = false;
       dropdownContent.style.width = `${input.offsetWidth}px`;
       inputWrapper.onpointerdown = handleInputFieldPointerDown;

@@ -60,7 +60,7 @@ export class InputField {
       }
 
       dropdownContent.hidden = true;
-      input.setAttribute('readonly', '');
+      // input.setAttribute('readonly', '');
       let enabled = false;
       dropdownContent.style.width = `${input.offsetWidth}px`;
       inputWrapper.onpointerdown = handleInputFieldPointerDown;

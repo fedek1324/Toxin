@@ -7,37 +7,99 @@ export class InputField {
       // const dropdownIcon = inputBlock.querySelector('.b-input-field__e-icon_is-chevron-icon');
       const dropdownContent = inputBlock.querySelector('.b-input-field__e-dropdown');
       const input = inputBlock.querySelector('.b-input-field__e-input_is-dropdown');
+      const defaultText = input.value.valueOf();
 
       if (inputBlock.matches('.b-input-field_has-counters-text-no-buttons')) {
         setCounterValuesAsText();
-        dropdownContent.addEventListener("pointerdown", setCounterValuesAsText, { passive: true });
+        dropdownContent.addEventListener('pointerdown', setCounterValuesAsText, { passive: true });
       }
 
-      if (inputBlock.matches('.b-input-field_has-counters-apply-button')) {
+      if (inputBlock.matches('.b-input-field_has-counters-text-and-apply-button')) {
+        const handleApplyButtonOnPointerDown = (event) => {
+          setCounterValuesAsText();
+          closeDropdown();
+        };
 
+        const applyButton = createButton('Применить',
+          handleApplyButtonOnPointerDown, ['b-button', 'b-button_is-text']);
+
+        const buttonsContainer = document.createElement('DIV');
+        buttonsContainer.classList.add('b-input-field__e-dropdown-one-button-container');
+        buttonsContainer.append(applyButton);
+
+        dropdownContent.append(buttonsContainer);
+      }
+
+      if (inputBlock.matches('.b-input-field_has-counters-text-has-apply-clear-buttons')) {
+        const handleApplyButtonOnPointerDown = (event) => {
+          setCounterValuesAsText();
+          closeDropdown();
+        };
+
+        const handleClearButtonPointerDown = (event) => {
+          setInputFieldDefaultText();
+        };
+
+        const applyButton = createButton('Применить',
+          handleApplyButtonOnPointerDown, ['b-button', 'b-button_is-text']);
+
+        const clearButton = createButton('Очистить',
+          handleClearButtonPointerDown, ['b-button', 'b-button_is-text']);
+
+        const buttonsContainer = document.createElement('DIV');
+        buttonsContainer.classList.add('b-input-field__e-dropdown-buttons-container');
+        buttonsContainer.append(applyButton);
+        buttonsContainer.prepend(clearButton);
+
+        dropdownContent.append(buttonsContainer);
+      }
+
+      if (inputBlock.dataset.applyCountersTextByDefault
+      || inputBlock.dataset.applyCountersTextByDefault === '') {
+        setCounterValuesAsText();
       }
 
       dropdownContent.hidden = true;
       input.setAttribute('readonly', '');
       let enabled = false;
       dropdownContent.style.width = `${input.offsetWidth}px`;
-      inputWrapper.onpointerdown = onclick;
+      inputWrapper.onpointerdown = handleInputFieldPointerDown;
 
       if (inputBlock.dataset.openByDefault || inputBlock.dataset.openByDefault === '') {
-        onclick();
+        handleInputFieldPointerDown();
       }
 
-      function onclick(event) {
+      function setInputFieldDefaultText() {
+        input.value = defaultText;
+      }
+
+      function handleInputFieldPointerDown(event) {
         event?.preventDefault();
         enabled = !enabled;
         input.classList.toggle('b-input-field__e-input_active-dropdown');
         dropdownContent.hidden = !enabled;
 
-        document.addEventListener('pointerdown', handleDocumentClick, { passive: true });
+        document.addEventListener('pointerdown', handleDocumentPoinerDown, { passive: true });
+      }
+
+      function createButton(text, callback, classes) {
+        const button = document.createElement('BUTTON');
+        button.classList.add(...classes);
+
+        const handleOnPointerDown = callback;
+
+        button.addEventListener('pointerdown', handleOnPointerDown);
+
+        const buttonText = document.createElement('SPAN');
+        buttonText.classList.add('b-button__e-text');
+        buttonText.textContent = text;
+        button.append(buttonText);
+
+        return button;
       }
 
       function setCounterValuesAsText() {
-        input.value = "";
+        input.value = '';
         const counters = dropdownContent.querySelectorAll('.b-counter');
         counters.forEach((counter) => {
           const counterTextEl = counter.querySelector('.b-counter__e-text');
@@ -46,48 +108,84 @@ export class InputField {
           const counterValue = +counterValueEl.textContent;
           input.value += `${formatWords(counterValue, counterText)}, `;
         });
+        input.value = input.value.slice(0, -2); // remove space and comma in the end
       }
 
-      function handleDocumentClick(event) {
+      function handleDocumentPoinerDown(event) {
         const isInside = inputBlock.contains(event.target);
         if (!isInside) {
-          enabled = false;
-          input.classList.remove('b-input-field__e-input_active-dropdown');
-          dropdownContent.hidden = true;
-          document.removeEventListener('pointerdown', handleDocumentClick, { passive: true });
+          closeDropdown();
         }
       }
 
-      function formatWords(num, word) {
-        let ending = "";
-        if (word === "спальни") {
+      function closeDropdown() {
+        enabled = false;
+        input.classList.remove('b-input-field__e-input_active-dropdown');
+        dropdownContent.hidden = true;
+        document.removeEventListener('pointerdown', handleDocumentPoinerDown, { passive: true });
+      }
+
+      function formatWords(num, wordArg) {
+        const word = wordArg.toLowerCase();
+        let ending = '';
+        if (word === 'спальни') {
           if (num === 1 || (num > 20 && num % 10 === 1)) {
-            ending = "спальня";
+            ending = 'спальня';
           } else if (num > 1 && num < 5) {
-            ending = "спальни";
+            ending = 'спальни';
           } else {
-            ending = "спален";
+            ending = 'спален';
           }
         }
-        if (word === "кровати") {
+        if (word === 'кровати') {
           if (num === 1 || (num > 20 && num % 10 === 1)) {
-            ending = "кровать";
+            ending = 'кровать';
           } else if (num > 1 && num < 5) {
-            ending = "кровати";
+            ending = 'кровати';
           } else {
-            ending = "кроватей";
+            ending = 'кроватей';
           }
         }
-        if (word === "ванные комнаты") {
+        if (word === 'ванные комнаты') {
           if (num === 1 || (num > 20 && num % 10 === 1)) {
-            ending = "ванная комната";
+            ending = 'ванная комната';
           } else if (num > 1 && num < 5) {
-            ending = "ванные комнаты";
+            ending = 'ванные комнаты';
           } else {
-            ending = "ванных комнат";
+            ending = 'ванных комнат';
           }
         }
-        return num + " " + ending;
+
+        if (word === 'взрослые') {
+          if (num === 1 || (num > 20 && num % 10 === 1)) {
+            ending = 'взрослый';
+          } else if (num > 1 && num < 5) {
+            ending = 'взрослых';
+          } else {
+            ending = 'взрослых';
+          }
+        }
+
+        if (word === 'дети') {
+          if (num === 1 || (num > 20 && num % 10 === 1)) {
+            ending = 'ребёнок';
+          } else if (num > 1 && num < 5) {
+            ending = 'детей';
+          } else {
+            ending = 'детей';
+          }
+        }
+
+        if (word === 'младенцы') {
+          if (num === 1 || (num > 20 && num % 10 === 1)) {
+            ending = 'младенец';
+          } else if (num > 1 && num < 5) {
+            ending = 'младенцев';
+          } else {
+            ending = 'младенцев';
+          }
+        }
+        return `${num} ${ending}`;
       }
     }
   }

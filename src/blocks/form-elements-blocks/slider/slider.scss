@@ -11,7 +11,7 @@
   &__e-title {
     @extend .h3;
     text-transform: uppercase;
-    margin-bottom: 16px;
+    margin-bottom: 23px;
   }
 
   &__e-current-range-text {
@@ -40,9 +40,10 @@
   &__e-thumb {
     position: absolute;
     touch-action: none;
+    box-sizing: content-box;
 
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     border: 2px solid #FFFFFF;
     border-radius: 10px;
     left: 10px;

@@ -59,31 +59,6 @@ block content
                   value: "", placeholder: "Email", image: "arrow-forward"
                 })(style="width: 266px; margin-top: 41px;")
 
-                +b-input-field({
-                  type: "counters-no-buttons", headText: "Dropdown",
-                  secondHeadText: "Default",
-                  value: ""
-                })(style="width: 266px; margin-top: 100px;")
-                    +b-counter({text: "спальни",
-                      initialValue: 2}).__e-row
-                    +b-counter({text: "кровати",
-                      initialValue: 2}).__e-row
-                    +b-counter({text: "ванные комнаты",
-                      initialValue: 0}).__e-row
-
-                +b-input-field({
-                  type: "counters-apply-button",
-                  headText: "Dropdown", secondHeadText: "Expanded",
-                  value: "Default text"
-                })(style="width: 266px; margin-top: 20px; margin-bottom: 160px;"
-                    data-open-by-default)
-                    +b-counter({text: "спальни",
-                      maxValue: 5, initialValue: 2}).__e-row
-                    +b-counter({text: "кровати",
-                      maxValue: 5, initialValue: 2}).__e-row
-                    +b-counter({text: "ванные комнаты",
-                      maxValue: 5, initialValue: 0}).__e-row
-
             +e.e-column
                 +e.e-checkboxes-container
                     +e.e-title Checkbox Buttons
@@ -99,7 +74,7 @@ block content
                       id: "cb4",
                       text: "Можно пригласить гостей (до 10 человек)",
                       active: "true"
-                    })(style="margin-bottom: 10px")
+                    })
 
                 +e.e-title Radio Buttons
                 +e.e-row(style="margin-bottom: 36.5px")
@@ -113,12 +88,12 @@ block content
                   id: "tg1",
                   text: "Получать спецпредложения",
                   active: "true"
-                })(style="margin-bottom: 10px")
+                })(style="margin-bottom: 14px")
                 +b-toggle({
                   id: "tg2",
                   text: "Получать спецпредложения",
                   active: "false"
-                })(style="margin-bottom: 40.4px")
+                })(style="margin-bottom: 44.4px")
 
                 +e.e-title Like button
                 +e.e-row(style="margin-bottom: 40px;")
@@ -159,8 +134,76 @@ block content
                 //})
 
             +e.e-column
-                p first new col
+                +b-input-field({
+                  type: "counters-no-buttons", headText: "Dropdown",
+                  secondHeadText: "Default",
+                  value: ""
+                })(style="width: 266px;")
+                    +b-counter({
+                      text: "спальни",
+                      initialValue: 2
+                    }).__e-row
+                    +b-counter({
+                      text: "кровати",
+                      initialValue: 2
+                    }).__e-row
+                    +b-counter({
+                      text: "ванные комнаты",
+                      initialValue: 0
+                    }).__e-row
+
+                +b-input-field({
+                  type: "counters-no-buttons",
+                  headText: "Dropdown", secondHeadText: "Expanded",
+                  value: "Default text"
+                })(style="width: 266px; margin-top: 20px; margin-bottom: 160px;"
+                    data-open-by-default)
+                    +b-counter({
+                      text: "спальни",
+                      maxValue: 5, initialValue: 2
+                    }).__e-row
+                    +b-counter({
+                      text: "кровати",
+                      maxValue: 5, initialValue: 2
+                    }).__e-row
+                    +b-counter({
+                      text: "ванные комнаты",
+                      maxValue: 5, initialValue: 0
+                    }).__e-row
             +e.e-column
-                p sec new col
+                +b-input-field({
+                  type: "counters-apply-button",
+                  headText: "Dropdown",
+                  value: "Сколько гостей"
+                })(style="margin-bottom: 160px;" data-open-by-default)
+                    +b-counter({
+                      text: "Взрослые",
+                      maxValue: 50, initialValue: 0
+                    }).__e-row
+                    +b-counter({
+                      text: "Дети",
+                      maxValue: 50, initialValue: 0
+                    }).__e-row
+                    +b-counter({
+                      text: "Младенцы",
+                      maxValue: 50, initialValue: 0
+                    }).__e-row
             +e.e-column
-                p third new col
+                +b-input-field({
+                  type: "counters-apply-clear-buttons",
+                  headText: "Dropdown",
+                  value: "Сколько гостей"
+                })(style="margin-bottom: 160px;" data-open-by-default
+                    data-apply-counters-text-by-default)
+                    +b-counter({
+                      text: "Взрослые",
+                      maxValue: 50, initialValue: 2
+                    }).__e-row
+                    +b-counter({
+                      text: "Дети",
+                      maxValue: 50, initialValue: 1
+                    }).__e-row
+                    +b-counter({
+                      text: "Младенцы",
+                      maxValue: 50, initialValue: 0
+                    }).__e-row

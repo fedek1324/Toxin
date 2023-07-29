@@ -72,6 +72,11 @@
     }
   }
 
+  &__e-description-text {
+    width: 100%;
+    text-align: center;
+  }
+
   &__e-description, &__e-on-page-elements-count,
   &__e-union-text, &__e-total-elements-count,  &__e-finishing-text {
     color: common.$dark75;

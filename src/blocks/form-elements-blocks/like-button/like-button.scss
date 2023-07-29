@@ -16,6 +16,10 @@
 
     & .b-like-button__e-like-icon {
       color: common.$dark25;
+
+      &:before {
+        content: "favorite_border";
+      }
     }
 
     & .b-like-button__e-counter-text {
@@ -32,7 +36,7 @@
     padding-right: 6px;
 
     &:before {
-      content: "favorite_border";
+      content: "favorite";
     }
   }
 

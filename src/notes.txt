@@ -1,11 +1,11 @@
 TODO
-refactor pagination
 add use of several paginations
 check slider on fraction values it should output smth like 0.000000000002
 make class Thumb in Slider
 remove old input focus on other input tap (mobile)
 slider thub position left 0 ois not like left 252 - left max looks different
 i can select last (expanded) dropdown text onpointer down under it and under expanded menu like cursos is on input field
+use this in input block add class constructors to access class inner things fron static init dropdowns
 rewrite input block not add additional classes to several nodes just use complex css selectors
 like button changes its size on click
 cb click works only on label
@@ -31,11 +31,11 @@ add auto style and js import check flat ui metalamp
 change chevron to symbol smth like &#8249; or cvehron using material icons
 make calendar rows constant mb
 add error handlers to slider when creating with random args
-
+refactor pagination
 text spacing b-color __description
 used positon absolute in input block
 
-split input block to dropdown and input
+split input block to dropdown and input?
 
 interesting example: colors and type page
 1) There are 2 spacers (flex inline blocks) who have

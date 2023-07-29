@@ -498,6 +498,16 @@ button, input[type=submit], input[type=reset] {
 .b-input-field__e-row {
   margin-bottom: 7px;
 }
+.b-input-field__e-dropdown-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 19px;
+}
+.b-input-field__e-dropdown-one-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 19px;
+}
 
 /* стили для label */
 .b-input-field__e-second-head {
@@ -883,6 +893,9 @@ button, input[type=submit], input[type=reset] {
 .b-like-button_disabled .b-like-button__e-like-icon {
   color: rgba(31, 32, 65, 0.25);
 }
+.b-like-button_disabled .b-like-button__e-like-icon:before {
+  content: "favorite_border";
+}
 .b-like-button_disabled .b-like-button__e-counter-text {
   color: rgba(31, 32, 65, 0.25);
 }
@@ -893,7 +906,7 @@ button, input[type=submit], input[type=reset] {
   padding-right: 6px;
 }
 .b-like-button__e-like-icon:before {
-  content: "favorite_border";
+  content: "favorite";
 }
 .b-like-button__e-counter-text {
   box-sizing: content-box;
@@ -926,7 +939,7 @@ button, input[type=submit], input[type=reset] {
 }
 .b-slider__e-title {
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 23px;
 }
 .b-slider__e-current-range-text {
   color: rgba(31, 32, 65, 0.5);
@@ -948,8 +961,9 @@ button, input[type=submit], input[type=reset] {
 .b-slider__e-thumb {
   position: absolute;
   touch-action: none;
-  width: 14px;
-  height: 14px;
+  box-sizing: content-box;
+  width: 12px;
+  height: 12px;
   border: 2px solid #FFFFFF;
   border-radius: 10px;
   left: 10px;
@@ -1011,6 +1025,10 @@ button, input[type=submit], input[type=reset] {
 }
 .b-pagination__e-previous-page-button::before {
   content: "arrow_back";
+}
+.b-pagination__e-description-text {
+  width: 100%;
+  text-align: center;
 }
 .b-pagination__e-description, .b-pagination__e-on-page-elements-count, .b-pagination__e-union-text, .b-pagination__e-total-elements-count, .b-pagination__e-finishing-text {
   color: rgba(31, 32, 65, 0.75);

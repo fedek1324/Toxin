@@ -6,6 +6,20 @@
   &__e-row {
     margin-bottom: 7px;
   }
+
+  &__e-dropdown-buttons-container {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 19px;
+  }
+
+  &__e-dropdown-one-button-container {
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: 19px;
+  }
 }
 
 /* стили для label */

@@ -20,8 +20,8 @@ const pageCount = 15;
 const totalElements = 12 * 15;
 
 const initPagination = (currentPageArg, pageCountArg,
-  currentPageElementsCountArg, totalElementsCount, pageChangeCallback) => {
-
+  currentPageElementsCountArg, totalElementsCount, pageChangeCallback) =>
+{
   const pageElFrom = maxElementsPerPage * (currentPageArg - 1) + 1;
   const pageElementTo = pageElFrom + currentPageElementsCountArg - 1; // including last
 
@@ -33,6 +33,7 @@ const initPagination = (currentPageArg, pageCountArg,
 const pageChangeCallback = (currentPageArg) => {
   console.log(`new page ${currentPageArg}`);
   currentPage = currentPageArg;
+
   initPagination(currentPageArg, pageCount,
     currentPageElementsCount, totalElements, pageChangeCallback);
 };

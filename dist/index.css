@@ -274,7 +274,7 @@ button, input[type=submit], input[type=reset] {
   color: rgba(31, 32, 65, 0.75);
 }
 
-.material-icons, .b-pagination__e-next-page-button, .b-rate-button__e-star-button, .b-like-button__e-like-icon, .b-button__e-icon_is-arrow-forward-icon, .b-input-field__e-icon_is-chevron-icon, .b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
+.material-icons, .b-pagination__e-next-page-button, .b-pagination__e-previous-page-button, .b-rate-button__e-star-button, .b-like-button__e-like-icon, .b-button__e-icon_is-arrow-forward-icon, .b-input-field__e-icon_is-chevron-icon, .b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
 .b-input-field__e-next-month-btn {
   font-family: "Material Icons";
   font-weight: normal;
@@ -298,44 +298,44 @@ button, input[type=submit], input[type=reset] {
 }
 
 /* Rules for sizing the icon. */
-.material-icons.md-18, .md-18.b-pagination__e-next-page-button, .md-18.b-rate-button__e-star-button, .md-18.b-like-button__e-like-icon, .md-18.b-button__e-icon_is-arrow-forward-icon, .md-18.b-input-field__e-icon_is-chevron-icon, .md-18.b-input-field__e-icon_is-arrow-forward-icon, .md-18.b-input-field__e-prev-month-btn,
+.material-icons.md-18, .md-18.b-pagination__e-next-page-button, .md-18.b-pagination__e-previous-page-button, .md-18.b-rate-button__e-star-button, .md-18.b-like-button__e-like-icon, .md-18.b-button__e-icon_is-arrow-forward-icon, .md-18.b-input-field__e-icon_is-chevron-icon, .md-18.b-input-field__e-icon_is-arrow-forward-icon, .md-18.b-input-field__e-prev-month-btn,
 .md-18.b-input-field__e-next-month-btn {
   font-size: 18px;
 }
 
-.material-icons.md-24, .md-24.b-pagination__e-next-page-button, .md-24.b-rate-button__e-star-button, .md-24.b-like-button__e-like-icon, .md-24.b-button__e-icon_is-arrow-forward-icon, .md-24.b-input-field__e-icon_is-chevron-icon, .md-24.b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
+.material-icons.md-24, .md-24.b-pagination__e-next-page-button, .md-24.b-pagination__e-previous-page-button, .md-24.b-rate-button__e-star-button, .md-24.b-like-button__e-like-icon, .md-24.b-button__e-icon_is-arrow-forward-icon, .md-24.b-input-field__e-icon_is-chevron-icon, .md-24.b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
 .b-input-field__e-next-month-btn {
   font-size: 24px;
 }
 
-.material-icons.md-36, .md-36.b-pagination__e-next-page-button, .md-36.b-rate-button__e-star-button, .md-36.b-like-button__e-like-icon, .md-36.b-button__e-icon_is-arrow-forward-icon, .md-36.b-input-field__e-icon_is-chevron-icon, .md-36.b-input-field__e-icon_is-arrow-forward-icon, .md-36.b-input-field__e-prev-month-btn,
+.material-icons.md-36, .md-36.b-pagination__e-next-page-button, .md-36.b-pagination__e-previous-page-button, .md-36.b-rate-button__e-star-button, .md-36.b-like-button__e-like-icon, .md-36.b-button__e-icon_is-arrow-forward-icon, .md-36.b-input-field__e-icon_is-chevron-icon, .md-36.b-input-field__e-icon_is-arrow-forward-icon, .md-36.b-input-field__e-prev-month-btn,
 .md-36.b-input-field__e-next-month-btn {
   font-size: 36px;
 }
 
-.material-icons.md-48, .md-48.b-pagination__e-next-page-button, .md-48.b-rate-button__e-star-button, .md-48.b-like-button__e-like-icon, .md-48.b-button__e-icon_is-arrow-forward-icon, .md-48.b-input-field__e-icon_is-chevron-icon, .md-48.b-input-field__e-icon_is-arrow-forward-icon, .md-48.b-input-field__e-prev-month-btn,
+.material-icons.md-48, .md-48.b-pagination__e-next-page-button, .md-48.b-pagination__e-previous-page-button, .md-48.b-rate-button__e-star-button, .md-48.b-like-button__e-like-icon, .md-48.b-button__e-icon_is-arrow-forward-icon, .md-48.b-input-field__e-icon_is-chevron-icon, .md-48.b-input-field__e-icon_is-arrow-forward-icon, .md-48.b-input-field__e-prev-month-btn,
 .md-48.b-input-field__e-next-month-btn {
   font-size: 48px;
 }
 
 /* Rules for using icons as black on a light background. */
-.material-icons.md-dark, .md-dark.b-pagination__e-next-page-button, .md-dark.b-rate-button__e-star-button, .md-dark.b-like-button__e-like-icon, .md-dark.b-button__e-icon_is-arrow-forward-icon, .md-dark.b-input-field__e-icon_is-chevron-icon, .md-dark.b-input-field__e-icon_is-arrow-forward-icon, .md-dark.b-input-field__e-prev-month-btn,
+.material-icons.md-dark, .md-dark.b-pagination__e-next-page-button, .md-dark.b-pagination__e-previous-page-button, .md-dark.b-rate-button__e-star-button, .md-dark.b-like-button__e-like-icon, .md-dark.b-button__e-icon_is-arrow-forward-icon, .md-dark.b-input-field__e-icon_is-chevron-icon, .md-dark.b-input-field__e-icon_is-arrow-forward-icon, .md-dark.b-input-field__e-prev-month-btn,
 .md-dark.b-input-field__e-next-month-btn {
   color: rgba(0, 0, 0, 0.54);
 }
 
-.material-icons.md-dark.md-inactive, .md-dark.md-inactive.b-pagination__e-next-page-button, .md-dark.md-inactive.b-rate-button__e-star-button, .md-dark.md-inactive.b-like-button__e-like-icon, .md-dark.md-inactive.b-button__e-icon_is-arrow-forward-icon, .md-dark.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-dark.md-inactive.b-input-field__e-icon_is-arrow-forward-icon, .md-dark.md-inactive.b-input-field__e-prev-month-btn,
+.material-icons.md-dark.md-inactive, .md-dark.md-inactive.b-pagination__e-next-page-button, .md-dark.md-inactive.b-pagination__e-previous-page-button, .md-dark.md-inactive.b-rate-button__e-star-button, .md-dark.md-inactive.b-like-button__e-like-icon, .md-dark.md-inactive.b-button__e-icon_is-arrow-forward-icon, .md-dark.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-dark.md-inactive.b-input-field__e-icon_is-arrow-forward-icon, .md-dark.md-inactive.b-input-field__e-prev-month-btn,
 .md-dark.md-inactive.b-input-field__e-next-month-btn {
   color: rgba(0, 0, 0, 0.26);
 }
 
 /* Rules for using icons as white on a dark background. */
-.material-icons.md-light, .md-light.b-pagination__e-next-page-button, .md-light.b-rate-button__e-star-button, .md-light.b-like-button__e-like-icon, .md-light.b-button__e-icon_is-arrow-forward-icon, .md-light.b-input-field__e-icon_is-chevron-icon, .md-light.b-input-field__e-icon_is-arrow-forward-icon, .md-light.b-input-field__e-prev-month-btn,
+.material-icons.md-light, .md-light.b-pagination__e-next-page-button, .md-light.b-pagination__e-previous-page-button, .md-light.b-rate-button__e-star-button, .md-light.b-like-button__e-like-icon, .md-light.b-button__e-icon_is-arrow-forward-icon, .md-light.b-input-field__e-icon_is-chevron-icon, .md-light.b-input-field__e-icon_is-arrow-forward-icon, .md-light.b-input-field__e-prev-month-btn,
 .md-light.b-input-field__e-next-month-btn {
   color: rgb(255, 255, 255);
 }
 
-.material-icons.md-light.md-inactive, .md-light.md-inactive.b-pagination__e-next-page-button, .md-light.md-inactive.b-rate-button__e-star-button, .md-light.md-inactive.b-like-button__e-like-icon, .md-light.md-inactive.b-button__e-icon_is-arrow-forward-icon, .md-light.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-light.md-inactive.b-input-field__e-icon_is-arrow-forward-icon, .md-light.md-inactive.b-input-field__e-prev-month-btn,
+.material-icons.md-light.md-inactive, .md-light.md-inactive.b-pagination__e-next-page-button, .md-light.md-inactive.b-pagination__e-previous-page-button, .md-light.md-inactive.b-rate-button__e-star-button, .md-light.md-inactive.b-like-button__e-like-icon, .md-light.md-inactive.b-button__e-icon_is-arrow-forward-icon, .md-light.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-light.md-inactive.b-input-field__e-icon_is-arrow-forward-icon, .md-light.md-inactive.b-input-field__e-prev-month-btn,
 .md-light.md-inactive.b-input-field__e-next-month-btn {
   color: rgba(255, 255, 255, 0.3);
 }
@@ -958,6 +958,11 @@ button, input[type=submit], input[type=reset] {
   cursor: pointer;
 }
 
+.b-pagination {
+  min-width: 241px;
+  display: flex;
+  justify-content: center;
+}
 .b-pagination__e-buttons-container {
   display: flex;
   margin-bottom: 10.5px;
@@ -983,10 +988,10 @@ button, input[type=submit], input[type=reset] {
   line-height: normal;
   color: #FFFFFF;
 }
-.b-pagination__e-button_selected:hover {
-  background-color: #D1CFFC;
+.b-pagination__e-button:hover {
+  opacity: 0.5;
 }
-.b-pagination__e-next-page-button {
+.b-pagination__e-next-page-button, .b-pagination__e-previous-page-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -997,13 +1002,16 @@ button, input[type=submit], input[type=reset] {
   background-color: #6FCF97;
   border-radius: 22px;
 }
-.b-pagination__e-next-page-button::before {
+.b-pagination__e-next-page-button::before, .b-pagination__e-previous-page-button::before {
   content: "arrow_forward";
 }
-.b-pagination__e-next-page-button:hover {
+.b-pagination__e-next-page-button:hover, .b-pagination__e-previous-page-button:hover {
   opacity: 0.5;
 }
-.b-pagination__e-description {
+.b-pagination__e-previous-page-button::before {
+  content: "arrow_back";
+}
+.b-pagination__e-description, .b-pagination__e-on-page-elements-count, .b-pagination__e-union-text, .b-pagination__e-total-elements-count, .b-pagination__e-finishing-text {
   color: rgba(31, 32, 65, 0.75);
   font-size: 14px;
   font-style: normal;
@@ -1013,7 +1021,6 @@ button, input[type=submit], input[type=reset] {
 .b-pagination__e-three-dots {
   display: flex;
   align-self: flex-start;
-  position: relative;
   width: 40px;
   height: 40px;
   padding: 12.5px 17px;

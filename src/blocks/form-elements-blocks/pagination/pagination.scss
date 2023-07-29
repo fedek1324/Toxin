@@ -1,6 +1,9 @@
 @use "@/styles/common";
 
 .b-pagination {
+  min-width: 241px;
+  display: flex;
+  justify-content: center;
 
   &__e-buttons-container {
     display: flex;
@@ -21,7 +24,6 @@
     font-weight: 400;
     line-height: normal;
 
-
     &_selected {
       background-color: common.$purple;
       border-radius: 22px;
@@ -31,14 +33,14 @@
       font-weight: 700;
       line-height: normal;
       color: common.$white;
+    }
 
-      &:hover {
-        background-color: common.$button-disabled-purple;
-      }
+    &:hover {
+      opacity: 0.5;
     }
   }
 
-  &__e-next-page-button {
+  &__e-next-page-button, &__e-previous-page-button {
     @extend .material-icons;
     display: flex;
     justify-content: center;
@@ -63,7 +65,14 @@
     }
   }
 
-  &__e-description {
+  &__e-previous-page-button {
+    &::before {
+      content: "arrow_back";
+    }
+  }
+
+  &__e-description, &__e-on-page-elements-count,
+  &__e-union-text, &__e-total-elements-count,  &__e-finishing-text {
     color: common.$dark75;
     font-size: 14px;
     font-style: normal;
@@ -74,7 +83,6 @@
   &__e-three-dots {
     display: flex;
     align-self: flex-start;
-    position: relative;
 
     width: 40px;
     height: 40px;

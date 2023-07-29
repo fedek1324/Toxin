@@ -1,4 +1,6 @@
 TODO
+refactor pagination
+add use of several paginations
 check slider on fraction values it should output smth like 0.000000000002
 make class Thumb in Slider
 remove old input focus on other input tap (mobile)

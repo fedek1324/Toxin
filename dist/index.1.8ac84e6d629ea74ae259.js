@@ -15,7 +15,7 @@
   \******************/
 /***/ (() => {
 
-eval("throw new Error(\"Module parse failed: Identifier 'pagination' has already been declared (19:6)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| const pagination = new Pagination(1, 1,\\n|   12, 12, 12);\\n> const pagination = new Pagination(1, 3,\\n|   12, 12, 36);\\n| const pagination = new Pagination(1, 15,\");\n\n//# sourceURL=webpack:///./index.js?");
+eval("throw new Error(\"Module parse failed: Unexpected token (17:0)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| let firstElementNumber = 1;\\n| let maxElementsPerPage = \\n> const pageChangeCallback = (currentPage) => {\\n|   console.log(`new page ${currentPage}`);\\n|   firstElementNumber =\");\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ })
 

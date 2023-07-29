@@ -962,6 +962,7 @@ button, input[type=submit], input[type=reset] {
   min-width: 241px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 .b-pagination__e-buttons-container {
   display: flex;

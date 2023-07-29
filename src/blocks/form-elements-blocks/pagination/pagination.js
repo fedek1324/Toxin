@@ -1,29 +1,67 @@
 export class Pagination {
-  constructor(currentPage, pageCount, pageElementsCount,
-    maxPageElementsCount, totalElementsCount) {
+  constructor(currentPage, pageCount, pageElementFrom,
+              pageElementTo, totalElementsCount, pageChangeCallback) {
     this.pagination = document.querySelector('.b-pagination');
 
-    this.initPagination(currentPage, pageCount, pageElementsCount,
-      maxPageElementsCount, totalElementsCount);
+    this.pageChangeCallback = pageChangeCallback;
+
+    this.setPagination(currentPage, pageCount, pageElementFrom,
+                pageElementTo, totalElementsCount);
   }
 
-  clearContent() {
+  removeDefaultText() {
+    const descriptionEl = this.pagination.querySelector('.b-pagination__e-default-description');
+    descriptionEl?.remove();
+  }
+
+  setCurrentPageElementsRangeText(from, to) {
+    this.removeDefaultText();
+    const rangeEl = this.pagination.querySelector('.b-pagination__e-on-page-elements-count');
+    rangeEl.textContent = `${from} - ${to}`;
+  }
+
+  removeButtons() {
     const buttons = this.pagination.querySelector('.b-pagination__e-buttons-container');
     // buttons.textContent = '';
     buttons.replaceChildren();
   }
 
-  initPagination(currentPage, pageCount, pageElementsCount,
-    maxPageElementsCount, totalElementsCount) {
+  setPagination(currentPage, pageCount, pageElementFrom,
+                pageElementTo, totalElementsCount) {
     this.currentPage = currentPage;
     this.pageCount = pageCount;
-    this.pageElementsCount = pageElementsCount;
-    this.maxPageElementsCount = maxPageElementsCount;
+    this.pageElementFrom = pageElementFrom;
+    this.pageElementTo = pageElementTo;
     this.totalElementsCount = totalElementsCount;
 
-    this.clearContent();
+    this.removeButtons();
 
     this.initButtons(pageCount, currentPage);
+    this.initDescription();
+  }
+
+  initDescription() {
+    this.removeDefaultText();
+
+    const {
+      pageElementFrom,
+      pageElementTo, totalElementsCount,
+    } = this;
+
+    this.setCurrentPageElementsRangeText(pageElementFrom, pageElementTo);
+
+    const unionSelector = '.b-pagination__e-union-text';
+    const totalElementsSelector = '.b-pagination__e-total-elements-count';
+    const finishingTextSelector = '.b-pagination__e-finishing-text';
+
+    const unuionEl = this.pagination.querySelector(unionSelector);
+    const totalEl = this.pagination.querySelector(totalElementsSelector);
+    const finishingTextEl = this.pagination.querySelector(finishingTextSelector);
+
+    unuionEl.textContent = ' из ';
+    totalEl.textContent = totalElementsCount;
+    finishingTextEl.textContent = ' вариантов аренды';
+
   }
 
   initButtons(pageCount, currentPage) {
@@ -96,12 +134,7 @@ export class Pagination {
 
     const handlePageButtonOnPointerDown = (event) => {
       event.preventDefault();
-      const {
-        pageCount, pageElementsCount,
-        maxPageElementsCount, totalElementsCount,
-      } = this;
-      this.initPagination(pageNumber, pageCount,
-        pageElementsCount, maxPageElementsCount, totalElementsCount);
+      this.pageChangeCallback(pageNumber, event);
     };
 
     newButton.addEventListener('pointerdown', handlePageButtonOnPointerDown);
@@ -119,12 +152,7 @@ export class Pagination {
 
     const handleNextPageButtonOnPointerDown = (event) => {
       event.preventDefault();
-      const {
-        currentPage, pageCount, pageElementsCount,
-        maxPageElementsCount, totalElementsCount,
-      } = this;
-      this.initPagination(currentPage + 1, pageCount,
-        pageElementsCount, maxPageElementsCount, totalElementsCount);
+      this.pageChangeCallback(this.currentPage + 1, event);
     };
 
     newButton.addEventListener('pointerdown', handleNextPageButtonOnPointerDown);
@@ -139,12 +167,7 @@ export class Pagination {
 
     const handlePreviousPageButtonOnPointerDown = (event) => {
       event.preventDefault();
-      const {
-        currentPage, pageCount, pageElementsCount,
-        maxPageElementsCount, totalElementsCount,
-      } = this;
-      this.initPagination(currentPage - 1, pageCount,
-        pageElementsCount, maxPageElementsCount, totalElementsCount);
+      this.pageChangeCallback(this.currentPage - 1, event);
     };
 
     newButton.addEventListener('pointerdown', handlePreviousPageButtonOnPointerDown);
@@ -158,13 +181,9 @@ export class Pagination {
     const container = document.querySelector('.b-pagination__e-buttons-container');
     container.append(dots);
   }
-
-  dispose() {
-
-  }
 }
 
-// init buttons type 2 whe one can return to page 1 in the middle
+// init buttons type 2 whe one can return to page 1 in the middle NEEDS FIX
 // initButtons(pageCount, currentPage) {
 //     if (pageCount === 1) {
 //       this.addPageButton(1, true);

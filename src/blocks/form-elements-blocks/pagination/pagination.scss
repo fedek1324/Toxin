@@ -4,6 +4,7 @@
   min-width: 241px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 
   &__e-buttons-container {
     display: flex;

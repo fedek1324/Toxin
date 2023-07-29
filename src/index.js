@@ -12,11 +12,32 @@ LikeButton.initLikeButtons();
 RateButton.initRateButtons();
 Slider.initSliders();
 
+let currentPage = 1;
+let currentPageElementsCount = 12;
 
-// const pagination = new Pagination(1, 1,
-//   12, 12, 12);
-// const pagination2 = new Pagination(1, 3,
-//   12, 12, 36);
-const pagination3 = new Pagination(1, 7,
-  12, 12, 12 * 15);
-InputField.initDropdowns(); // hides already inited nodes
+const maxElementsPerPage = 12;
+const pageCount = 15;
+const totalElements = 12 * 15;
+
+const initPagination = (currentPageArg, pageCountArg,
+  currentPageElementsCountArg, totalElementsCount, pageChangeCallback) => {
+
+  const pageElFrom = maxElementsPerPage * (currentPageArg - 1) + 1;
+  const pageElementTo = pageElFrom + currentPageElementsCountArg - 1; // including last
+
+  new Pagination(currentPageArg, pageCountArg,
+    pageElFrom, pageElementTo, totalElementsCount,
+    pageChangeCallback);
+};
+
+const pageChangeCallback = (currentPageArg) => {
+  console.log(`new page ${currentPageArg}`);
+  currentPage = currentPageArg;
+  initPagination(currentPageArg, pageCount,
+    currentPageElementsCount, totalElements, pageChangeCallback);
+};
+
+initPagination(currentPage, pageCount,
+  currentPageElementsCount, totalElements, pageChangeCallback);
+
+InputField.initDropdowns(); // hides already inited nodes (eg counters)

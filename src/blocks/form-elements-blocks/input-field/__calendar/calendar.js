@@ -27,11 +27,12 @@ export class Calendar {
         // console.log('outer of input block click detected. closing block')
         this.input.classList.remove('b-input-field__e-input_active-date-picker');
         this.calendar.classList.remove('b-input-field__e-calendar_active');
-        document.removeEventListener('pointerdown', handleDocumentClick, true);
+        document.removeEventListener('click', handleDocumentClick, true);
       }
     };
 
-    document.addEventListener('pointerdown', handleDocumentClick, true);
+    // no poiner down bcs it doesnt allow scroll
+    document.addEventListener('click', handleDocumentClick, true);
   }
 
   initCalendar(datePicker) {
@@ -46,13 +47,29 @@ export class Calendar {
     this.datePickerBlock.append(this.calendar);
     this.input.setAttribute('readonly', '');
 
+    if (this.isOnTheRightOfContainer(this.calendar)) {
+      // this.calendar.style.position = 'relative';
+      this.calendar.style.right = '38px';
+    }
+
     // Event listener to toggle the calendar visibility
-    this.inputWrapper.addEventListener('pointerdown', (event) => {
-      event.preventDefault();
+    this.inputWrapper.addEventListener('click', (event) => {
       this.input.classList.toggle('b-input-field__e-input_active-date-picker');
       this.calendar.classList.toggle('b-input-field__e-calendar_active');
       this.addCloseOnDocumentClickHandlers();
     });
+  }
+
+  isOnTheRightOfContainer(element) {
+    console.log(element);
+    const closestContainer = element.closest('div');
+    const containerRight = closestContainer.getBoundingClientRect().right;
+    const containerLeft = closestContainer.getBoundingClientRect().left;
+
+    const elRight = element.getBoundingClientRect().right;
+    const elLeft = element.getBoundingClientRect().left;
+
+    return (containerRight - elRight) < (containerLeft - elLeft);
   }
 
   // Function to generate the calendar HTML
@@ -141,7 +158,7 @@ export class Calendar {
     const prevMonthBtn = this.calendar.querySelector('.b-input-field__e-prev-month-btn');
     const nextMonthBtn = this.calendar.querySelector('.b-input-field__e-next-month-btn');
 
-    prevMonthBtn.addEventListener('pointerdown', (event) => {
+    prevMonthBtn.addEventListener('click', (event) => {
       event.preventDefault();
       const newMonth = this.currentMonth === 1 ? 12 : this.currentMonth - 1;
       const newYear = this.currentMonth === 1 ? this.currentYear - 1 : this.currentYear;
@@ -149,7 +166,7 @@ export class Calendar {
       this.highlightRange();
     });
 
-    nextMonthBtn.addEventListener('pointerdown', (event) => {
+    nextMonthBtn.addEventListener('click', (event) => {
       event.preventDefault();
       // waiting for addCloseOnDocumentClickHandlers proof that click was on input block
       this.currentMonth = this.currentMonth === 12 ? 1 : this.currentMonth + 1;
@@ -168,7 +185,7 @@ export class Calendar {
 
   addCellOnClick() {
     // Event listener for date selection using event delegation
-    this.calendar.addEventListener('pointerdown', (event) => {
+    this.calendar.addEventListener('click', (event) => {
       const cell = event.target;
       if (cell.tagName === 'TD' && !cell.classList.contains('b-input-field__e-date_disabled')) {
         const date = parseInt(cell.textContent, 10);

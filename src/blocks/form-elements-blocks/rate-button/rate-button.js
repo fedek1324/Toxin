@@ -6,12 +6,12 @@ export class RateButton {
       const starButtons = rateButton.querySelectorAll('.b-rate-button__e-star-button');
       for (let j = 0; j < starButtons.length; j += 1) {
         const starButton = starButtons[j];
-        starButton.addEventListener('pointerdown', (event) =>
-          handleStarButtonOnPointerDown.bind(this, event, j, starButtons)());
+        starButton.addEventListener('click', (event) =>
+          handleStarButtonClick.bind(this, event, j, starButtons)());
       }
     }
 
-    function handleStarButtonOnPointerDown(event, starIndex, starButtons) {
+    function handleStarButtonClick(event, starIndex, starButtons) {
       for (let i = 0; i < starButtons.length; i += 1) {
         const starButton = starButtons[i];
         if (i <= starIndex) {

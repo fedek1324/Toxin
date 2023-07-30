@@ -25,11 +25,11 @@ export class Counter {
       const value = counter.querySelector('.b-counter__e-value');
       const initialValue = +value.textContent; // Parse the initial value as a number
 
-      minusBtn.onpointerdown = () => {
+      minusBtn.onclick = () => {
         updateCounterValue(counter, value, -1);
       };
 
-      plusBtn.onpointerdown = () => {
+      plusBtn.onclick = () => {
         updateCounterValue(counter, value, 1);
       };
 

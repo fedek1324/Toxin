@@ -1,16 +1,21 @@
 export class InputField {
-  static initDropdowns() {
 
-
+  static removeInputFocusOnOntherInputClick() {
     const inputs = document.querySelectorAll('.b-input-field__e-input');
-    document.body.addEventListener('pointerdown', (e) => {
-      for (let i = 0; i < inputs.length; i++) {
-        const input = inputs[i];
-        input.blur();
-        console.log('blur');
+    document.body.addEventListener('click', (e) => {
+      // console.log(e.target.closest('.b-input-field'));
+      if (e.target.closest('.b-input-field')) {
+        // if click was in input block
+        console.log('includes input');
+        for (let i = 0; i < inputs.length; i += 1) {
+          const input = inputs[i];
+          input.blur();
+        }
       }
-    }, true);
-
+    }, { passive: true, capture: true });
+  }
+  static initDropdowns() {
+    // InputField.removeInputFocusOnOntherInputClick();
 
     for (let i = 0; i < document.getElementsByClassName('b-input-field_is-dropdown').length; i++) {
       const inputBlock = document.getElementsByClassName('b-input-field_is-dropdown')[i];
@@ -28,13 +33,13 @@ export class InputField {
       }
 
       if (inputBlock.matches('.b-input-field_has-counters-text-and-apply-button')) {
-        const handleApplyButtonOnPointerDown = (event) => {
+        const handleApplyButtonClick = (event) => {
           setCounterValuesAsText();
           closeDropdown();
         };
 
         const applyButton = createButton('Применить',
-          handleApplyButtonOnPointerDown, ['b-button', 'b-button_is-text']);
+          handleApplyButtonClick, ['b-button', 'b-button_is-text']);
 
         const buttonsContainer = document.createElement('DIV');
         buttonsContainer.classList.add('b-input-field__e-dropdown-one-button-container');
@@ -44,20 +49,20 @@ export class InputField {
       }
 
       if (inputBlock.matches('.b-input-field_has-counters-text-has-apply-clear-buttons')) {
-        const handleApplyButtonOnPointerDown = (event) => {
+        const handleApplyButtonOnClick = (event) => {
           setCounterValuesAsText();
           closeDropdown();
         };
 
-        const handleClearButtonPointerDown = (event) => {
+        const handleClearButtonClick = (event) => {
           setInputFieldDefaultText();
         };
 
         const applyButton = createButton('Применить',
-          handleApplyButtonOnPointerDown, ['b-button', 'b-button_is-text']);
+          handleApplyButtonOnClick, ['b-button', 'b-button_is-text']);
 
         const clearButton = createButton('Очистить',
-          handleClearButtonPointerDown, ['b-button', 'b-button_is-text']);
+          handleClearButtonClick, ['b-button', 'b-button_is-text']);
 
         const buttonsContainer = document.createElement('DIV');
         buttonsContainer.classList.add('b-input-field__e-dropdown-buttons-container');
@@ -74,34 +79,34 @@ export class InputField {
 
       dropdownContent.hidden = true;
       input.setAttribute('readonly', '');
-      let enabled = false;
+      let dropdownEnabled = false;
       dropdownContent.style.width = `${input.offsetWidth}px`;
-      inputWrapper.onpointerdown = handleInputFieldPointerDown;
+      inputWrapper.onclick = handleInputFieldClick;
 
       if (inputBlock.dataset.openByDefault || inputBlock.dataset.openByDefault === '') {
-        handleInputFieldPointerDown();
+        handleInputFieldClick();
       }
 
       function setInputFieldDefaultText() {
         input.value = defaultText;
       }
 
-      function handleInputFieldPointerDown(event) {
-        event?.preventDefault();
-        enabled = !enabled;
+      function handleInputFieldClick(event) {
+        // event?.preventDefault();
+        dropdownEnabled = !dropdownEnabled;
         input.classList.toggle('b-input-field__e-input_active-dropdown');
-        dropdownContent.hidden = !enabled;
+        dropdownContent.hidden = !dropdownEnabled;
 
-        document.addEventListener('pointerdown', handleDocumentPoinerDown, { passive: true });
+        document.addEventListener('click', handleDocumentClick, { passive: true });
       }
 
       function createButton(text, callback, classes) {
         const button = document.createElement('BUTTON');
         button.classList.add(...classes);
 
-        const handleOnPointerDown = callback;
+        const handleClick = callback;
 
-        button.addEventListener('pointerdown', handleOnPointerDown);
+        button.addEventListener('click', handleClick);
 
         const buttonText = document.createElement('SPAN');
         buttonText.classList.add('b-button__e-text');
@@ -124,7 +129,7 @@ export class InputField {
         input.value = input.value.slice(0, -2); // remove space and comma in the end
       }
 
-      function handleDocumentPoinerDown(event) {
+      function handleDocumentClick(event) {
         const isInside = inputBlock.contains(event.target);
         if (!isInside) {
           closeDropdown();
@@ -132,10 +137,10 @@ export class InputField {
       }
 
       function closeDropdown() {
-        enabled = false;
+        dropdownEnabled = false;
         input.classList.remove('b-input-field__e-input_active-dropdown');
         dropdownContent.hidden = true;
-        document.removeEventListener('pointerdown', handleDocumentPoinerDown, { passive: true });
+        document.removeEventListener('click', handleDocumentClick, { passive: true });
       }
 
       function formatWords(num, wordArg) {

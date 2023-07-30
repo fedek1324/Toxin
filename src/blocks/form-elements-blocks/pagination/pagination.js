@@ -132,12 +132,12 @@ export class Pagination {
     }
     newButton.textContent = pageNumber;
 
-    const handlePageButtonOnPointerDown = (event) => {
+    const handlePageButtonClick = (event) => {
       event.preventDefault();
       this.pageChangeCallback(pageNumber, event);
     };
 
-    newButton.addEventListener('pointerdown', handlePageButtonOnPointerDown);
+    newButton.addEventListener('click', handlePageButtonClick);
 
     const container = this.pagination.querySelector('.b-pagination__e-buttons-container');
     container.append(newButton);
@@ -150,12 +150,12 @@ export class Pagination {
     const container = this.pagination.querySelector('.b-pagination__e-buttons-container');
     container.append(newButton);
 
-    const handleNextPageButtonOnPointerDown = (event) => {
+    const handleNextPageButtonClick = (event) => {
       event.preventDefault();
       this.pageChangeCallback(this.currentPage + 1, event);
     };
 
-    newButton.addEventListener('pointerdown', handleNextPageButtonOnPointerDown);
+    newButton.addEventListener('click', handleNextPageButtonClick);
   }
 
   addPreviousPageButton() {
@@ -165,12 +165,12 @@ export class Pagination {
     const container = document.querySelector('.b-pagination__e-buttons-container');
     container.prepend(newButton);
 
-    const handlePreviousPageButtonOnPointerDown = (event) => {
+    const handlePreviousPageButtonClick = (event) => {
       event.preventDefault();
       this.pageChangeCallback(this.currentPage - 1, event);
     };
 
-    newButton.addEventListener('pointerdown', handlePreviousPageButtonOnPointerDown);
+    newButton.addEventListener('click', handlePreviousPageButtonClick);
   }
 
   addThreeDots() {

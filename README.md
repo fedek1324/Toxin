@@ -1,3 +1,3 @@
 # Toxin
 
-Actual versioin available at <a href="toxin-phi.vercel.app">toxin-phi.vercel.app</a>
+Actual version available at <a href="toxin-phi.vercel.app">toxin-phi.vercel.app</a>

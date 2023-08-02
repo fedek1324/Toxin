@@ -1,0 +1,7 @@
+mixin b-expandable-checkbox-list(options)
+    +b.b-expandable-checkbox-list&attributes(attributes)
+        +e.e-title-row-container
+            +e.SPAN.e-title #{options.title}
+            +e.e-chevron
+        +e.e-checkboxes-container
+            block

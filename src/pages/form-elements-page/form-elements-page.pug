@@ -12,6 +12,7 @@ include ../../blocks/form-elements-blocks/like-button/like-button
 include ../../blocks/form-elements-blocks/rate-button/rate-button
 include ../../blocks/form-elements-blocks/slider/slider
 include ../../blocks/form-elements-blocks/pagination/pagination
+include ../../blocks/form-elements-blocks/expandable-checkbox-list/b-expandable-checkbox-list
 
 block head
     title Form elements
@@ -133,7 +134,7 @@ block content
                 //  defaultDescription: "1 – 12 из 100+ вариантов аренды"
                 //})
 
-            +e.e-column
+            +e.e-column(style="width: 266px")
                 +b-input-field({
                   type: "counters-no-buttons", headText: "Dropdown",
                   secondHeadText: "Default",
@@ -170,6 +171,15 @@ block content
                       text: "ванные комнаты",
                       maxValue: 5, initialValue: 0
                     }).__e-row
+
+                +b-expandable-checkbox-list({title: "expandable checkbox list"})
+                    +b-checkbox({id: "exp1", text: "Завтрак"})
+                    +b-checkbox({id: "exp2", text: "Письменный стол", active: "true"})
+                    +b-checkbox({id: "exp3", text: "Стул для кормления", active: "true"})
+                    +b-checkbox({id: "exp4", text: "Кроватка", active: "true"})
+                    +b-checkbox({id: "exp5", text: "Телевизор", active: "false"})
+                    +b-checkbox({id: "exp6", text: "Шампунь", active: "false"})
+
             +e.e-column
                 +b-input-field({
                   type: "counters-apply-button",

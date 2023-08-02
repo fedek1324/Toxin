@@ -1,0 +1,47 @@
+@use "@/styles/common";
+
+.b-expandable-checkbox-list {
+  width: 100%;
+
+  &__e-title-row-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 2.4px;
+
+    cursor: pointer;
+  }
+
+  &__e-title {
+    color: common.$dark100;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  &__e-chevron {
+    height: 44px;
+    width: 44px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @extend .material-icons;
+    color: common.$dark50;
+    font-size: 24px;
+
+   &::before {
+     content: "expand_more";
+   }
+  }
+
+  &__e-checkboxes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

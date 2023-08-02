@@ -274,7 +274,7 @@ button, input[type=submit], input[type=reset] {
   color: rgba(31, 32, 65, 0.75);
 }
 
-.material-icons, .b-pagination__e-next-page-button, .b-pagination__e-previous-page-button, .b-rate-button__e-star-button, .b-like-button__e-like-icon, .b-button__e-icon_is-arrow-forward-icon, .b-input-field__e-icon_is-chevron-icon, .b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
+.material-icons, .b-expandable-checkbox-list__e-chevron, .b-pagination__e-next-page-button, .b-pagination__e-previous-page-button, .b-rate-button__e-star-button, .b-like-button__e-like-icon, .b-button__e-icon_is-arrow-forward-icon, .b-input-field__e-icon_is-chevron-icon, .b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
 .b-input-field__e-next-month-btn {
   font-family: "Material Icons";
   font-weight: normal;
@@ -298,44 +298,44 @@ button, input[type=submit], input[type=reset] {
 }
 
 /* Rules for sizing the icon. */
-.material-icons.md-18, .md-18.b-pagination__e-next-page-button, .md-18.b-pagination__e-previous-page-button, .md-18.b-rate-button__e-star-button, .md-18.b-like-button__e-like-icon, .md-18.b-button__e-icon_is-arrow-forward-icon, .md-18.b-input-field__e-icon_is-chevron-icon, .md-18.b-input-field__e-icon_is-arrow-forward-icon, .md-18.b-input-field__e-prev-month-btn,
+.material-icons.md-18, .md-18.b-expandable-checkbox-list__e-chevron, .md-18.b-pagination__e-next-page-button, .md-18.b-pagination__e-previous-page-button, .md-18.b-rate-button__e-star-button, .md-18.b-like-button__e-like-icon, .md-18.b-button__e-icon_is-arrow-forward-icon, .md-18.b-input-field__e-icon_is-chevron-icon, .md-18.b-input-field__e-icon_is-arrow-forward-icon, .md-18.b-input-field__e-prev-month-btn,
 .md-18.b-input-field__e-next-month-btn {
   font-size: 18px;
 }
 
-.material-icons.md-24, .md-24.b-pagination__e-next-page-button, .md-24.b-pagination__e-previous-page-button, .md-24.b-rate-button__e-star-button, .md-24.b-like-button__e-like-icon, .md-24.b-button__e-icon_is-arrow-forward-icon, .md-24.b-input-field__e-icon_is-chevron-icon, .md-24.b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
+.material-icons.md-24, .md-24.b-expandable-checkbox-list__e-chevron, .md-24.b-pagination__e-next-page-button, .md-24.b-pagination__e-previous-page-button, .md-24.b-rate-button__e-star-button, .md-24.b-like-button__e-like-icon, .md-24.b-button__e-icon_is-arrow-forward-icon, .md-24.b-input-field__e-icon_is-chevron-icon, .md-24.b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
 .b-input-field__e-next-month-btn {
   font-size: 24px;
 }
 
-.material-icons.md-36, .md-36.b-pagination__e-next-page-button, .md-36.b-pagination__e-previous-page-button, .md-36.b-rate-button__e-star-button, .md-36.b-like-button__e-like-icon, .md-36.b-button__e-icon_is-arrow-forward-icon, .md-36.b-input-field__e-icon_is-chevron-icon, .md-36.b-input-field__e-icon_is-arrow-forward-icon, .md-36.b-input-field__e-prev-month-btn,
+.material-icons.md-36, .md-36.b-expandable-checkbox-list__e-chevron, .md-36.b-pagination__e-next-page-button, .md-36.b-pagination__e-previous-page-button, .md-36.b-rate-button__e-star-button, .md-36.b-like-button__e-like-icon, .md-36.b-button__e-icon_is-arrow-forward-icon, .md-36.b-input-field__e-icon_is-chevron-icon, .md-36.b-input-field__e-icon_is-arrow-forward-icon, .md-36.b-input-field__e-prev-month-btn,
 .md-36.b-input-field__e-next-month-btn {
   font-size: 36px;
 }
 
-.material-icons.md-48, .md-48.b-pagination__e-next-page-button, .md-48.b-pagination__e-previous-page-button, .md-48.b-rate-button__e-star-button, .md-48.b-like-button__e-like-icon, .md-48.b-button__e-icon_is-arrow-forward-icon, .md-48.b-input-field__e-icon_is-chevron-icon, .md-48.b-input-field__e-icon_is-arrow-forward-icon, .md-48.b-input-field__e-prev-month-btn,
+.material-icons.md-48, .md-48.b-expandable-checkbox-list__e-chevron, .md-48.b-pagination__e-next-page-button, .md-48.b-pagination__e-previous-page-button, .md-48.b-rate-button__e-star-button, .md-48.b-like-button__e-like-icon, .md-48.b-button__e-icon_is-arrow-forward-icon, .md-48.b-input-field__e-icon_is-chevron-icon, .md-48.b-input-field__e-icon_is-arrow-forward-icon, .md-48.b-input-field__e-prev-month-btn,
 .md-48.b-input-field__e-next-month-btn {
   font-size: 48px;
 }
 
 /* Rules for using icons as black on a light background. */
-.material-icons.md-dark, .md-dark.b-pagination__e-next-page-button, .md-dark.b-pagination__e-previous-page-button, .md-dark.b-rate-button__e-star-button, .md-dark.b-like-button__e-like-icon, .md-dark.b-button__e-icon_is-arrow-forward-icon, .md-dark.b-input-field__e-icon_is-chevron-icon, .md-dark.b-input-field__e-icon_is-arrow-forward-icon, .md-dark.b-input-field__e-prev-month-btn,
+.material-icons.md-dark, .md-dark.b-expandable-checkbox-list__e-chevron, .md-dark.b-pagination__e-next-page-button, .md-dark.b-pagination__e-previous-page-button, .md-dark.b-rate-button__e-star-button, .md-dark.b-like-button__e-like-icon, .md-dark.b-button__e-icon_is-arrow-forward-icon, .md-dark.b-input-field__e-icon_is-chevron-icon, .md-dark.b-input-field__e-icon_is-arrow-forward-icon, .md-dark.b-input-field__e-prev-month-btn,
 .md-dark.b-input-field__e-next-month-btn {
   color: rgba(0, 0, 0, 0.54);
 }
 
-.material-icons.md-dark.md-inactive, .md-dark.md-inactive.b-pagination__e-next-page-button, .md-dark.md-inactive.b-pagination__e-previous-page-button, .md-dark.md-inactive.b-rate-button__e-star-button, .md-dark.md-inactive.b-like-button__e-like-icon, .md-dark.md-inactive.b-button__e-icon_is-arrow-forward-icon, .md-dark.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-dark.md-inactive.b-input-field__e-icon_is-arrow-forward-icon, .md-dark.md-inactive.b-input-field__e-prev-month-btn,
+.material-icons.md-dark.md-inactive, .md-dark.md-inactive.b-expandable-checkbox-list__e-chevron, .md-dark.md-inactive.b-pagination__e-next-page-button, .md-dark.md-inactive.b-pagination__e-previous-page-button, .md-dark.md-inactive.b-rate-button__e-star-button, .md-dark.md-inactive.b-like-button__e-like-icon, .md-dark.md-inactive.b-button__e-icon_is-arrow-forward-icon, .md-dark.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-dark.md-inactive.b-input-field__e-icon_is-arrow-forward-icon, .md-dark.md-inactive.b-input-field__e-prev-month-btn,
 .md-dark.md-inactive.b-input-field__e-next-month-btn {
   color: rgba(0, 0, 0, 0.26);
 }
 
 /* Rules for using icons as white on a dark background. */
-.material-icons.md-light, .md-light.b-pagination__e-next-page-button, .md-light.b-pagination__e-previous-page-button, .md-light.b-rate-button__e-star-button, .md-light.b-like-button__e-like-icon, .md-light.b-button__e-icon_is-arrow-forward-icon, .md-light.b-input-field__e-icon_is-chevron-icon, .md-light.b-input-field__e-icon_is-arrow-forward-icon, .md-light.b-input-field__e-prev-month-btn,
+.material-icons.md-light, .md-light.b-expandable-checkbox-list__e-chevron, .md-light.b-pagination__e-next-page-button, .md-light.b-pagination__e-previous-page-button, .md-light.b-rate-button__e-star-button, .md-light.b-like-button__e-like-icon, .md-light.b-button__e-icon_is-arrow-forward-icon, .md-light.b-input-field__e-icon_is-chevron-icon, .md-light.b-input-field__e-icon_is-arrow-forward-icon, .md-light.b-input-field__e-prev-month-btn,
 .md-light.b-input-field__e-next-month-btn {
   color: rgb(255, 255, 255);
 }
 
-.material-icons.md-light.md-inactive, .md-light.md-inactive.b-pagination__e-next-page-button, .md-light.md-inactive.b-pagination__e-previous-page-button, .md-light.md-inactive.b-rate-button__e-star-button, .md-light.md-inactive.b-like-button__e-like-icon, .md-light.md-inactive.b-button__e-icon_is-arrow-forward-icon, .md-light.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-light.md-inactive.b-input-field__e-icon_is-arrow-forward-icon, .md-light.md-inactive.b-input-field__e-prev-month-btn,
+.material-icons.md-light.md-inactive, .md-light.md-inactive.b-expandable-checkbox-list__e-chevron, .md-light.md-inactive.b-pagination__e-next-page-button, .md-light.md-inactive.b-pagination__e-previous-page-button, .md-light.md-inactive.b-rate-button__e-star-button, .md-light.md-inactive.b-like-button__e-like-icon, .md-light.md-inactive.b-button__e-icon_is-arrow-forward-icon, .md-light.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-light.md-inactive.b-input-field__e-icon_is-arrow-forward-icon, .md-light.md-inactive.b-input-field__e-prev-month-btn,
 .md-light.md-inactive.b-input-field__e-next-month-btn {
   color: rgba(255, 255, 255, 0.3);
 }
@@ -1047,6 +1047,42 @@ button, input[type=submit], input[type=reset] {
   font-size: 12px;
   font-weight: 400;
   line-height: normal;
+}
+
+.b-expandable-checkbox-list {
+  width: 100%;
+}
+.b-expandable-checkbox-list__e-title-row-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.4px;
+  cursor: pointer;
+}
+.b-expandable-checkbox-list__e-title {
+  color: #1F2041;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.b-expandable-checkbox-list__e-chevron {
+  height: 44px;
+  width: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(31, 32, 65, 0.5);
+  font-size: 24px;
+}
+.b-expandable-checkbox-list__e-chevron::before {
+  content: "expand_more";
+}
+.b-expandable-checkbox-list__e-checkboxes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .b-logo {

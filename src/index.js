@@ -5,12 +5,14 @@ import { LikeButton } from "./blocks/form-elements-blocks/like-button/like-butto
 import { RateButton } from "./blocks/form-elements-blocks/rate-button/rate-button";
 import { Slider } from "./blocks/form-elements-blocks/slider/slider";
 import { Pagination } from "./blocks/form-elements-blocks/pagination/pagination";
+import { ExpandableCheckboxList } from "./blocks/form-elements-blocks/expandable-checkbox-list/b-expandable-checkbox-list";
 
 Calendar.initCalendars();
 Counter.initCounters();
 LikeButton.initLikeButtons();
 RateButton.initRateButtons();
 Slider.initSliders();
+ExpandableCheckboxList.initExpandableCheckboxLists();
 
 let currentPage = 1;
 let currentPageElementsCount = 12;

@@ -13,6 +13,10 @@ include ../../blocks/form-elements-blocks/rate-button/rate-button
 include ../../blocks/form-elements-blocks/slider/slider
 include ../../blocks/form-elements-blocks/pagination/pagination
 include ../../blocks/form-elements-blocks/expandable-checkbox-list/b-expandable-checkbox-list
+include ../../blocks/form-elements-blocks/bullet-item/bullet-item
+include ../../blocks/form-elements-blocks/bullet-list/bullet-list
+include ../../blocks/form-elements-blocks/icon-text/b-icon-text
+include ../../blocks/form-elements-blocks/comment/b-comment
 
 block head
     title Form elements
@@ -172,7 +176,7 @@ block content
                       maxValue: 5, initialValue: 0
                     }).__e-row
 
-                +b-expandable-checkbox-list({title: "expandable checkbox list"})
+                +b-expandable-checkbox-list({title: "expandable checkbox list"})(style="margin-bottom: 20px;")
                     +b-checkbox({id: "exp1", text: "Завтрак"})
                     +b-checkbox({id: "exp2", text: "Письменный стол", active: "true"})
                     +b-checkbox({id: "exp3", text: "Стул для кормления", active: "true"})
@@ -180,12 +184,21 @@ block content
                     +b-checkbox({id: "exp5", text: "Телевизор", active: "false"})
                     +b-checkbox({id: "exp6", text: "Шампунь", active: "false"})
 
+                +b-expandable-checkbox-list({title: "expandable checkbox list"})(data-open-by-default="")
+                    +b-checkbox({id: "exp2_1", text: "Завтрак"})
+                    +b-checkbox({id: "exp2_2", text: "Письменный стол", active: "true"})
+                    +b-checkbox({id: "exp2_3", text: "Стул для кормления", active: "true"})
+                    +b-checkbox({id: "exp2_4", text: "Кроватка", active: "true"})
+                    +b-checkbox({id: "exp2_5", text: "Телевизор", active: "false"})
+                    +b-checkbox({id: "exp2_6", text: "Шампунь", active: "false"})
+
+
             +e.e-column
                 +b-input-field({
                   type: "counters-apply-button",
                   headText: "Dropdown",
                   value: "Сколько гостей"
-                })(style="margin-bottom: 160px;" data-open-by-default)
+                })(style="margin-bottom: 256px;" data-open-by-default)
                     +b-counter({
                       text: "Взрослые",
                       maxValue: 50, initialValue: 0
@@ -198,12 +211,25 @@ block content
                       text: "Младенцы",
                       maxValue: 50, initialValue: 0
                     }).__e-row
+
+                +e.e-title Rich Checkbox Buttons
+                +b-checkbox({
+                  id: "cor-width",
+                  text: "Ширина коридоров в номере не менее 91 см.",
+                  header: "Широкий коридор"
+                })(style="margin-bottom: 10px;")
+                +b-checkbox({
+                  id: "assistance",
+                  text: "На 1 этаже вас встретит специалист  и проводит до номера.",
+                  header: "Помощник для инвалидов"
+                })
+
             +e.e-column
                 +b-input-field({
                   type: "counters-apply-clear-buttons",
                   headText: "Dropdown",
                   value: "Сколько гостей"
-                })(style="margin-bottom: 160px;" data-open-by-default
+                })(style="margin-bottom: 256px;" data-open-by-default
                     data-apply-counters-text-by-default)
                     +b-counter({
                       text: "Взрослые",
@@ -217,3 +243,17 @@ block content
                       text: "Младенцы",
                       maxValue: 50, initialValue: 0
                     }).__e-row
+
+                +e.e-title bullet list
+                +b-bullet-list({})
+                    +b-bullet-item({text: "Нельзя с питомцами"})
+                    +b-bullet-item({text: "Без вечеринок и мероприятий"})
+                    +b-bullet-item({text: "Время прибытия — после 13:00,\n" +
+                        "а выезд до 12:00"})
+
+            +e.e-column(style="width: 300px")
+                +b-icon-text({icon: "insert_emoticon", title: "Комфорт",
+                  description: "Шумопоглощающие стены"})(style="margin-bottom: 20px;")
+                +b-icon-text({icon: "location_city", title: "Удобство", description: "Окно в каждой из спален"})
+            +e.e-column(style="max-width: 711px;")
+                +b-comment({icon: "insert_emoticon", username: "Мурад Сарафанов", date: "5 дней назад"})

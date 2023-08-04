@@ -1,0 +1,25 @@
+@use "@/styles/common";
+
+.b-bullet-item {
+  display: flex;
+
+  &__e-dot {
+    border-radius: 10px;
+    background-color: common.$dark25;
+    width: 10.43px;
+    height: 10px;
+
+    margin-top: 4px;
+    margin-right: 10.43px;
+  }
+
+  &__e-text {
+    color: common.$dark75;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    //line-height: 24px; /* In figma element can be aligned to top of line height but not in css
+    // so i set default line height and extended gap instead*/
+    line-height: normal;
+  }
+}

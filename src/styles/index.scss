@@ -1,4 +1,7 @@
+@use "./reset.css";
+@use "./normalize.css";
 @use "./fonts";
+@use "./common";
 
 @use "../blocks/colors-and-type-blocks/b-color/b-color-and-elements";
 @use "../blocks/colors-and-type-blocks/body-text/body-text";
@@ -18,6 +21,10 @@
 @use "../blocks/form-elements-blocks/slider/slider";
 @use "../blocks/form-elements-blocks/pagination/pagination";
 @use "../blocks/form-elements-blocks/expandable-checkbox-list/b-expandable-checkbox-list";
+@use "../blocks/form-elements-blocks/bullet-item/bullet-item";
+@use "../blocks/form-elements-blocks/bullet-list/bullet-list";
+@use "../blocks/form-elements-blocks/icon-text/b-icon-text";
+@use "../blocks/form-elements-blocks/comment/b-comment";
 
 @use "../blocks/logo/logo";
 @use "../blocks/logo/logo_type_full";

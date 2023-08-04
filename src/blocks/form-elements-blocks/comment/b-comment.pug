@@ -1,0 +1,8 @@
+mixin b-comment(options)
+    +b.b-comment&attributes(attributes)
+        +e.e-head-container
+            +e.SPAN.e-icon #{options.icon}
+            +e.e-meta-data-container
+                +e.SPAN.e-username #{options.username}
+                +e.SPAN.e-date #{options.date}
+        +e.e-second-line-container

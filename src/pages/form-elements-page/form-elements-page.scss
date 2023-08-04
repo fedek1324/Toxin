@@ -14,7 +14,12 @@
     width: 222px;
     margin-bottom: 41px;
   }
-
+}
+@media (max-width: calc(140px + 320px + 141px)) {
+  // width = padding-l + col1 + padding-r
+  .b-form-elements-page {
+    padding: 140px 16px 0 16px;
+  }
 }
 
 .b-form-elements-page__e-title {
@@ -61,13 +66,4 @@
 .b-form-elements-page__e-row {
   display: flex;
   flex-direction: row;
-}
-
-
-
-@media (max-width: calc(140px + 320px + 141px)) {
-  // width = padding-l + col1 + padding-r
-  .b-form-elements-page {
-    padding: 140px 16px 0 16px;
-  }
 }

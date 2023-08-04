@@ -1,4 +1,8 @@
 TODO
+on other year that selected calendar highlights dates too
+dont use material icons use svg mb instead or add onload
+check elements with non auto line height. In figma element can be aligned to top of line height but not in css
+refactor bullet list as ul and li
 add use of several paginations
 check slider on fraction values it should output smth like 0.000000000002
 make class Thumb in Slider

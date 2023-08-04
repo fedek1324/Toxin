@@ -1,0 +1,8 @@
+mixin b-icon-text(options)
+    +b.b-icon-text&attributes(attributes)
+        +e.e-content-container
+            +e.SPAN.e-icon #{options.icon}
+            +e.e-text-container
+                +e.SPAN.e-title #{options.title}
+                +e.SPAN.e-description #{options.description}
+        +e.e-finishing-line

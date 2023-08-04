@@ -9,6 +9,7 @@ $dark100: #1F2041;
 $dark75: rgba($dark, 0.75);
 $dark50: rgba($dark, 0.50);
 $dark25: rgba($dark, 0.25);
+$dark10: rgba($dark, 0.10);
 $dark5: rgba($dark, 0.05);
 $white: #FFFFFF;
 $purple: #BC9CFF;
@@ -25,7 +26,6 @@ $green: #6FCF97;
 
 
 html {
-  margin: 0 0;
   font-family: Montserrat, sans-serif;
   border-color: #FFFFFF;
   color: $dark75;

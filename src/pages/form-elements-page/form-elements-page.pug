@@ -27,7 +27,7 @@ block content
         +e.DIV.e-header
             +b-logo("watermark")
         +e.e-content-container
-            +e.e-column(style="width: 320px")
+            +e.e-column
                 +b-input-field({type: "text", headText: "Text Field",
                   secondHeadText: "Default",
                   placeholder: "Email"})
@@ -64,7 +64,7 @@ block content
                   value: "", placeholder: "Email", image: "arrow-forward"
                 })(style="width: 266px; margin-top: 41px;")
 
-            +e.e-column(style="width: 320px")
+            +e.e-column
                 +e.e-checkboxes-container
                     +e.e-title Checkbox Buttons
                     +b-checkbox({
@@ -109,7 +109,7 @@ block content
                 +e.e-row
                     +b-rate-button({value: "4"})(style="margin-right: 20px")
                     +b-rate-button({value: "5"})
-            +e.e-column(style="width: 320px")
+            +e.e-column
                 +b-slider({title: "Range Slider", minValue: "0", maxValue: "15000",
                   step: "1000", defaultStart: "5000", defaultEnd: "10000"})
                 +e.e-title Buttons
@@ -138,7 +138,7 @@ block content
                 //  defaultDescription: "1 – 12 из 100+ вариантов аренды"
                 //})
 
-            +e.e-column(style="width: 266px")
+            +e.e-column
                 +b-input-field({
                   type: "counters-no-buttons", headText: "Dropdown",
                   secondHeadText: "Default",
@@ -193,7 +193,7 @@ block content
                     +b-checkbox({id: "exp2_6", text: "Шампунь", active: "false"})
 
 
-            +e.e-column(style="width: 320px")
+            +e.e-column
                 +b-input-field({
                   type: "counters-apply-button",
                   headText: "Dropdown",
@@ -224,7 +224,7 @@ block content
                   header: "Помощник для инвалидов"
                 })
 
-            +e.e-column(style="width: 320px")
+            +e.e-column
                 +b-input-field({
                   type: "counters-apply-clear-buttons",
                   headText: "Dropdown",
@@ -251,11 +251,11 @@ block content
                     +b-bullet-item({text: "Время прибытия — после 13:00,\n" +
                         "а выезд до 12:00"})
 
-            +e.e-column(style="width: 300px")
+            +e.e-column
                 +b-icon-text({icon: "insert_emoticon", title: "Комфорт",
                   description: "Шумопоглощающие стены"})(style="margin-bottom: 20px;")
                 +b-icon-text({icon: "location_city", title: "Удобство", description: "Окно в каждой из спален"})
-            +e.e-column(style="")
+            +e.e-column
                 +b-comment({
                   avatarUrl: "https://i.imgur.com/Bn0bBEf.jpeg",
                   username: "Мурад Сарафанов", date: "5 дней назад",

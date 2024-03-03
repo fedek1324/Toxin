@@ -1669,6 +1669,29 @@ button, input[type=submit], input[type=reset] {
   align-items: flex-start;
   padding-bottom: 100px;
 }
+.b-form-elements-page__e-column:nth-child(-n+3) {
+  width: 320px;
+}
+.b-form-elements-page__e-column:nth-child(4) {
+  width: 266px;
+}
+.b-form-elements-page__e-column:nth-child(5) {
+  width: 320px;
+}
+.b-form-elements-page__e-column:nth-child(6) {
+  width: 320px;
+}
+.b-form-elements-page__e-column:nth-child(7) {
+  width: 300px;
+}
+.b-form-elements-page__e-column:nth-child(8) {
+  grid-column: 2/-1;
+}
+@media (max-width: 1440px) {
+  .b-form-elements-page__e-column:nth-child(8) {
+    grid-column: auto;
+  }
+}
 .b-form-elements-page__e-row {
   display: flex;
   flex-direction: row;

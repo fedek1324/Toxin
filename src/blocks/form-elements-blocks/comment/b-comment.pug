@@ -1,8 +1,13 @@
+include ../like-button/like-button
+
 mixin b-comment(options)
+    - let likeButtonDisabled = options.likeButtonDisabled === undefined ? false : options.likeButtonDisabled;
     +b.b-comment&attributes(attributes)
         +e.e-head-container
-            +e.SPAN.e-icon #{options.icon}
+            +e.IMG.e-avatar(src=options.avatarUrl alt="avatar")
             +e.e-meta-data-container
                 +e.SPAN.e-username #{options.username}
                 +e.SPAN.e-date #{options.date}
         +e.e-second-line-container
+            +b-like-button({disabled: likeButtonDisabled, value: options.likesCount})
+            +e.SPAN.e-comment-text #{options.text}

@@ -8,6 +8,16 @@
     gap: 10px;
   }
 
+  &__e-avatar {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 32px;
+    border: 2px solid white;
+
+    box-shadow: 0 10px 20px common.$dark10;
+  }
+
   &__e-meta-data-container {
     display: flex;
     flex-direction: column;
@@ -40,6 +50,21 @@
   }
 
   &__e-date {
+    color: common.$dark75;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  &__e-second-line-container {
+    display: flex;
+    gap: 10px;
+
+    margin-top: 12px;
+  }
+
+  &__e-comment-text {
     color: common.$dark75;
     font-size: 14px;
     font-style: normal;

@@ -27,7 +27,7 @@ block content
         +e.DIV.e-header
             +b-logo("watermark")
         +e.e-content-container
-            +e.e-column
+            +e.e-column(style="width: 320px")
                 +b-input-field({type: "text", headText: "Text Field",
                   secondHeadText: "Default",
                   placeholder: "Email"})
@@ -64,7 +64,7 @@ block content
                   value: "", placeholder: "Email", image: "arrow-forward"
                 })(style="width: 266px; margin-top: 41px;")
 
-            +e.e-column
+            +e.e-column(style="width: 320px")
                 +e.e-checkboxes-container
                     +e.e-title Checkbox Buttons
                     +b-checkbox({
@@ -102,14 +102,14 @@ block content
 
                 +e.e-title Like button
                 +e.e-row(style="margin-bottom: 40px;")
-                    +b-like-button({disabled: "", value: "2"})(style="margin-right: 10px")
+                    +b-like-button({disabled: true, value: "2"})(style="margin-right: 10px")
                     +b-like-button({value: "12"})
 
                 +e.e-title Rate button
                 +e.e-row
                     +b-rate-button({value: "4"})(style="margin-right: 20px")
                     +b-rate-button({value: "5"})
-            +e.e-column
+            +e.e-column(style="width: 320px")
                 +b-slider({title: "Range Slider", minValue: "0", maxValue: "15000",
                   step: "1000", defaultStart: "5000", defaultEnd: "10000"})
                 +e.e-title Buttons
@@ -193,7 +193,7 @@ block content
                     +b-checkbox({id: "exp2_6", text: "Шампунь", active: "false"})
 
 
-            +e.e-column
+            +e.e-column(style="width: 320px")
                 +b-input-field({
                   type: "counters-apply-button",
                   headText: "Dropdown",
@@ -224,7 +224,7 @@ block content
                   header: "Помощник для инвалидов"
                 })
 
-            +e.e-column
+            +e.e-column(style="width: 320px")
                 +b-input-field({
                   type: "counters-apply-clear-buttons",
                   headText: "Dropdown",
@@ -255,5 +255,10 @@ block content
                 +b-icon-text({icon: "insert_emoticon", title: "Комфорт",
                   description: "Шумопоглощающие стены"})(style="margin-bottom: 20px;")
                 +b-icon-text({icon: "location_city", title: "Удобство", description: "Окно в каждой из спален"})
-            +e.e-column(style="max-width: 711px;")
-                +b-comment({icon: "insert_emoticon", username: "Мурад Сарафанов", date: "5 дней назад"})
+            +e.e-column(style="")
+                +b-comment({
+                  avatarUrl: "https://i.imgur.com/Bn0bBEf.jpeg",
+                  username: "Мурад Сарафанов", date: "5 дней назад",
+                  likesCount: "12", likeButtonDisabled: false,
+                  text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+                })

@@ -1,8 +1,7 @@
 mixin b-like-button(options)
     // {active}
     - let value = options.value ?? 0;
-    - let disabled = (options.disabled || options.disabled === "") && options.disabled !== "false";
-    - let disabledClass = disabled ? "_disabled" : "";
+    - let disabledClass = options.disabled ? "_disabled" : "";
     +b.BUTTON.b-like-button(class=disabledClass)&attributes(attributes)
         +e.SPAN.e-like-icon
         +e.SPAN.e-counter-text #{value}

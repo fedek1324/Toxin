@@ -1,9 +1,14 @@
 export class Calendar {
+  /**
+   * @constructor
+   * @param datePicker - input field
+   * @param isRange
+   */
   constructor(datePicker, isRange) {
     this.today = new Date();
-    this.currentMonth = this.today.getMonth() + 1; // like-button people count
-    this.currentYear = this.today.getFullYear();
 
+    this.currentMonth = null;
+    this.currentYear = null;
     this.startDate = null;
     this.endDate = null;
     this.calendar = null;
@@ -14,10 +19,97 @@ export class Calendar {
     this.isRange = isRange;
 
     this.initCalendar(datePicker);
-    // Generate the calendar for the current month
-    this.generateCalendar(this.currentYear, this.currentMonth);
+
+    const datesParsedFromValue = this.parseValueAsData(isRange);
+    if (datesParsedFromValue.length === 0) {
+      // Generate the calendar for the current month
+      this.currentMonth = this.today.getMonth() + 1; // like-button people count
+      this.currentYear = this.today.getFullYear();
+      this.generateCalendar(this.currentYear, this.currentMonth);
+    } else {
+      // go to fist dates of parsed no matter if it is one or two dates
+      this.currentMonth = datesParsedFromValue[0].getMonth() + 1; // like-button people count
+      this.currentYear = datesParsedFromValue[0].getFullYear();
+      this.generateCalendar(this.currentYear, this.currentMonth);
+
+      if (datesParsedFromValue.length === 2) {
+        this.startDate = datesParsedFromValue[0];
+        this.endDate = datesParsedFromValue[1];
+        this.highlightRange();
+      } else if (datesParsedFromValue.length === 1) {
+        const neededDate = datesParsedFromValue[0];
+        const cells = this.calendar.querySelectorAll('td');
+        for (let i = 0; i < cells.length; i += 1) {
+          const cell = cells[i];
+          const cellDate = +cell.textContent;
+
+          let cellDateObj;
+          if (cellDate - i > 15) {
+            // we get prev month dates here
+            const jsMonth = this.currentMonth - 1; // to 0..11 format
+            const month = jsMonth === 0 ? 11 : jsMonth - 1;
+            cellDateObj = new Date(this.currentYear, month, cellDate);
+          } else if (cellDate - i < -15) {
+            // we get next month dates here
+            const jsMonth = this.currentMonth - 1; // to 0..11 format
+            const month = jsMonth === 11 ? 0 : jsMonth + 1;
+            cellDateObj = new Date(this.currentYear, month, cellDate);
+          } else {
+            const jsMonth = this.currentMonth - 1; // to 0..11 format
+            cellDateObj = new Date(this.currentYear, jsMonth, cellDate);
+          }
+
+          if (neededDate.getTime() === cellDateObj.getTime()) {
+            cell.classList.add('b-input-field__e-date_picked');
+          }
+        }
+      }
+    }
 
     this.addCellOnClick();
+  }
+
+  /**
+   * returns array of parsed Dates from input
+   * @param isRange
+   * @return {*[]|Date[]|[Date,Date]}
+   */
+  parseValueAsData(isRange) {
+    // Helper function from before to parse individual date strings
+    function parseDate(dateStr) {
+      // Handle the full date format: "dd.mm.yyyy"
+      const [day, month, year] = dateStr.split('.').map(Number);
+      return new Date(year, month - 1, day); // month is 0-based in JavaScript
+    }
+
+    function parseDateRange(dateRangeStr) {
+      // Split the input string by " - " to get the two date parts
+      const splitResult = dateRangeStr.split(' - ');
+      const [startDateStr, endDateStr] = splitResult;
+      if (endDateStr === undefined) {
+        throw new Error('Trying to parse input value. Error. Maybe one date used for range picker');
+      }
+
+      // Parse each date string using the parseDate function (assuming full date format)
+      const startDate = parseDate(startDateStr);
+      const endDate = parseDate(endDateStr);
+
+      return [startDate, endDate];
+    }
+
+    function isDate(value) {
+      return /\d+/.test(value.trim().split('.')[0]);
+    }
+
+    const { value } = this.input;
+
+    if (isDate(value)) {
+      if (isRange) {
+        return parseDateRange(value);
+      }
+      return [parseDate(value)];
+    }
+    return [];
   }
 
   addCloseOnDocumentClickHandlers() {
@@ -129,9 +221,9 @@ export class Calendar {
 
     this.calendar.innerHTML = `
         <div class="b-input-field__e-current-month-header">
-          <button class="b-input-field__e-prev-month-btn">arrow_back</button>
+          <button type="button" class="b-input-field__e-prev-month-btn">arrow_back</button>
           <span class="b-input-field__e-current-month">${formattedTitle}</span>
-          <button class="b-input-field__e-next-month-btn">arrow_forward</button>
+          <button type="button" class="b-input-field__e-next-month-btn">arrow_forward</button>
         </div>
         <table class="b-input-field__e-table">
           <thead class="b-input-field__e-t-head">
@@ -199,6 +291,10 @@ export class Calendar {
     });
   }
 
+  /**
+   * @param {Date} selectedDate
+   * @param event
+   */
   handleClickIfRange(selectedDate, event) {
     const cell = event.target;
     // Check if start date is not set
@@ -308,7 +404,11 @@ export class Calendar {
     }
   }
 
-  // Function to format the date as "dd.mm.yyyy"
+  /**
+   * from date object to "dd.mm.yyyy" or "dd mmm - dd mmm"
+   * @param date
+   * @return {string}
+   */
   formatDate(date) {
     const day = String(date.getDate()).padStart(2, '0');
     const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -319,6 +419,7 @@ export class Calendar {
       month: 'short',
     });
     if (this.isRange) {
+      // remove last character
       return formattedDate.slice(0, -1);
     }
     return `${day}.${month}.${year}`;

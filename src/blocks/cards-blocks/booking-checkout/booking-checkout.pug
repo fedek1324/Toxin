@@ -1,0 +1,64 @@
+include ../../form-elements-blocks/input-field/b-input-field
+include ../../form-elements-blocks/button/button
+include ../../form-elements-blocks/counter/b-counter
+
+
+mixin b-booking-checkout(options)
+    // {roomNumber, isLux, price, arrival, departure, guestsNumber}
+    +b.FORM.b-booking-checkout&attributes(attributes)
+        +e.DIV.e-first-row
+            +e.DIV.e-card-header
+                +e.DIV.e-room-number-container
+                    +e.SPAN.e-room-number-sign № 
+                    +e.SPAN.e-room-number #{options.roomNumber}
+                    if options.isLux
+                        +e.SPAN.e-lux-text люкс
+            +e.DIV.e-price-container
+                +e.SPAN.e-price #{options.price}₽
+                +e.SPAN.e-price-tail  в сутки
+        +e.e-row_has-margins
+            +b-input-field({
+                type: "single-date-picker", headText: "Прибытие",
+                value: "ДД.ММ.ГГГГ"
+            })
+            +b-input-field({
+                type: "single-date-picker", headText: "Выезд",
+                value: "ДД.ММ.ГГГГ"
+            })
+        +b-input-field({
+            type: "counters-no-buttons",
+            headText: "гости", secondHeadText: "",
+            value: "Сколько гостей"
+        })(style="margin-bottom: 30.5px;")
+            +b-counter({
+                text: "Взрослые",
+                maxValue: 50, initialValue: 2
+            }).__e-row
+            +b-counter({
+                text: "Дети",
+                maxValue: 50, initialValue: 1
+            }).__e-row
+            +b-counter({
+                text: "Младенцы",
+                maxValue: 50, initialValue: 0
+            }).__e-row
+        +e.e-row(style="justify-content: space-between;")
+            +e.SPAN.e-room-price-split 9 990₽ х 4 суток
+            +e.SPAN.e-room-price-total 39 960₽
+        +e.e-row(style="justify-content: space-between;")
+            +e.e-room-price-split-with-icon
+                +e.SPAN.e-service-price Сбор за услуги: скидка 2 179₽
+                +e.SPAN.e-service-price-icon
+            +e.SPAN.e-room-price-total 0₽
+        +e.e-row(style="justify-content: space-between;")
+            +e.e-additional-service-price-with-icon
+                +e.SPAN.e-additional-service-price(style="line-height: 18px") Сбор за дополнительные услуги
+                +e.SPAN.e-additional-service-price-icon
+            +e.SPAN.e-additional-service-price-total 300₽
+        +e.e-row(style="justify-content: space-between; margin-top: 30px")
+            +e.SPAN.e-total-text Итого
+            +e.SPAN.e-total-price 38 081₽
+        +b-button({
+            type: "wide", text: "забронировать",
+            disabled: "false", icon: "arrow-forward"
+        })(style="margin-top: 20px")

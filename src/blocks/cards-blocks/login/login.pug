@@ -1,0 +1,29 @@
+include ../../colors-and-type-blocks/h1/h1
+include ../../form-elements-blocks/input-field/b-input-field
+include ../../form-elements-blocks/button/button
+include ../../colors-and-type-blocks/h3/h3
+
+
+mixin b-login()
+    +b.FORM.b-login&attributes(attributes)
+        +b-h1("Войти")(style="margin-bottom: 20px")
+        +b-input-field({
+            type: "email", headText: "",
+            secondHeadText: "",
+            placeholder: "Email"
+        })(style="margin-bottom: 10px;")
+        +b-input-field({
+            type: "password", headText: "",
+            secondHeadText: "",
+            placeholder: "Пароль"
+        })(style="margin-bottom: 20px;")
+        +b-button({
+            type: "wide", text: "войти",
+            disabled: "false", icon: "arrow-forward"
+        })(type="submit")(style="margin-bottom: 30px")
+        +e.e-row(style="justify-content: space-between;")
+            +e.SPAN.e-question-block-text Нет аккаунта на Toxin?
+            +b-button({
+                type: "secondary", text: "создать",
+                disabled: "false"
+            })(type="button")

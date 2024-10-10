@@ -24,3 +24,7 @@ mixin b-button(options)
         +e.SPAN.e-text #{options.text}
         if (options.icon)
             +e.SPAN.e-icon(class=iconClass)
+
+//-
+    +b-button({type: "wide", text: "перейти к оплате",
+      disabled: "true", icon: "arrow-forward"})(style="margin-bottom: 40px")

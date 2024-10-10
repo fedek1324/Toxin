@@ -26,9 +26,8 @@ export class InputField {
       const input = inputBlock.querySelector('.b-input-field__e-input_is-dropdown');
       const defaultText = input.value.valueOf();
 
-
       if (inputBlock.matches('.b-input-field_has-counters-text-no-buttons')) {
-        setCounterValuesAsText();
+        // setCounterValuesAsText();
         dropdownContent.addEventListener('pointerdown', setCounterValuesAsText, { passive: true });
       }
 

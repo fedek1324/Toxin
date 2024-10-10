@@ -26,9 +26,15 @@
 @use "../blocks/form-elements-blocks/icon-text/b-icon-text";
 @use "../blocks/form-elements-blocks/comment/b-comment";
 
+@use "../blocks/cards-blocks/find-room/find-room";
+@use "../blocks/cards-blocks/registration/registartion";
+@use "../blocks/cards-blocks/booking-checkout/booking-checkout";
+@use "../blocks/cards-blocks/login/login";
+
 @use "../blocks/logo/logo";
 @use "../blocks/logo/logo_type_full";
 @use "../blocks/logo/logo_type_watermark";
 
 @use "../pages/colors-and-type-page/colors-and-type-page";
 @use "../pages/form-elements-page/form-elements-page";
+@use "../pages/cards-page/cards-page";

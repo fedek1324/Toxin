@@ -1,0 +1,24 @@
+@use "@/styles/common.scss";
+
+.b-cards-page {
+  padding: 150px 140px 140px 140px;
+  margin: 0 auto;
+
+  background-color: #F4F4F6;
+
+  display: flex;
+  gap: 40px;
+
+  &__e-header {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+
+  &__e-column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+}

@@ -143,7 +143,7 @@ block content
                   type: "counters-no-buttons", headText: "Dropdown",
                   secondHeadText: "Default",
                   value: ""
-                })(style="width: 266px;")
+                })(style="width: 266px;" data-apply-counters-text-by-default)
                     +b-counter({
                       text: "спальни",
                       initialValue: 2
@@ -160,9 +160,9 @@ block content
                 +b-input-field({
                   type: "counters-no-buttons",
                   headText: "Dropdown", secondHeadText: "Expanded",
-                  value: "Default text"
+                  value: ""
                 })(style="width: 266px; margin-top: 20px; margin-bottom: 160px;"
-                    data-open-by-default)
+                    data-open-by-default data-apply-counters-text-by-default)
                     +b-counter({
                       text: "спальни",
                       maxValue: 5, initialValue: 2

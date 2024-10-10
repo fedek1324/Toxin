@@ -3,6 +3,11 @@ export class Pagination {
               pageElementTo, totalElementsCount, pageChangeCallback) {
     this.pagination = document.querySelector('.b-pagination');
 
+    if (!this.pagination) {
+      console.log("pagination not found");
+      return;
+    }
+
     this.pageChangeCallback = pageChangeCallback;
 
     this.setPagination(currentPage, pageCount, pageElementFrom,

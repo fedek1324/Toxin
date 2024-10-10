@@ -1,0 +1,39 @@
+include ../../colors-and-type-blocks/h1/h1
+include ../../form-elements-blocks/input-field/b-input-field
+include ../../form-elements-blocks/button/button
+include ../../form-elements-blocks/counter/b-counter
+
+
+mixin b-find-room()
+    +b.FORM.b-find-room&attributes(attributes)
+        +b-h1("Найдём номера под ваши пожелания")
+        +e.e-row
+            +b-input-field({
+                type: "single-date-picker", headText: "Прибытие",
+                value: "ДД.ММ.ГГГГ"
+            })
+            +b-input-field({
+                type: "single-date-picker", headText: "Выезд",
+                value: "ДД.ММ.ГГГГ"
+            })
+        +b-input-field({
+            type: "counters-no-buttons",
+            headText: "гости", secondHeadText: "",
+            value: "Сколько гостей"
+        })(style="margin-bottom: 30.5px;")
+            +b-counter({
+                text: "Взрослые",
+                maxValue: 50, initialValue: 2
+            }).__e-row
+            +b-counter({
+                text: "Дети",
+                maxValue: 50, initialValue: 1
+            }).__e-row
+            +b-counter({
+                text: "Младенцы",
+                maxValue: 50, initialValue: 0
+            }).__e-row
+        +b-button({
+            type: "wide", text: "подобрать номер",
+            disabled: "false", icon: "arrow-forward"
+        })(type="submit")

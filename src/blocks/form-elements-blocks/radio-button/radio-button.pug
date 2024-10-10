@@ -6,3 +6,10 @@ mixin b-radio-button(options)
         +e.INPUT.e-legacy-radio-button(type="radio" checked=active name=options.name id=options.id)
         +e.SPAN.e-new-radio-button
         +e.LABEL.e-label(for=options.id) #{options.text}
+
+
+//-
+    +b-radio-button({id: "rb1", name: "gender",
+      text: "Мужчина", active: ""})(style="margin-right: 20px")
+    +b-radio-button({id: "rb2", name: "gender",
+      text: "Женщина"})

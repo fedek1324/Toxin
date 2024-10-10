@@ -6,3 +6,10 @@ mixin b-toggle(options)
         +e.e-toggle
         +e.IMAGE.e-circle(alt ="circle")
         +e.LABEL.e-label(for=options.id) #{options.text}
+
+//-
+    +b-toggle({
+      id: "tg2",
+      text: "Получать спецпредложения",
+      active: "false"
+    })(style="margin-bottom: 44.4px")

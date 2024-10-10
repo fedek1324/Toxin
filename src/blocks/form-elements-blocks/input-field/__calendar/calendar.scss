@@ -75,8 +75,8 @@
   @extend .body-text;
   color: common.$dark50;
 
-  width: 40px;
-  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
 }
 
 .b-input-field__e-date:not(.b-input-field__e-date_disabled):hover {

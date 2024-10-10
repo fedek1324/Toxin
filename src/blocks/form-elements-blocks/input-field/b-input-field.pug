@@ -2,9 +2,16 @@ mixin b-input-field(options)
     //-- type, headText, secondHeadText, value, placeholder = "", image
     -let modfierClasses = ""
     -let counerTypeClasses = ""
+    -let type = "text";
     case options.type
         when "text"
             - modfierClasses += "_is-text-field"
+        when "email"
+            - modfierClasses += "_is-text-field"
+            - type = "email"
+        when "password"
+            - modfierClasses += "_is-text-field"
+            - type = "password"
         when "dropdown"
             - modfierClasses += "_is-dropdown"
             - options.image = "chevron"
@@ -43,8 +50,6 @@ mixin b-input-field(options)
                 - chevronOpacity += "_is-half-transparent"
             default
                 - chevronOpacity += "_is-not-transparent"
-    if dropdown
-        - modfierClasses = "dropdown"
     +b.b-input-field(class=modfierClasses, class=counerTypeClasses)&attributes(attributes)
         +e.e-header-container
             if options.headText
@@ -53,8 +58,131 @@ mixin b-input-field(options)
                 +e.SPAN.e-second-head #{options.secondHeadText}
         +e.e-input-wrapper
             +e.INPUT.e-input(class=additionalInputClass, class=modfierClasses,
-                type="text", placeholder=options.placeholder, value=options.value)
+                type=type, placeholder=options.placeholder, value=options.value)
             +e.SPAN.e-icon(class=imgClass, class= chevronOpacity)
         if (options.type == "dropdown" || options.type == "counters-apply-button" || options.type == "counters-no-buttons" || options.type == "counters-apply-clear-buttons")
             +e.e-dropdown
                 block
+
+//-
+    +b-input-field({
+        type: "text", headText: "Text Field",
+        secondHeadText: "Default",
+        placeholder: "Email"
+    })
+    +b-input-field({
+        type: "text", headText: "Text Field",
+        secondHeadText: "Hover / Focus",
+        value: "This is pretty awesome",
+        placeholder: ""
+    })(style="margin-top: 20px;")
+    +b-input-field({
+        type: "dropdown", headText: "Dropdown",
+        value: "Сколько гостей"
+    })(style="margin-top: 20px;")
+        p Dropdown
+    +b-input-field({
+        type: "text", headText: "masked text field",
+        value: "", placeholder: "ДД.ММ.ГГГГ"
+    })(style="margin-top: 20px;")
+
+    +e.e-row
+        +b-input-field({
+                type: "single-date-picker", headText: "date Dropdown",
+                value: "ДД.ММ.ГГГГ"
+            })(style="width: 150px; margin-top: 40px; margin-right: 20px;")
+        +b-input-field({
+                type: "single-date-picker", headText: "date Dropdown",
+                value: "19.08.2019"
+            })(style="width: 150px; margin-top: 40px;")
+
+    +b-input-field({
+        type: "range-date-picker", headText: "filter date dropdown",
+        value: "19.08.2024 - 23.08.2024"
+    })(style="width: 266px; margin-top: 40.5px;")
+
+    +b-input-field({
+        type: "text", headText: "subscription text field",
+        value: "", placeholder: "Email", image: "arrow-forward"
+    })(style="width: 266px; margin-top: 41px;")
+
+
+
+    +b-input-field({
+      type: "counters-no-buttons", headText: "Dropdown",
+      secondHeadText: "Default",
+      value: ""
+    })(style="width: 266px;")
+        +b-counter({
+          text: "спальни",
+          initialValue: 2
+        }).__e-row
+        +b-counter({
+          text: "кровати",
+          initialValue: 2
+        }).__e-row
+        +b-counter({
+          text: "ванные комнаты",
+          initialValue: 0
+        }).__e-row
+
+    +b-input-field({
+      type: "counters-no-buttons",
+      headText: "Dropdown", secondHeadText: "Expanded",
+      value: "Default text"
+    })(style="width: 266px; margin-top: 20px; margin-bottom: 160px;"
+        data-open-by-default)
+        +b-counter({
+          text: "спальни",
+          maxValue: 5, initialValue: 2
+        }).__e-row
+        +b-counter({
+          text: "кровати",
+          maxValue: 5, initialValue: 2
+        }).__e-row
+        +b-counter({
+          text: "ванные комнаты",
+          maxValue: 5, initialValue: 0
+        }).__e-row
+
+
+
+    +b-input-field({
+        type: "counters-apply-button",
+        headText: "Dropdown",
+        value: "Сколько гостей"
+    })(style="margin-bottom: 256px;" data-open-by-default)
+        +b-counter({
+                text: "Взрослые",
+                maxValue: 50, initialValue: 0
+            }).__e-row
+        +b-counter({
+                text: "Дети",
+                maxValue: 50, initialValue: 0
+            }).__e-row
+        +b-counter({
+                text: "Младенцы",
+                maxValue: 50, initialValue: 0
+            }).__e-row
+
+
+
+    +b-input-field({
+      type: "counters-apply-clear-buttons",
+      headText: "Dropdown",
+      value: "Сколько гостей"
+    })(style="margin-bottom: 256px;" data-open-by-default
+        data-apply-counters-text-by-default)
+        +b-counter({
+          text: "Взрослые",
+          maxValue: 50, initialValue: 2
+        }).__e-row
+        +b-counter({
+          text: "Дети",
+          maxValue: 50, initialValue: 1
+        }).__e-row
+        +b-counter({
+          text: "Младенцы",
+          maxValue: 50, initialValue: 0
+        }).__e-row
+

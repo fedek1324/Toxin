@@ -641,6 +641,14 @@ button, input[type=submit], input[type=reset] {
   color: rgba(31, 32, 65, 0.75);
 }
 
+.card, .b-login, .b-booking-checkout, .b-registration, .b-find-room {
+  width: 380px;
+  padding: 40px 30px 30px 30px;
+  border-radius: 4px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
 .material-icons, .b-comment__e-icon, .b-icon-text__e-icon, .b-expandable-checkbox-list__e-chevron, .b-pagination__e-next-page-button, .b-pagination__e-previous-page-button, .b-rate-button__e-star-button, .b-like-button__e-like-icon, .b-button__e-icon_is-arrow-forward-icon, .b-input-field__e-icon_is-chevron-icon, .b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
 .b-input-field__e-next-month-btn {
   font-family: "Material Icons";
@@ -817,8 +825,8 @@ button, input[type=submit], input[type=reset] {
 
 .b-input-field__e-date {
   color: rgba(31, 32, 65, 0.5);
-  width: 40px;
-  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
 }
 
 .b-input-field__e-date:not(.b-input-field__e-date_disabled):hover {
@@ -1089,7 +1097,6 @@ button, input[type=submit], input[type=reset] {
   position: absolute;
   display: flex;
   align-items: center;
-  top: 0;
   bottom: 0;
   right: 0.625rem;
   top: 50%;
@@ -1583,6 +1590,133 @@ button, input[type=submit], input[type=reset] {
   line-height: 24px;
 }
 
+.b-find-room__e-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  margin-top: 21px;
+  margin-bottom: 20px;
+}
+
+.b-registration__e-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.b-registration__e-question-block-text {
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
+.b-booking-checkout__e-first-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.b-booking-checkout__e-room-number-container {
+  display: flex;
+  align-items: baseline;
+}
+.b-booking-checkout__e-room-number-sign {
+  font-size: 14px;
+  font-weight: bold;
+  color: #1F2041;
+}
+.b-booking-checkout__e-room-number {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1F2041;
+}
+.b-booking-checkout__e-lux-text {
+  font-size: 12px;
+  font-weight: bold;
+  color: #BC9CFF;
+  margin-left: 8px;
+  text-transform: uppercase;
+}
+.b-booking-checkout__e-price {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 18px;
+  color: rgba(31, 32, 65, 0.5);
+}
+.b-booking-checkout__e-price-tail {
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 18px;
+  color: rgba(31, 32, 65, 0.5);
+}
+.b-booking-checkout__e-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+.b-booking-checkout__e-row_has-margins {
+  margin-top: 21px;
+  margin-bottom: 20px;
+}
+.b-booking-checkout .details-text, .b-booking-checkout .b-booking-checkout__e-additional-service-price-total, .b-booking-checkout .b-booking-checkout__e-additional-service-price, .b-booking-checkout .b-booking-checkout__e-service-price, .b-booking-checkout .b-booking-checkout__e-room-price-total, .b-booking-checkout .b-booking-checkout__e-room-price-split {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  max-width: 239px;
+}
+.b-booking-checkout__e-room-price-split {
+  max-width: 214px;
+}
+.b-booking-checkout__e-room-price-split-with-icon {
+  display: flex;
+  justify-content: space-between;
+}
+.b-booking-checkout__e-service-price {
+  width: 214px;
+}
+.b-booking-checkout__e-service-price-icon, .b-booking-checkout__e-additional-service-price-icon {
+  display: inline-block;
+  width: 20px;
+  height: 21px;
+  margin-left: 5px;
+  background-image: url(assets/images/info-icon.a2ef7acc.svg);
+  color: rgba(31, 32, 65, 0.5);
+}
+.b-booking-checkout__e-additional-service-price-with-icon {
+  display: flex;
+  justify-content: space-between;
+}
+.b-booking-checkout__e-additional-service-price {
+  width: 214px;
+}
+.b-booking-checkout__e-total-text {
+  font-size: 19px;
+  font-weight: bold;
+  color: #1F2041;
+  width: 214px;
+}
+.b-booking-checkout__e-total-price {
+  font-size: 19px;
+  font-weight: bold;
+  color: #1F2041;
+}
+
+.b-login__e-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.b-login__e-question-block-text {
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
 .b-logo {
   display: block;
 }
@@ -1730,4 +1864,21 @@ button, input[type=submit], input[type=reset] {
     display: grid;
     grid-template-columns: 1fr;
   }
+}
+.b-cards-page {
+  padding: 150px 140px 140px 140px;
+  margin: 0 auto;
+  background-color: #F4F4F6;
+  display: flex;
+  gap: 40px;
+}
+.b-cards-page__e-header {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+.b-cards-page__e-column {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }

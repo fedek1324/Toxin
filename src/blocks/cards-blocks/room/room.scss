@@ -1,0 +1,145 @@
+@use "../../../styles/common";
+
+.b-room {
+  @extend .card;
+
+  &__e-first-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__e-room-number-container {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &__e-room-number-sign {
+    font-size: 14px;
+    font-weight: bold;
+    color: common.$dark100;
+  }
+
+  &__e-room-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: common.$dark100;
+  }
+
+  &__e-lux-text {
+    font-size: 12px;
+    font-weight: bold;
+    color: common.$purple;
+
+    margin-left: 8px;
+
+    text-transform: uppercase;
+  }
+
+  &__e-price {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 18px;
+    color: common.$dark50;
+  }
+
+  &__e-price-tail {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 18px;
+    color: common.$dark50;
+  }
+
+
+  &__e-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    gap: 20px;
+
+    &_has-margins {
+      margin-top: 21px;
+      margin-bottom: 20px;
+    }
+  }
+
+
+
+  .details-text {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 24px;
+
+    color: common.$dark75;
+    max-width: 239px;
+
+  }
+
+  &__e-room-price-split {
+    @extend .details-text;
+    max-width: 214px;
+  }
+
+  &__e-room-price-total {
+    @extend .details-text;
+  }
+
+  &__e-room-price-split-with-icon {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__e-service-price {
+    @extend .details-text;
+    width: 214px;
+  }
+
+  &__e-service-price-icon {
+    display: inline-block;
+
+    width: 20px;
+    height: 21px;
+
+    margin-left: 5px;
+
+    background-image: url("@/assets/images/info-icon.svg");
+
+    color: common.$dark50;
+
+    //cursor: pointer;
+  }
+
+  &__e-additional-service-price-with-icon {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__e-additional-service-price {
+    @extend .details-text;
+    width: 214px;
+  }
+
+  &__e-additional-service-price-icon {
+    @extend .b-room__e-service-price-icon;
+  }
+
+  &__e-additional-service-price-total {
+    @extend .details-text;
+  }
+
+  &__e-total-text {
+    font-size: 19px;
+    font-weight: bold;
+
+    color: common.$dark100;
+    width: 214px;
+  }
+
+  &__e-total-price {
+    font-size: 19px;
+    font-weight: bold;
+
+    color: common.$dark100;
+  }
+}

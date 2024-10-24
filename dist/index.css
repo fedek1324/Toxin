@@ -641,7 +641,7 @@ button, input[type=submit], input[type=reset] {
   color: rgba(31, 32, 65, 0.75);
 }
 
-.card, .b-login, .b-booking-checkout, .b-registration, .b-find-room {
+.card, .b-room, .b-login, .b-booking-checkout, .b-registration, .b-find-room {
   width: 380px;
   padding: 40px 30px 30px 30px;
   border-radius: 4px;
@@ -865,6 +865,11 @@ button, input[type=submit], input[type=reset] {
 .b-input-field__e-date_last {
   background-color: transparent;
   background: url("data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%2741%27 height=%2740%27 viewBox=%270 0 41 40%27 fill=%27none%27><path d=%27M0.195312 20C0.195312 8.98872 9.12173 0 20.133 0C31.1443 0 40.0707 8.98872 40.0707 20C40.0707 31.0113 31.1443 40 20.133 40C9.12173 40 0.195312 31.0113 0.195312 20Z%27 fill=%27url%28%23paint0_linear_18442_180%29%27/><defs><linearGradient id=%27paint0_linear_18442_180%27 x1=%2720.133%27 y1=%270%27 x2=%2720.133%27 y2=%2740%27 gradientUnits=%27userSpaceOnUse%27><stop stop-color=%27%23BC9CFF%27/><stop offset=%271%27 stop-color=%27%238BA4F9%27/></linearGradient></defs></svg>"), linear-gradient(to right, #EBE7FD, #EBE7FD 49.9%, transparent 50%);
+}
+
+.b-input-field__e-buttons-row {
+  display: flex;
+  justify-content: space-between;
 }
 
 .b-input-field {
@@ -1715,6 +1720,98 @@ button, input[type=submit], input[type=reset] {
   display: flex;
   align-items: center;
   color: black;
+}
+
+.b-room__e-first-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.b-room__e-room-number-container {
+  display: flex;
+  align-items: baseline;
+}
+.b-room__e-room-number-sign {
+  font-size: 14px;
+  font-weight: bold;
+  color: #1F2041;
+}
+.b-room__e-room-number {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1F2041;
+}
+.b-room__e-lux-text {
+  font-size: 12px;
+  font-weight: bold;
+  color: #BC9CFF;
+  margin-left: 8px;
+  text-transform: uppercase;
+}
+.b-room__e-price {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 18px;
+  color: rgba(31, 32, 65, 0.5);
+}
+.b-room__e-price-tail {
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 18px;
+  color: rgba(31, 32, 65, 0.5);
+}
+.b-room__e-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+.b-room__e-row_has-margins {
+  margin-top: 21px;
+  margin-bottom: 20px;
+}
+.b-room .details-text, .b-room .b-room__e-additional-service-price-total, .b-room .b-room__e-additional-service-price, .b-room .b-room__e-service-price, .b-room .b-room__e-room-price-total, .b-room .b-room__e-room-price-split {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  max-width: 239px;
+}
+.b-room__e-room-price-split {
+  max-width: 214px;
+}
+.b-room__e-room-price-split-with-icon {
+  display: flex;
+  justify-content: space-between;
+}
+.b-room__e-service-price {
+  width: 214px;
+}
+.b-room__e-service-price-icon, .b-room__e-additional-service-price-icon {
+  display: inline-block;
+  width: 20px;
+  height: 21px;
+  margin-left: 5px;
+  background-image: url(assets/images/info-icon.a2ef7acc.svg);
+  color: rgba(31, 32, 65, 0.5);
+}
+.b-room__e-additional-service-price-with-icon {
+  display: flex;
+  justify-content: space-between;
+}
+.b-room__e-additional-service-price {
+  width: 214px;
+}
+.b-room__e-total-text {
+  font-size: 19px;
+  font-weight: bold;
+  color: #1F2041;
+  width: 214px;
+}
+.b-room__e-total-price {
+  font-size: 19px;
+  font-weight: bold;
+  color: #1F2041;
 }
 
 .b-logo {

@@ -6,6 +6,7 @@ include ../../blocks/cards-blocks/find-room/find-room
 include ../../blocks/cards-blocks/registration/registration
 include ../../blocks/cards-blocks/booking-checkout/booking-checkout
 include ../../blocks/cards-blocks/login/login
+include ../../blocks/cards-blocks/room/room
 
 block head
     title Cards
@@ -24,5 +25,6 @@ block content
         +e.e-column
             +b-input-field({
                 type: "range-date-picker", headText: "filter date dropdown",
-                value: "19.08.2024 - 21.09.2024"
-            })(style="width: 266px; margin-top: 40.5px;")
+                value: "19.08.2024 - 23.08.2024"
+            })(style="width: 266px;" data-add-buttons data-input-hidden)
+            +b-room({})

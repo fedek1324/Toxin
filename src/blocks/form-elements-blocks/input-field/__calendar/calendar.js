@@ -11,6 +11,7 @@ export class Calendar {
     this.currentYear = null;
     this.startDate = null;
     this.endDate = null;
+    this.singlePickedDate = null;
     this.calendar = null;
     this.datePickerBlock = null;
     this.inputWrapper = null;
@@ -20,6 +21,7 @@ export class Calendar {
 
     this.initCalendar(datePicker);
 
+    // used for default input value values
     const datesParsedFromValue = this.parseValueAsData(isRange);
     if (datesParsedFromValue.length === 0) {
       // Generate the calendar for the current month
@@ -33,44 +35,24 @@ export class Calendar {
       this.generateCalendar(this.currentYear, this.currentMonth);
 
       if (datesParsedFromValue.length === 2) {
-        this.startDate = datesParsedFromValue[0];
-        this.endDate = datesParsedFromValue[1];
-        this.highlightRange();
+        [this.startDate, this.endDate] = datesParsedFromValue;
+
+        // convert default input value to short dates format
+        this.input.value = `${this.formatDate(this.startDate)} - ${this.formatDate(this.endDate)}`;
+
+        this.highlightDates(true);
       } else if (datesParsedFromValue.length === 1) {
-        const neededDate = datesParsedFromValue[0];
-        const cells = this.calendar.querySelectorAll('td');
-        for (let i = 0; i < cells.length; i += 1) {
-          const cell = cells[i];
-          const cellDate = +cell.textContent;
-
-          let cellDateObj;
-          if (cellDate - i > 15) {
-            // we get prev month dates here
-            const jsMonth = this.currentMonth - 1; // to 0..11 format
-            const month = jsMonth === 0 ? 11 : jsMonth - 1;
-            cellDateObj = new Date(this.currentYear, month, cellDate);
-          } else if (cellDate - i < -15) {
-            // we get next month dates here
-            const jsMonth = this.currentMonth - 1; // to 0..11 format
-            const month = jsMonth === 11 ? 0 : jsMonth + 1;
-            cellDateObj = new Date(this.currentYear, month, cellDate);
-          } else {
-            const jsMonth = this.currentMonth - 1; // to 0..11 format
-            cellDateObj = new Date(this.currentYear, jsMonth, cellDate);
-          }
-
-          if (neededDate.getTime() === cellDateObj.getTime()) {
-            cell.classList.add('b-input-field__e-date_picked');
-          }
-        }
+        [this.singlePickedDate] = datesParsedFromValue;
+        this.highlightDates(false);
       }
     }
 
     this.addCellOnClick();
+    this.handleIsInputHidden();
   }
 
   /**
-   * returns array of parsed Dates from input
+   * returns array of parsed Dates from input. Used for default values handle
    * @param isRange
    * @return {*[]|Date[]|[Date,Date]}
    */
@@ -148,8 +130,15 @@ export class Calendar {
     this.inputWrapper.addEventListener('click', (event) => {
       this.input.classList.toggle('b-input-field__e-input_active-date-picker');
       this.calendar.classList.toggle('b-input-field__e-calendar_active');
-      this.addCloseOnDocumentClickHandlers();
+      if (!this.isInputHidden) {
+        this.addCloseOnDocumentClickHandlers();
+      }
     });
+
+    const isAddButtons = this.datePickerBlock.dataset.addButtons || this.datePickerBlock.dataset.addButtons === '';
+    this.isApplyClearButtons = isAddButtons;
+    const isInputHidden = this.datePickerBlock.dataset.inputHidden || this.datePickerBlock.dataset.inputHidden === '';
+    this.isInputHidden = isInputHidden;
   }
 
   isOnTheRightOfContainer(element) {
@@ -219,7 +208,7 @@ export class Calendar {
     const monthName = new Date(year, month - 1, 1).toLocaleString('default', { month: 'long' });
     const formattedTitle = `${monthName[0].toUpperCase() + monthName.slice(1)} ${year}`;
 
-    this.calendar.innerHTML = `
+    let calendarHtml = `
         <div class="b-input-field__e-current-month-header">
           <button type="button" class="b-input-field__e-prev-month-btn">arrow_back</button>
           <span class="b-input-field__e-current-month">${formattedTitle}</span>
@@ -242,7 +231,17 @@ export class Calendar {
           </tbody>
         </table>
       `;
+
+    if (this.isApplyClearButtons) {
+      calendarHtml = this.addApplyClearButtonsHTML(calendarHtml);
+    }
+
+    this.calendar.innerHTML = calendarHtml;
     this.addMonthNavigationHandlers();
+
+    if (this.isApplyClearButtons) {
+      this.addApplyClearButtonsHandlers();
+    }
   }
 
   addMonthNavigationHandlers() {
@@ -255,7 +254,7 @@ export class Calendar {
       const newMonth = this.currentMonth === 1 ? 12 : this.currentMonth - 1;
       const newYear = this.currentMonth === 1 ? this.currentYear - 1 : this.currentYear;
       this.updateCalendar(newYear, newMonth);
-      this.highlightRange();
+      this.highlightDates(true);
     });
 
     nextMonthBtn.addEventListener('click', (event) => {
@@ -264,7 +263,7 @@ export class Calendar {
       this.currentMonth = this.currentMonth === 12 ? 1 : this.currentMonth + 1;
       this.currentYear = this.currentMonth === 12 ? this.currentYear + 1 : this.currentYear;
       this.updateCalendar(this.currentYear, this.currentMonth);
-      this.highlightRange();
+      this.highlightDates(true);
     });
   }
 
@@ -318,15 +317,28 @@ export class Calendar {
       cell.classList.add('b-input-field__e-date_picked');
     }
 
-    // Check if both start and end dates are set
     if (this.startDate && this.endDate) {
-      const formattedStartDate = this.formatDate(this.startDate);
-      const formattedEndDate = this.formatDate(this.endDate);
-      this.input.value = `${formattedStartDate} - ${formattedEndDate}`;
-      this.highlightRange();
-    } else if (this.startDate && !this.endDate) {
-      const formattedStartDate = this.formatDate(this.startDate);
-      this.input.value = formattedStartDate;
+      this.highlightDates(true);
+    }
+
+    if (!this.isApplyClearButtons) {
+      this.updateInputValue();
+    }
+  }
+
+  updateInputValue() {
+    if (this.isRange) {
+      // Check if both start and end dates are set
+      if (this.startDate && this.endDate) {
+        const formattedStartDate = this.formatDate(this.startDate);
+        const formattedEndDate = this.formatDate(this.endDate);
+        this.input.value = `${formattedStartDate} - ${formattedEndDate}`;
+      } else if (this.startDate && !this.endDate) {
+        const formattedStartDate = this.formatDate(this.startDate);
+        this.input.value = formattedStartDate;
+      }
+    } else {
+      this.input.value = this.singlePickedDate;
     }
   }
 
@@ -356,15 +368,21 @@ export class Calendar {
       pickedDate.classList.remove('b-input-field__e-date_picked');
     }
     const formattedDate = this.formatDate(selectedDate);
-    this.input.value = formattedDate;
+    this.singlePickedDate = formattedDate;
+    if (!this.isApplyClearButtons) {
+      this.updateInputValue();
+    }
     cell.classList.add('b-input-field__e-date_picked');
   }
 
-  highlightRange() {
-    console.log('highlightRange');
+  /**
+   * @param isRange
+   */
+  highlightDates(isRange) {
+    console.log('highlight dates');
 
     // Highlight the selected date range
-    if (!this.startDate || !this.endDate) {
+    if ((!this.startDate || !this.endDate) && !this.singlePickedDate) {
       return;
     }
 
@@ -390,14 +408,20 @@ export class Calendar {
         cellDateObj = new Date(this.currentYear, jsMonth, cellDate);
       }
 
-      if (this.startDate.getTime() <= cellDateObj.getTime()
-        && cellDateObj.getTime() <= this.endDate.getTime()) {
-        cell.classList.add('b-input-field__e-date_selected');
-        if (cellDateObj.getTime() === this.startDate.getTime()) {
-          cell.classList.add('b-input-field__e-date_first');
-          cell.classList.add('b-input-field__e-date_picked');
-        } else if (cellDateObj.getTime() === this.endDate.getTime()) {
-          cell.classList.add('b-input-field__e-date_last');
+      if (isRange) {
+        if (this.startDate.getTime() <= cellDateObj.getTime()
+          && cellDateObj.getTime() <= this.endDate.getTime()) {
+          cell.classList.add('b-input-field__e-date_selected');
+          if (cellDateObj.getTime() === this.startDate.getTime()) {
+            cell.classList.add('b-input-field__e-date_first');
+            cell.classList.add('b-input-field__e-date_picked');
+          } else if (cellDateObj.getTime() === this.endDate.getTime()) {
+            cell.classList.add('b-input-field__e-date_last');
+            cell.classList.add('b-input-field__e-date_picked');
+          }
+        }
+      } else {
+        if (this.singlePickedDate.getTime() === cellDateObj.getTime()) {
           cell.classList.add('b-input-field__e-date_picked');
         }
       }
@@ -423,6 +447,55 @@ export class Calendar {
       return formattedDate.slice(0, -1);
     }
     return `${day}.${month}.${year}`;
+  }
+
+  addApplyClearButtonsHTML(calendarHtml) {
+    const buttonHtml = `
+        <div class="b-input-field__e-buttons-row">
+          <button class="b-button b-button_is-text b-input-field__e-clear-button" style="margin-top: 20px;">
+            <span class="b-button__e-text">очистить</span>
+          </button>
+          <button class="b-button b-button_is-text b-input-field__e-apply-button" style="margin-top: 20px;">
+            <span class="b-button__e-text">применить</span>
+          </button>
+        </div>
+         `;
+    const res = calendarHtml + buttonHtml;
+    return res;
+  }
+
+  addApplyClearButtonsHandlers() {
+    const clearButton = this.calendar.querySelector('.b-input-field__e-clear-button');
+    clearButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      this.startDate = null;
+      this.endDate = null;
+      this.singlePickedDate = null;
+      this.generateCalendar(this.currentYear, this.currentMonth);
+      this.input.value = 'ДД.ММ.ГГГГ';
+    });
+
+    const applyButton = this.calendar.querySelector('.b-input-field__e-apply-button');
+    applyButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      this.updateInputValue();
+    });
+  }
+
+  handleIsInputHidden() {
+    if (this.isInputHidden) {
+      // open calendar by default
+      this.input.classList.add('b-input-field__e-input_active-date-picker');
+      this.calendar.classList.add('b-input-field__e-calendar_active');
+
+      // hide input
+      this.inputWrapper.hidden = true;
+      const header = this.datePickerBlock.querySelector('.b-input-field__e-header-container');
+      header.style.display = 'none';
+      header.hidden = true;
+
+      this.datePickerBlock.style.height = this.calendar.offsetHeight + 'px';
+    }
   }
 
   static initCalendars() {

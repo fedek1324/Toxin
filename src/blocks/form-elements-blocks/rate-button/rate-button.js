@@ -7,11 +7,12 @@ export class RateButton {
       for (let j = 0; j < starButtons.length; j += 1) {
         const starButton = starButtons[j];
         starButton.addEventListener('click', (event) =>
-          handleStarButtonClick.bind(this, event, j, starButtons)());
+          handleStarButtonClick(event, j, starButtons));
       }
     }
 
     function handleStarButtonClick(event, starIndex, starButtons) {
+      event.preventDefault();
       for (let i = 0; i < starButtons.length; i += 1) {
         const starButton = starButtons[i];
         if (i <= starIndex) {

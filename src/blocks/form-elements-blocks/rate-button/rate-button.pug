@@ -1,14 +1,11 @@
 mixin b-rate-button(options)
+    // {value: string}
     -
         function isFilledStar(number) {
           if (!(options.value && Number.isFinite(+options.value))) {
             return false;
           }
-          if (number <= options.value) {
-            return true;
-          } else {
-            return false;
-          }
+          return number <= options.value;
         }
     - let n = 0;
     +b.b-rate-button&attributes(attributes)

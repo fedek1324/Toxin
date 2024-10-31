@@ -1,0 +1,13 @@
+mixin b-carousel(imagesUrlArray)
+    +b.b-carousel&attributes(attributes)(data-images-url-array = imagesUrlArray)
+        +e.e-image-div(style="background: url('"
+                + imagesUrlArray[0] +
+                "') center/cover no-repeat;" alt="room picture")
+            +e.e-buttons-row
+                +e.e-left-button-area
+                +e.SPAN.e-left-arrow
+                +e.e-right-button-area
+                +e.SPAN.e-right-arrow
+            +e.e-image-switch
+                each val, index in imagesUrlArray
+                    +e.e-image-set-dot

@@ -6,6 +6,7 @@ import { RateButton } from './blocks/form-elements-blocks/rate-button/rate-butto
 import { Slider } from './blocks/form-elements-blocks/slider/slider';
 import { Pagination } from './blocks/form-elements-blocks/pagination/pagination';
 import { ExpandableCheckboxList } from './blocks/form-elements-blocks/expandable-checkbox-list/b-expandable-checkbox-list';
+import { Carousel } from './blocks/cards-blocks/carousel/carousel';
 
 Calendar.initCalendars();
 Counter.initCounters();
@@ -13,6 +14,7 @@ LikeButton.initLikeButtons();
 RateButton.initRateButtons();
 Slider.initSliders();
 ExpandableCheckboxList.initExpandableCheckboxLists();
+Carousel.initCarousels();
 
 let currentPage = 1;
 let currentPageElementsCount = 12;

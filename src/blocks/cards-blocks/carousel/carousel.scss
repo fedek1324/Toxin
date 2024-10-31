@@ -1,0 +1,89 @@
+@use "@/styles/common";
+
+.b-carousel {
+  &__e-image-div {
+    width: 100%;
+    height: 151px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    margin-bottom: 20px;
+  }
+
+  //shadow
+  &__e-left-button-area,
+  &__e-right-button-area {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 42px;
+    height: 100%;
+
+    cursor: pointer;
+  }
+
+  &__e-left-button-area {
+    left: 0;
+    box-shadow: inset 55px 0 55px -55px rgba(0, 0, 0, 0.5);
+  }
+
+  &__e-right-button-area {
+    right: 0;
+    box-shadow: inset -55px 0 55px -55px rgba(0, 0, 0, 0.5);
+  }
+
+  &__e-buttons-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__e-image-switch {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+  }
+
+  &__e-left-arrow::before {
+    content: "expand_more";
+  }
+
+  &__e-left-arrow {
+    @extend .material-icons;
+    rotate: 90deg;
+    color: common.$white;
+
+    cursor: pointer;
+  }
+
+  &__e-right-arrow::before {
+    content: "expand_more";
+  }
+
+  &__e-right-arrow {
+    @extend .material-icons;
+    rotate: -90deg;
+    color: common.$white;
+
+    cursor: pointer;
+  }
+
+  &__e-image-switch {
+    display: flex;
+  }
+
+  &__e-image-set-dot {
+    width: 7.5px;
+    height: 7.5px;
+    border: 1px solid common.$white;
+    border-radius: 50%;
+    margin-left: 3.75px;
+  }
+
+  &__e-image-set-dot_selected {
+    background-color: common.$white;
+  }
+}

@@ -93,3 +93,5 @@ block b-color is b-color b-form-elements-page__color
 when there i make drowser dev console wider all by blocks start to became smaller (bcs some blocks have
 width 100%) and even block with fixed width has started to became smaller so i set it min width and
 it fixed everything (situation it type examples h1 h2 etc)
+
+remove rate buttons on click handlers when its room card in catalog

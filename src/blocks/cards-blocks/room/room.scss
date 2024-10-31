@@ -3,10 +3,20 @@
 .b-room {
   @extend .card;
 
-  &__e-first-row {
+  padding: 0;
+
+  width: 270px;
+
+  &__e-content {
+    padding: 0 17px 19px 20px;
+  }
+
+  &__e-main-row {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+
+    margin-bottom: 10px;
   }
 
   &__e-room-number-container {
@@ -21,7 +31,7 @@
   }
 
   &__e-room-number {
-    font-size: 24px;
+    font-size: 19px;
     font-weight: bold;
     color: common.$dark100;
   }
@@ -31,7 +41,7 @@
     font-weight: bold;
     color: common.$purple;
 
-    margin-left: 8px;
+    margin-left: 1px;
 
     text-transform: uppercase;
   }
@@ -64,82 +74,33 @@
     }
   }
 
+  &__e-separation-line {
+    height: 1px;
+    width: 100%;
+    background-color: common.$dark10;
+    margin-bottom: 8px;
+  }
 
+  &__e-feedback-row {
+    display: flex;
+    justify-content: space-between;
+  }
 
-  .details-text {
+  &__e-feedback-text {
+    margin-right: 3px;
+  }
+
+  &__e-feedback-count {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 18px;
+    color: common.$dark50;
+  }
+
+  &__e-feedback-count-tail {
     font-size: 14px;
     font-weight: normal;
-    line-height: 24px;
-
-    color: common.$dark75;
-    max-width: 239px;
-
-  }
-
-  &__e-room-price-split {
-    @extend .details-text;
-    max-width: 214px;
-  }
-
-  &__e-room-price-total {
-    @extend .details-text;
-  }
-
-  &__e-room-price-split-with-icon {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__e-service-price {
-    @extend .details-text;
-    width: 214px;
-  }
-
-  &__e-service-price-icon {
-    display: inline-block;
-
-    width: 20px;
-    height: 21px;
-
-    margin-left: 5px;
-
-    background-image: url("@/assets/images/info-icon.svg");
-
+    line-height: 18px;
     color: common.$dark50;
-
-    //cursor: pointer;
-  }
-
-  &__e-additional-service-price-with-icon {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__e-additional-service-price {
-    @extend .details-text;
-    width: 214px;
-  }
-
-  &__e-additional-service-price-icon {
-    @extend .b-room__e-service-price-icon;
-  }
-
-  &__e-additional-service-price-total {
-    @extend .details-text;
-  }
-
-  &__e-total-text {
-    font-size: 19px;
-    font-weight: bold;
-
-    color: common.$dark100;
-    width: 214px;
-  }
-
-  &__e-total-price {
-    font-size: 19px;
-    font-weight: bold;
-
-    color: common.$dark100;
   }
 }

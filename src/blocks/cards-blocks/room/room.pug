@@ -19,7 +19,7 @@ mixin b-room(options)
                     +e.SPAN.e-price-tail  в сутки
             +e.e-separation-line
             +e.e-feedback-row
-                +b-rate-button({value: 5})
+                +b-rate-button({value: options.rating})
                 +e.e-feedback-text
                     +e.SPAN.e-feedback-count #{options.feedBackCount}
                     +e.SPAN.e-feedback-count-tail  Отзывов

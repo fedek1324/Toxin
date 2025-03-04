@@ -1,0 +1,37 @@
+extends ../../template.pug
+
+include ../../blocks/logo/logo
+include ../../blocks/headers-and-footers-blocks/header/header
+
+block head
+    title Cards
+    meta(name="keywords" content="Headers, Footers")
+    meta(name="description" content="Headers, Footers")
+block content
+    +b.b-headers-and-footers-page
+        +e.DIV.e-header
+            +b-logo("watermark")
+        +b-header({
+            elements: [
+                {text: "О нас", isBold: true},
+                {text: "Услуги", elements: ["Поиск отеля", "Поддержка"]},
+                {text: "Вакансии"},
+                {text: "Новости"},
+                {
+                    text: "Соглашения",
+                    elements: ["Соглашение об использовании данных", "Соглашение об использовании куки"]
+                }],
+            username: undefined
+        })
+        +b-header({
+            elements: [
+                {text: "О нас", isBold: true},
+                {text: "Услуги", elements: ["Поиск отеля", "Поддержка"]},
+                {text: "Вакансии"},
+                {text: "Новости"},
+                {
+                    text: "Соглашения",
+                    elements: ["Соглашение об использовании данных", "Соглашение об использовании куки"]
+                }],
+            username: "Юлий Цезарь"
+        })

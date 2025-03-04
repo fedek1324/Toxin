@@ -1,0 +1,14 @@
+@use "@/styles/common.scss";
+
+.b-headers-and-footers-page {
+  padding: 150px 140px 140px 140px;
+  margin: 0 auto;
+
+  background-color: #F4F4F6;
+
+  &__e-header {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+}

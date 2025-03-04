@@ -33,6 +33,8 @@
 @use "../blocks/cards-blocks/room/room";
 @use "../blocks/cards-blocks/carousel/carousel";
 
+@use "../blocks/headers-and-footers-blocks/header/header";
+
 @use "../blocks/logo/logo";
 @use "../blocks/logo/logo_type_full";
 @use "../blocks/logo/logo_type_watermark";
@@ -40,3 +42,4 @@
 @use "../pages/colors-and-type-page/colors-and-type-page";
 @use "../pages/form-elements-page/form-elements-page";
 @use "../pages/cards-page/cards-page";
+@use "../pages/headers-and-footers-page/headers-and-footers-page";

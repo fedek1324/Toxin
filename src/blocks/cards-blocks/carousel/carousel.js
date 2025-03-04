@@ -15,7 +15,7 @@ export class Carousel {
       const imageSetDots = carousel.querySelectorAll('.b-carousel__e-image-set-dot');
       let currentImage = 0;
 
-      if (i === 0) {
+      if (imageSetDots.length) {
         imageSetDots[0].classList.add('b-carousel__e-image-set-dot_selected');
       }
 

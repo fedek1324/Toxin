@@ -5,7 +5,7 @@ mixin b-header(options)
     +b.b-header&attributes(attributes)
         +e.e-inner
             +e.e-left
-                +b-logo()
+                +b-logo()(style="height: 40px")
 
             +e.e-nav
                 +e.UL.e-menu
@@ -14,7 +14,7 @@ mixin b-header(options)
                             if item.elements
                                 +e.A.e-link(href='#')
                                     | #{item.text}
-                                    i.material-icons.e-link__arrow expand_more
+                                    +e.i.material-icons.e-link__arrow expand_more
                                 +e.UL.e-submenu
                                     each subItem in item.elements
                                         +e.LI.e-submenu-item
@@ -28,8 +28,7 @@ mixin b-header(options)
             +e.e-right
                 if options.username
                     +e.SPAN.e-username= options.username
-                    +b-button({text: 'Выйти', type: 'secondary'})
                 else
                     // Если не нужен реально «широкий» вид, уберите type: "wide" или переопределите в SCSS:
-                    +b-button({text: 'Войти', type: 'primary'})
-                    +b-button({text: 'Зарегистрироваться', type: 'wide'})
+                    +b-button({text: 'Войти', type: 'secondary', small: true})
+                    +b-button({text: 'Зарегистрироваться', type: 'primary', small: true})

@@ -1090,6 +1090,9 @@ button, input[type=submit], input[type=reset] {
   color: #FFFFFF;
   line-height: normal;
 }
+.b-button_is-small {
+  padding: 9px 20px 10px;
+}
 .b-button__e-icon_is-arrow-forward-icon::before {
   content: "arrow_forward";
 }
@@ -1870,8 +1873,9 @@ button, input[type=submit], input[type=reset] {
 
 .b-header {
   width: 100%;
-  padding: 0 16px;
+  padding: 15px 140px;
   background-color: #fff;
+  font-size: 14px;
 }
 .b-header__e-inner {
   display: flex;
@@ -1884,15 +1888,18 @@ button, input[type=submit], input[type=reset] {
 }
 .b-header__e-nav {
   margin-left: 24px;
+  display: flex;
   flex: 1;
+  justify-content: right;
 }
 .b-header__e-menu {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 24px;
+  gap: 20px;
   flex-wrap: nowrap;
+  align-items: center;
 }
 .b-header__e-menu-item {
   position: relative;
@@ -1918,6 +1925,7 @@ button, input[type=submit], input[type=reset] {
   position: absolute;
   top: 100%;
   left: 0;
+  z-index: 1;
   background-color: #fff;
   list-style: none;
   margin: 0;
@@ -1939,15 +1947,14 @@ button, input[type=submit], input[type=reset] {
 .b-header__e-right {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-left: auto;
+  gap: 20px;
+  margin-left: 20px;
 }
-.b-header__e-right .e-username {
-  font-weight: 500;
+.b-header__e-username {
   position: relative;
   padding-left: 16px;
 }
-.b-header__e-right .e-username::before {
+.b-header__e-username::before {
   content: "";
   position: absolute;
   left: 0;
@@ -2126,7 +2133,7 @@ button, input[type=submit], input[type=reset] {
 }
 
 .b-headers-and-footers-page {
-  padding: 150px 140px 140px 140px;
+  padding: 150px 0 140px;
   margin: 0 auto;
   background-color: #F4F4F6;
 }

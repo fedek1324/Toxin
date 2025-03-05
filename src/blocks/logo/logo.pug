@@ -6,8 +6,8 @@ mixin b-logo(type = "full")
     let lf= require('@/assets/images/logo-full.png');
     let lw= require('@/assets/images/logo-watermark.png');
   if type == "full"
-    +b.b-logo.IMG(src=lf alt="logo")._type_full
+    +b.b-logo&attributes(attributes).IMG(src=lf alt="logo")._type_full
   else if type == "watermark"
-    +b.b-logo.IMG(src=lw alt="logo")._type_watermark
+    +b.b-logo&attributes(attributes).IMG(src=lw alt="logo")._type_watermark
   else
-    +b.b-logo.IMG(src=lf alt="logo")._type_full
+    +b.b-logo&attributes(attributes).IMG(src=lf alt="logo")._type_full

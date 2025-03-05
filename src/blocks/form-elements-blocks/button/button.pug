@@ -1,5 +1,5 @@
 mixin b-button(options)
-    //-- type, text, icon, disabled
+    //-- type, text, icon, disabled, small
     -let modifierClasses = ""
     case options.type
         when "primary"
@@ -16,11 +16,12 @@ mixin b-button(options)
     -let iconClass = options.icon ? "_is-"+ options.icon + "-icon" : ""
     -let additionalClass = options.icon ? "_has-icon" : ""
     -let disabled = false;
+    -let isSmallClass = options.small ? "_is-small" : "";
     if (options.disabled || options.disabled === "") && options.disabled != "false"
         - disabled = true;
     -let disabledClass = disabled ? "_disabled" : "";
     +b.BUTTON.b-button(class=modifierClasses,
-        class=additionalClass class=disabledClass)&attributes(attributes)
+        class=additionalClass class=disabledClass class=isSmallClass)&attributes(attributes)
         +e.SPAN.e-text #{options.text}
         if (options.icon)
             +e.SPAN.e-icon(class=iconClass)

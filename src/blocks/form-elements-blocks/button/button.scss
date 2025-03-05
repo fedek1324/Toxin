@@ -87,6 +87,10 @@
 
   }
 
+  &_is-small {
+    padding: 9px 20px 10px;
+  }
+
   /* иконка лупы */
   &__e-icon_is-arrow-forward-icon::before {
     content: "arrow_forward";

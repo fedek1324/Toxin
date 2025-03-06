@@ -1,9 +1,14 @@
+@use "@/styles/common";
+
 .b-header {
   width: 100%;
   padding: 15px 140px;
+
   background-color: #fff;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 
   font-size: 14px;
+  line-height: 24px;
 
   &__e-inner {
     display: flex;

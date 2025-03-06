@@ -29,6 +29,5 @@ mixin b-header(options)
                 if options.username
                     +e.SPAN.e-username= options.username
                 else
-                    // Если не нужен реально «широкий» вид, уберите type: "wide" или переопределите в SCSS:
                     +b-button({text: 'Войти', type: 'secondary', small: true})
                     +b-button({text: 'Зарегистрироваться', type: 'primary', small: true})

@@ -88,6 +88,11 @@ button, input[type="submit"], input[type="reset"] {
   color: $dark;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .body-text {
   font-size: 14px;
   font-weight: normal;

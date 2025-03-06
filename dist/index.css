@@ -634,6 +634,11 @@ button, input[type=submit], input[type=reset] {
   color: #1F2041;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .body-text, .b-colors-and-type-page__e-text-type-name-body, .b-colors-and-type-page__e-text-type-exapmle-body-text, .b-input-field__e-second-head, .b-input-field__e-input, .b-input-field__e-weekday, .b-input-field__e-date, .b-body-text {
   font-size: 14px;
   font-weight: normal;
@@ -649,7 +654,7 @@ button, input[type=submit], input[type=reset] {
   background-color: white;
 }
 
-.material-icons, .b-carousel__e-left-arrow, .b-carousel__e-right-arrow, .b-comment__e-icon, .b-icon-text__e-icon, .b-expandable-checkbox-list__e-chevron, .b-pagination__e-next-page-button, .b-pagination__e-previous-page-button, .b-rate-button__e-star-button, .b-like-button__e-like-icon, .b-button__e-icon_is-arrow-forward-icon, .b-input-field__e-icon_is-chevron-icon, .b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
+.material-icons, .b-footer__e-icon, .b-carousel__e-left-arrow, .b-carousel__e-right-arrow, .b-comment__e-icon, .b-icon-text__e-icon, .b-expandable-checkbox-list__e-chevron, .b-pagination__e-next-page-button, .b-pagination__e-previous-page-button, .b-rate-button__e-star-button, .b-like-button__e-like-icon, .b-button__e-icon_is-arrow-forward-icon, .b-input-field__e-icon_is-chevron-icon, .b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
 .b-input-field__e-next-month-btn {
   font-family: "Material Icons";
   font-weight: normal;
@@ -673,44 +678,44 @@ button, input[type=submit], input[type=reset] {
 }
 
 /* Rules for sizing the icon. */
-.material-icons.md-18, .md-18.b-carousel__e-left-arrow, .md-18.b-carousel__e-right-arrow, .md-18.b-comment__e-icon, .md-18.b-icon-text__e-icon, .md-18.b-expandable-checkbox-list__e-chevron, .md-18.b-pagination__e-next-page-button, .md-18.b-pagination__e-previous-page-button, .md-18.b-rate-button__e-star-button, .md-18.b-like-button__e-like-icon, .md-18.b-button__e-icon_is-arrow-forward-icon, .md-18.b-input-field__e-icon_is-chevron-icon, .md-18.b-input-field__e-icon_is-arrow-forward-icon, .md-18.b-input-field__e-prev-month-btn,
+.material-icons.md-18, .md-18.b-footer__e-icon, .md-18.b-carousel__e-left-arrow, .md-18.b-carousel__e-right-arrow, .md-18.b-comment__e-icon, .md-18.b-icon-text__e-icon, .md-18.b-expandable-checkbox-list__e-chevron, .md-18.b-pagination__e-next-page-button, .md-18.b-pagination__e-previous-page-button, .md-18.b-rate-button__e-star-button, .md-18.b-like-button__e-like-icon, .md-18.b-button__e-icon_is-arrow-forward-icon, .md-18.b-input-field__e-icon_is-chevron-icon, .md-18.b-input-field__e-icon_is-arrow-forward-icon, .md-18.b-input-field__e-prev-month-btn,
 .md-18.b-input-field__e-next-month-btn {
   font-size: 18px;
 }
 
-.material-icons.md-24, .md-24.b-carousel__e-left-arrow, .md-24.b-carousel__e-right-arrow, .md-24.b-comment__e-icon, .md-24.b-icon-text__e-icon, .md-24.b-expandable-checkbox-list__e-chevron, .md-24.b-pagination__e-next-page-button, .md-24.b-pagination__e-previous-page-button, .md-24.b-rate-button__e-star-button, .md-24.b-like-button__e-like-icon, .md-24.b-button__e-icon_is-arrow-forward-icon, .md-24.b-input-field__e-icon_is-chevron-icon, .md-24.b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
+.material-icons.md-24, .md-24.b-footer__e-icon, .md-24.b-carousel__e-left-arrow, .md-24.b-carousel__e-right-arrow, .md-24.b-comment__e-icon, .md-24.b-icon-text__e-icon, .md-24.b-expandable-checkbox-list__e-chevron, .md-24.b-pagination__e-next-page-button, .md-24.b-pagination__e-previous-page-button, .md-24.b-rate-button__e-star-button, .md-24.b-like-button__e-like-icon, .md-24.b-button__e-icon_is-arrow-forward-icon, .md-24.b-input-field__e-icon_is-chevron-icon, .md-24.b-input-field__e-icon_is-arrow-forward-icon, .b-input-field__e-prev-month-btn,
 .b-input-field__e-next-month-btn {
   font-size: 24px;
 }
 
-.material-icons.md-36, .md-36.b-carousel__e-left-arrow, .md-36.b-carousel__e-right-arrow, .md-36.b-comment__e-icon, .md-36.b-icon-text__e-icon, .md-36.b-expandable-checkbox-list__e-chevron, .md-36.b-pagination__e-next-page-button, .md-36.b-pagination__e-previous-page-button, .md-36.b-rate-button__e-star-button, .md-36.b-like-button__e-like-icon, .md-36.b-button__e-icon_is-arrow-forward-icon, .md-36.b-input-field__e-icon_is-chevron-icon, .md-36.b-input-field__e-icon_is-arrow-forward-icon, .md-36.b-input-field__e-prev-month-btn,
+.material-icons.md-36, .md-36.b-footer__e-icon, .md-36.b-carousel__e-left-arrow, .md-36.b-carousel__e-right-arrow, .md-36.b-comment__e-icon, .md-36.b-icon-text__e-icon, .md-36.b-expandable-checkbox-list__e-chevron, .md-36.b-pagination__e-next-page-button, .md-36.b-pagination__e-previous-page-button, .md-36.b-rate-button__e-star-button, .md-36.b-like-button__e-like-icon, .md-36.b-button__e-icon_is-arrow-forward-icon, .md-36.b-input-field__e-icon_is-chevron-icon, .md-36.b-input-field__e-icon_is-arrow-forward-icon, .md-36.b-input-field__e-prev-month-btn,
 .md-36.b-input-field__e-next-month-btn {
   font-size: 36px;
 }
 
-.material-icons.md-48, .md-48.b-carousel__e-left-arrow, .md-48.b-carousel__e-right-arrow, .md-48.b-comment__e-icon, .md-48.b-icon-text__e-icon, .md-48.b-expandable-checkbox-list__e-chevron, .md-48.b-pagination__e-next-page-button, .md-48.b-pagination__e-previous-page-button, .md-48.b-rate-button__e-star-button, .md-48.b-like-button__e-like-icon, .md-48.b-button__e-icon_is-arrow-forward-icon, .md-48.b-input-field__e-icon_is-chevron-icon, .md-48.b-input-field__e-icon_is-arrow-forward-icon, .md-48.b-input-field__e-prev-month-btn,
+.material-icons.md-48, .md-48.b-footer__e-icon, .md-48.b-carousel__e-left-arrow, .md-48.b-carousel__e-right-arrow, .md-48.b-comment__e-icon, .md-48.b-icon-text__e-icon, .md-48.b-expandable-checkbox-list__e-chevron, .md-48.b-pagination__e-next-page-button, .md-48.b-pagination__e-previous-page-button, .md-48.b-rate-button__e-star-button, .md-48.b-like-button__e-like-icon, .md-48.b-button__e-icon_is-arrow-forward-icon, .md-48.b-input-field__e-icon_is-chevron-icon, .md-48.b-input-field__e-icon_is-arrow-forward-icon, .md-48.b-input-field__e-prev-month-btn,
 .md-48.b-input-field__e-next-month-btn {
   font-size: 48px;
 }
 
 /* Rules for using icons as black on a light background. */
-.material-icons.md-dark, .md-dark.b-carousel__e-left-arrow, .md-dark.b-carousel__e-right-arrow, .md-dark.b-comment__e-icon, .md-dark.b-icon-text__e-icon, .md-dark.b-expandable-checkbox-list__e-chevron, .md-dark.b-pagination__e-next-page-button, .md-dark.b-pagination__e-previous-page-button, .md-dark.b-rate-button__e-star-button, .md-dark.b-like-button__e-like-icon, .md-dark.b-button__e-icon_is-arrow-forward-icon, .md-dark.b-input-field__e-icon_is-chevron-icon, .md-dark.b-input-field__e-icon_is-arrow-forward-icon, .md-dark.b-input-field__e-prev-month-btn,
+.material-icons.md-dark, .md-dark.b-footer__e-icon, .md-dark.b-carousel__e-left-arrow, .md-dark.b-carousel__e-right-arrow, .md-dark.b-comment__e-icon, .md-dark.b-icon-text__e-icon, .md-dark.b-expandable-checkbox-list__e-chevron, .md-dark.b-pagination__e-next-page-button, .md-dark.b-pagination__e-previous-page-button, .md-dark.b-rate-button__e-star-button, .md-dark.b-like-button__e-like-icon, .md-dark.b-button__e-icon_is-arrow-forward-icon, .md-dark.b-input-field__e-icon_is-chevron-icon, .md-dark.b-input-field__e-icon_is-arrow-forward-icon, .md-dark.b-input-field__e-prev-month-btn,
 .md-dark.b-input-field__e-next-month-btn {
   color: rgba(0, 0, 0, 0.54);
 }
 
-.material-icons.md-dark.md-inactive, .md-dark.md-inactive.b-carousel__e-left-arrow, .md-dark.md-inactive.b-carousel__e-right-arrow, .md-dark.md-inactive.b-comment__e-icon, .md-dark.md-inactive.b-icon-text__e-icon, .md-dark.md-inactive.b-expandable-checkbox-list__e-chevron, .md-dark.md-inactive.b-pagination__e-next-page-button, .md-dark.md-inactive.b-pagination__e-previous-page-button, .md-dark.md-inactive.b-rate-button__e-star-button, .md-dark.md-inactive.b-like-button__e-like-icon, .md-dark.md-inactive.b-button__e-icon_is-arrow-forward-icon, .md-dark.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-dark.md-inactive.b-input-field__e-icon_is-arrow-forward-icon, .md-dark.md-inactive.b-input-field__e-prev-month-btn,
+.material-icons.md-dark.md-inactive, .md-dark.md-inactive.b-footer__e-icon, .md-dark.md-inactive.b-carousel__e-left-arrow, .md-dark.md-inactive.b-carousel__e-right-arrow, .md-dark.md-inactive.b-comment__e-icon, .md-dark.md-inactive.b-icon-text__e-icon, .md-dark.md-inactive.b-expandable-checkbox-list__e-chevron, .md-dark.md-inactive.b-pagination__e-next-page-button, .md-dark.md-inactive.b-pagination__e-previous-page-button, .md-dark.md-inactive.b-rate-button__e-star-button, .md-dark.md-inactive.b-like-button__e-like-icon, .md-dark.md-inactive.b-button__e-icon_is-arrow-forward-icon, .md-dark.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-dark.md-inactive.b-input-field__e-icon_is-arrow-forward-icon, .md-dark.md-inactive.b-input-field__e-prev-month-btn,
 .md-dark.md-inactive.b-input-field__e-next-month-btn {
   color: rgba(0, 0, 0, 0.26);
 }
 
 /* Rules for using icons as white on a dark background. */
-.material-icons.md-light, .md-light.b-carousel__e-left-arrow, .md-light.b-carousel__e-right-arrow, .md-light.b-comment__e-icon, .md-light.b-icon-text__e-icon, .md-light.b-expandable-checkbox-list__e-chevron, .md-light.b-pagination__e-next-page-button, .md-light.b-pagination__e-previous-page-button, .md-light.b-rate-button__e-star-button, .md-light.b-like-button__e-like-icon, .md-light.b-button__e-icon_is-arrow-forward-icon, .md-light.b-input-field__e-icon_is-chevron-icon, .md-light.b-input-field__e-icon_is-arrow-forward-icon, .md-light.b-input-field__e-prev-month-btn,
+.material-icons.md-light, .md-light.b-footer__e-icon, .md-light.b-carousel__e-left-arrow, .md-light.b-carousel__e-right-arrow, .md-light.b-comment__e-icon, .md-light.b-icon-text__e-icon, .md-light.b-expandable-checkbox-list__e-chevron, .md-light.b-pagination__e-next-page-button, .md-light.b-pagination__e-previous-page-button, .md-light.b-rate-button__e-star-button, .md-light.b-like-button__e-like-icon, .md-light.b-button__e-icon_is-arrow-forward-icon, .md-light.b-input-field__e-icon_is-chevron-icon, .md-light.b-input-field__e-icon_is-arrow-forward-icon, .md-light.b-input-field__e-prev-month-btn,
 .md-light.b-input-field__e-next-month-btn {
   color: rgb(255, 255, 255);
 }
 
-.material-icons.md-light.md-inactive, .md-light.md-inactive.b-carousel__e-left-arrow, .md-light.md-inactive.b-carousel__e-right-arrow, .md-light.md-inactive.b-comment__e-icon, .md-light.md-inactive.b-icon-text__e-icon, .md-light.md-inactive.b-expandable-checkbox-list__e-chevron, .md-light.md-inactive.b-pagination__e-next-page-button, .md-light.md-inactive.b-pagination__e-previous-page-button, .md-light.md-inactive.b-rate-button__e-star-button, .md-light.md-inactive.b-like-button__e-like-icon, .md-light.md-inactive.b-button__e-icon_is-arrow-forward-icon, .md-light.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-light.md-inactive.b-input-field__e-icon_is-arrow-forward-icon, .md-light.md-inactive.b-input-field__e-prev-month-btn,
+.material-icons.md-light.md-inactive, .md-light.md-inactive.b-footer__e-icon, .md-light.md-inactive.b-carousel__e-left-arrow, .md-light.md-inactive.b-carousel__e-right-arrow, .md-light.md-inactive.b-comment__e-icon, .md-light.md-inactive.b-icon-text__e-icon, .md-light.md-inactive.b-expandable-checkbox-list__e-chevron, .md-light.md-inactive.b-pagination__e-next-page-button, .md-light.md-inactive.b-pagination__e-previous-page-button, .md-light.md-inactive.b-rate-button__e-star-button, .md-light.md-inactive.b-like-button__e-like-icon, .md-light.md-inactive.b-button__e-icon_is-arrow-forward-icon, .md-light.md-inactive.b-input-field__e-icon_is-chevron-icon, .md-light.md-inactive.b-input-field__e-icon_is-arrow-forward-icon, .md-light.md-inactive.b-input-field__e-prev-month-btn,
 .md-light.md-inactive.b-input-field__e-next-month-btn {
   color: rgba(255, 255, 255, 0.3);
 }
@@ -1875,7 +1880,9 @@ button, input[type=submit], input[type=reset] {
   width: 100%;
   padding: 15px 140px;
   background-color: #fff;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   font-size: 14px;
+  line-height: 24px;
 }
 .b-header__e-inner {
   display: flex;
@@ -1963,6 +1970,95 @@ button, input[type=submit], input[type=reset] {
   width: 1px;
   height: 24px;
   background-color: #e3e3e3;
+}
+
+.b-footer {
+  width: 100%;
+  padding: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  font-size: 14px;
+  line-height: 24px;
+}
+.b-footer__e-footer-small {
+  display: none;
+}
+@media (max-width: 800px) {
+  .b-footer__e-footer-wide {
+    display: none;
+  }
+  .b-footer__e-footer-small {
+    display: block;
+  }
+}
+.b-footer__e-main-wide {
+  display: flex;
+  flex-direction: row;
+  padding: 100px 140px;
+}
+.b-footer__e-main-small {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120px 104px;
+}
+.b-footer__e-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  margin-left: 40px;
+  flex: 1;
+}
+.b-footer__e-column:first-of-type {
+  margin-left: 0;
+}
+.b-footer__e-column:first-of-type, .b-footer__e-column:last-of-type {
+  flex: 2;
+}
+.b-footer__e-column-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+.b-footer__e-column-link {
+  color: rgba(31, 32, 65, 0.5);
+}
+.b-footer__e-column-header {
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #1F2041;
+}
+.b-footer__e-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.b-footer__e-icon {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 85%; /* 40.8px */
+  color: #BC9CFF;
+}
+.b-footer__e-hr {
+  margin: 0;
+  color: #DEDEE3;
+}
+.b-footer__e-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 23px 140px 27px;
 }
 
 .b-logo {

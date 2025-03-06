@@ -1,0 +1,112 @@
+@use "@/styles/common";
+
+.b-footer {
+  width: 100%;
+  padding: 0;
+
+  background-color: #fff;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+  font-size: 14px;
+  line-height: 24px;
+
+  &__e-footer-small {
+    display: none;
+  }
+  @media (max-width: 800px) {
+    &__e-footer-wide {
+      display: none;
+    }
+    &__e-footer-small {
+      display: block;
+    }
+  }
+
+  &__e-main-wide {
+    display: flex;
+    flex-direction: row;
+    padding: 100px 140px;
+  }
+
+  &__e-main-small {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120px 104px;
+  }
+
+  &__e-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+
+    margin-left: 40px;
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    flex: 1;
+    // Первой и последней колонке задаём коэффициент 2
+    &:first-of-type,
+    &:last-of-type {
+      flex: 2;
+    }
+  }
+
+  &__e-column-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  &__e-column-link {
+    color: common.$dark50;
+  }
+
+  &__e-column-header {
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    color: common.$dark100;
+  }
+
+  &__e-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  &__e-icon {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+
+    @extend .material-icons;
+
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 85%; /* 40.8px */
+    color: common.$purple;
+  }
+
+  &__e-hr {
+    margin: 0;
+    color: #DEDEE3;
+  }
+
+  &__e-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 23px 140px 27px;
+  }
+}

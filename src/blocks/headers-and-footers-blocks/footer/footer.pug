@@ -1,0 +1,59 @@
+include ../../form-elements-blocks/button/button
+include ../../logo/logo
+include ../../form-elements-blocks/input-field/b-input-field
+
+mixin b-footer(options)
+    +b.b-footer&attributes(attributes)
+        +e.e-footer-wide
+            +e.e-main-wide
+                +e.e-column
+                    +b-logo()(style="height: 40px")
+                    +e.SPAN.e-about-text
+                        | Бронирование номеров в лучшем отеле 2025 года по версии ассоциации «Отельные взгляды»
+                +e.e-column
+                    +e.SPAN.e-column-header Навигация
+                    +e.e-column-links
+                        +e.A.e-column-link(href="#") О нас
+                        +e.A.e-column-link(href="#") Новости
+                        +e.A.e-column-link(href="#") Служба поддержки
+                        +e.A.e-column-link(href="#") Услуги
+                +e.e-column
+                    +e.SPAN.e-column-header О нас
+                    +e.e-column-links
+                        +e.A.e-column-link(href="#") О сервисе
+                        +e.A.e-column-link(href="#") Наша команда
+                        +e.A.e-column-link(href="#") Вакансии
+                        +e.A.e-column-link(href="#") Инвесторы
+                +e.e-column
+                    +e.SPAN.e-column-header Служба поддержки
+                    +e.e-column-links
+                        +e.A.e-column-link(href="#") Соглашения
+                        +e.A.e-column-link(href="#") Сообщества
+                        +e.A.e-column-link(href="#") Связь с нами
+                +e.e-column
+                    +e.SPAN.e-column-header Подписка
+                    +e.SPAN.e-footer-text
+                        | Получайте специальные предложения и новости сервиса
+                    +b-input-field({
+                        type: "email", headText: "",
+                        secondHeadText: "",
+                        placeholder: "Email",
+                        image: "arrow-forward"
+                    })
+            +e.HR.e-hr
+            +e.e-bottom
+                +e.SPAN.e-copyright
+                    | Copyright © 2025 Toxin отель. Все права защищены.
+                +e.e-icons
+                    +e.A.e-icon(class="mdi mdi-twitter" href="#")
+                    +e.A.e-icon(class="mdi mdi-facebook" href="#")
+                    +e.A.e-icon(class="mdi mdi-instagram" href="#")
+        +e.e-footer-small
+            +e.e-main-small
+                +b-logo()(style="height: 40px; margin-bottom: 20px;")
+                +e.SPAN.e-copyright(style="margin-bottom: 25px;")
+                    | Copyright © 2025 Toxin отель. Все права защищены.
+                +e.e-icons
+                    +e.A.e-icon(class="mdi mdi-twitter" href="#")
+                    +e.A.e-icon(class="mdi mdi-facebook" href="#")
+                    +e.A.e-icon(class="mdi mdi-instagram" href="#")

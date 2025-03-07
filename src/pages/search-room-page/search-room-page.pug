@@ -1,0 +1,62 @@
+extends ../../template.pug
+
+include ../../blocks/headers-and-footers-blocks/header/header
+include ../../blocks/headers-and-footers-blocks/footer/footer
+include ../../blocks/form-elements-blocks/input-field/b-input-field
+include ../../blocks/colors-and-type-blocks/h1/h1
+include ../../blocks/cards-blocks/room/room
+
+block head
+    title Find room
+    meta(name="keywords" content="Find room")
+    meta(name="description" content="Choose a room")
+block content
+    +b.b-find-room-page
+        +b-header({
+            elements: [
+                {text: "О нас", isBold: true},
+                {text: "Услуги", elements: ["Поиск отеля", "Поддержка"]},
+                {text: "Вакансии"},
+                {text: "Новости"},
+                {
+                    text: "Соглашения",
+                    elements: ["Соглашение об использовании данных", "Соглашение об использовании куки"]
+                }],
+            username: undefined
+        })
+
+        +e.e-page-content
+            +e.e-find-room-block-big
+                +e.e-parameters
+                    +b-input-field({
+                        type: "range-date-picker", headText: "Даты пребывания в отеле",
+                        value: "19.08.2025 - 23.08.2025"
+                    })
+                +e.e-rooms
+                    +b-h1("Номера, которые мы для вас подобрали")
+                    // {roomNumber, isLux, price, rating, feedBackCount, imagesUrlArray}
+                    +e.e-rooms-grid
+                        +b-room({
+                            roomNumber: 888, isLux: true, price: 9900, rating: 5, feedBackCount: 145, imagesUrlArray: [
+                                "https://i.imgur.com/9rTdtxM.jpeg", "https://i.imgur.com/dgKnm7D.jpeg", "https://i.imgur.com/CE66PkT.jpeg"
+                            ]
+                        })
+                        +b-room({
+                            roomNumber: 888, isLux: true, price: 9900, rating: 5, feedBackCount: 145, imagesUrlArray: [
+                                "https://i.imgur.com/9rTdtxM.jpeg", "https://i.imgur.com/dgKnm7D.jpeg", "https://i.imgur.com/CE66PkT.jpeg"
+                            ]
+                        })
+                        +b-room({
+                            roomNumber: 888, isLux: true, price: 9900, rating: 5, feedBackCount: 145, imagesUrlArray: [
+                                "https://i.imgur.com/9rTdtxM.jpeg", "https://i.imgur.com/dgKnm7D.jpeg", "https://i.imgur.com/CE66PkT.jpeg"
+                            ]
+                        })
+                        +b-room({
+                            roomNumber: 888, isLux: true, price: 9900, rating: 5, feedBackCount: 145, imagesUrlArray: [
+                                "https://i.imgur.com/9rTdtxM.jpeg", "https://i.imgur.com/dgKnm7D.jpeg", "https://i.imgur.com/CE66PkT.jpeg"
+                            ]
+                        })
+
+
+
+        +b-footer()

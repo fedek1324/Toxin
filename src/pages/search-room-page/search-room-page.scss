@@ -1,0 +1,34 @@
+.b-find-room-page {
+  &__e-page-content {
+    padding: 30px 140px 0;
+    box-sizing: border-box;
+  }
+
+  &__e-find-room-block-big {
+    display: grid;
+
+    // Total width: 266px (settings) + 834px (rooms) = 1100px in figma
+    //Fractions:
+    //First column: 266 / 1100 ≈ 0.2418
+    //Second column: 834 / 1100 ≈ 0.7582
+    grid-template-columns: 0.2418fr 0.7582fr;
+    gap: 59px; // used one time - for distance between two columns
+  }
+
+  &__e-parameters {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__e-rooms {
+  }
+
+  &__e-rooms-grid {
+    display: grid;
+    gap: 20px; // расстояние между карточками
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+

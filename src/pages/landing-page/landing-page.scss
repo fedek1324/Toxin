@@ -1,0 +1,24 @@
+@use "@/styles/common";
+
+.b-find-room-block {
+  height: 830px;
+  background-image: url("@/assets/images/bg1.jpg");
+  background-size: cover;
+  background-position: center center;
+
+  padding: 70px 134px 18px 140px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  &__e-caption {
+    align-self: flex-end;
+    max-width: 297px;
+
+    line-height: 24px;
+    color: common.$dark75;
+    text-align: right;
+  }
+}

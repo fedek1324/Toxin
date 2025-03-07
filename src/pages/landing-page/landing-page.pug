@@ -1,0 +1,30 @@
+extends ../../template.pug
+
+include ../../blocks/cards-blocks/find-room/find-room
+include ../../blocks/headers-and-footers-blocks/header/header
+include ../../blocks/headers-and-footers-blocks/footer/footer
+
+block head
+    title Welcome
+    meta(name="keywords" content="Landing")
+    meta(name="description" content="Set initial room params")
+block content
+    +b.b-landing-page
+        +b-header({
+            elements: [
+                {text: "О нас", isBold: true},
+                {text: "Услуги", elements: ["Поиск отеля", "Поддержка"]},
+                {text: "Вакансии"},
+                {text: "Новости"},
+                {
+                    text: "Соглашения",
+                    elements: ["Соглашение об использовании данных", "Соглашение об использовании куки"]
+                }],
+            username: undefined
+        })
+
+        +b.b-find-room-block
+            +b-find-room()
+            +e.e-caption Лучшие номера для вашей работы, отдыха и просто вдохновения
+
+        +b-footer()

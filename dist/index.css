@@ -1732,7 +1732,7 @@ a {
 
 .b-room {
   padding: 0;
-  width: 270px;
+  width: auto;
 }
 .b-room__e-content {
   padding: 0 17px 19px 20px;
@@ -2237,4 +2237,42 @@ a {
   position: absolute;
   top: 30px;
   left: 30px;
+}
+
+.b-find-room-block {
+  height: 830px;
+  background-image: url(assets/images/bg1.e99de59c.jpg);
+  background-size: cover;
+  background-position: center center;
+  padding: 70px 134px 18px 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.b-find-room-block__e-caption {
+  align-self: flex-end;
+  max-width: 297px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  text-align: right;
+}
+
+.b-find-room-page__e-page-content {
+  padding: 30px 140px 0;
+  box-sizing: border-box;
+}
+.b-find-room-page__e-find-room-block-big {
+  display: grid;
+  grid-template-columns: 0.2418fr 0.7582fr;
+  gap: 59px;
+}
+.b-find-room-page__e-parameters {
+  display: flex;
+  flex-direction: column;
+}
+.b-find-room-page__e-rooms-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
 }

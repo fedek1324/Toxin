@@ -133,10 +133,11 @@ block content
 
                 +e.e-title Pagination
                 +b-pagination({})
-                //+b-pagination({
-                //  defaultPages: "15",
-                //  defaultDescription: "1 – 12 из 100+ вариантов аренды"
-                //})
+                //-
+                    +b-pagination({
+                      defaultPages: "15",
+                      defaultDescription: "1 – 12 из 100+ вариантов аренды"
+                    })
 
             +e.e-column
                 +b-input-field({

@@ -2,7 +2,7 @@ include ../../form-elements-blocks/rate-button/rate-button
 include ../carousel/carousel
 
 mixin b-room(options)
-    // {roomNumber, isLux, price, rating, feedBackCount, imagesUrlArray}
+    //- {roomNumber, isLux, price, rating, feedBackCount, imagesUrlArray}
     +b.FORM.b-room&attributes(attributes)
         +e.e-picture-container
             +b-carousel(options.imagesUrlArray)

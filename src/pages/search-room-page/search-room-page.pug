@@ -6,6 +6,7 @@ include ../../blocks/form-elements-blocks/input-field/b-input-field
 include ../../blocks/form-elements-blocks/counter/b-counter
 include ../../blocks/form-elements-blocks/checkbox/checkbox
 include ../../blocks/form-elements-blocks/slider/slider
+include ../../blocks/form-elements-blocks/pagination/pagination
 
 include ../../blocks/form-elements-blocks/bullet-list/bullet-list
 include ../../blocks/form-elements-blocks/bullet-item/bullet-item
@@ -101,10 +102,10 @@ block content
                         +b-checkbox({id: "exp4", text: "Кроватка", active: "true"})
                         +b-checkbox({id: "exp5", text: "Телевизор", active: "false"})
                         +b-checkbox({id: "exp6", text: "Шампунь", active: "false"})
-                +e.e-rooms
+                +e.e-right-side-content
                     +b-h1("Номера, которые мы для вас подобрали").__e-h1
                     // {roomNumber, isLux, price, rating, feedBackCount, imagesUrlArray}
-                    +e.e-rooms-grid
+                    +e.e-rooms-grid(style = "margin-bottom: 46.5px")
                         +b-room({
                             roomNumber: 888, isLux: true, price: 9900, rating: 5, feedBackCount: 145, imagesUrlArray: [
                                 "https://i.imgur.com/9rTdtxM.jpeg", "https://i.imgur.com/dgKnm7D.jpeg", "https://i.imgur.com/CE66PkT.jpeg"
@@ -165,7 +166,5 @@ block content
                                 "https://i.imgur.com/CE66PkT.jpeg", "https://i.imgur.com/9rTdtxM.jpeg", "https://i.imgur.com/dgKnm7D.jpeg"
                             ]
                         })
-
-
-
+                    +b-pagination({})(style = "margin-bottom: 65px")
         +b-footer()

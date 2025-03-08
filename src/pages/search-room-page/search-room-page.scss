@@ -1,3 +1,5 @@
+@use "../../styles/common";
+
 .b-find-room-page {
   &__e-page-content {
     padding: 30px 140px 0;
@@ -20,13 +22,34 @@
     flex-direction: column;
   }
 
+  &__e-settings-header {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    color: common.$dark100;
+  }
+
+  &__e-sileder-and-span {
+    margin-bottom: 30px;
+  }
+
+  &__e-room-price-span {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  &__e-h1 {
+    margin-bottom: 20.5px;
+  }
+
   &__e-rooms {
   }
 
   &__e-rooms-grid {
     display: grid;
-    gap: 20px; // расстояние между карточками
-    grid-template-columns: repeat(3, 1fr);
+    gap: 12px; // расстояние между карточками
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   }
 }
 

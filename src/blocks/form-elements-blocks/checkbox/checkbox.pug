@@ -1,5 +1,5 @@
 mixin b-checkbox(options)
-    // {id, text, header(optional), active}
+    //- {id, text, header(optional), active}
     - let textClass = ""
     if options.header
         - textClass = "_small"
@@ -20,3 +20,8 @@ mixin b-checkbox(options)
                 +e.SPAN.e-new-checkbox
                 +e.LABEL.e-label(for=options.id)
                     +e.SPAN.e-label-text(class=textClass) #{options.text}
+
+    //-
+         +b-checkbox({id: "exp2", text: "Письменный стол", active: "true"})
+                         +b-checkbox({id: "wide-hallway", header: "Широкий коридор",
+                                text: "Ширина коридоров в номере не менее 91 см.", active: "false"})

@@ -3,6 +3,15 @@ extends ../../template.pug
 include ../../blocks/headers-and-footers-blocks/header/header
 include ../../blocks/headers-and-footers-blocks/footer/footer
 include ../../blocks/form-elements-blocks/input-field/b-input-field
+include ../../blocks/form-elements-blocks/counter/b-counter
+include ../../blocks/form-elements-blocks/checkbox/checkbox
+include ../../blocks/form-elements-blocks/slider/slider
+
+include ../../blocks/form-elements-blocks/bullet-list/bullet-list
+include ../../blocks/form-elements-blocks/bullet-item/bullet-item
+
+include ../../blocks/form-elements-blocks/expandable-checkbox-list/b-expandable-checkbox-list
+
 include ../../blocks/colors-and-type-blocks/h1/h1
 include ../../blocks/cards-blocks/room/room
 
@@ -31,9 +40,69 @@ block content
                     +b-input-field({
                         type: "range-date-picker", headText: "Даты пребывания в отеле",
                         value: "19.08.2025 - 23.08.2025"
-                    })
+                    })(style = "margin-bottom: 20px")
+                    +b-input-field({
+                        type: "counters-apply-button",
+                        headText: "гости",
+                        value: "Сколько гостей"
+                    })(style = "margin-bottom: 30px")
+                        +b-counter({
+                            text: "Взрослые",
+                            maxValue: 50, initialValue: 0
+                        }).__e-row
+                        +b-counter({
+                            text: "Дети",
+                            maxValue: 50, initialValue: 0
+                        }).__e-row
+                        +b-counter({
+                            text: "Младенцы",
+                            maxValue: 50, initialValue: 0
+                        }).__e-row
+                    +e.e-sileder-and-span
+                        +b-slider({
+                            title: "диапазон цены", minValue: "0", maxValue: "15000",
+                            step: "1000", defaultStart: "5000", defaultEnd: "10000"
+                        })(style = "margin-bottom: 10.5px")
+                        +e.SPAN.e-room-price-span Стоимость за сутки пребывания в номере
+                    +e.e-rules(style = "margin-bottom: 30.8px")
+                        +e.e-settings-header-div(style = "margin-bottom: 16.5px")
+                            +e.SPAN.e-settings-header правила дома
+                        +b-checkbox({id: "smoke", text: "Можно курить", active: "false"})(style = "margin-bottom: 10.5px")
+                        +b-checkbox({id: "pet", text: "Можно c питомцами", active: "false"})(style = "margin-bottom: 10px")
+                        +b-checkbox({id: "guests", text: "Можно пригласить гостей (до 10 человек)", active: "false"})
+                    +e.e-alailability(style = "margin-bottom: 30px")
+                        +e.e-settings-header(style = "margin-bottom: 16px") доступность
+                        +b-checkbox({id: "wide-hallway", header: "Широкий коридор",
+                            text: "Ширина коридоров в номере не менее 91 см.", active: "false"})(style = "margin-bottom: 10px")
+                        +b-checkbox({
+                            id: "disabled-helper", header: "Помощник для инвалидов",
+                            text: "На 1 этаже вас встретит специалист  и проводит до номера.", active: "false"
+                        })
+                    +b-input-field({
+                        type: "counters-no-buttons", headText: "удобства номера",
+                        value: ""
+                    })(style = "margin-bottom: 15.5px" data-apply-counters-text-by-default="true")
+                        +b-counter({
+                            text: "спальни",
+                            initialValue: 2
+                        }).__e-row
+                        +b-counter({
+                            text: "кровати",
+                            initialValue: 2
+                        }).__e-row
+                        +b-counter({
+                            text: "ванные комнаты",
+                            initialValue: 0
+                        }).__e-row
+                    +b-expandable-checkbox-list({title: "дополнительные удобства"})
+                        +b-checkbox({id: "exp1", text: "Завтрак"})
+                        +b-checkbox({id: "exp2", text: "Письменный стол", active: "true"})
+                        +b-checkbox({id: "exp3", text: "Стул для кормления", active: "true"})
+                        +b-checkbox({id: "exp4", text: "Кроватка", active: "true"})
+                        +b-checkbox({id: "exp5", text: "Телевизор", active: "false"})
+                        +b-checkbox({id: "exp6", text: "Шампунь", active: "false"})
                 +e.e-rooms
-                    +b-h1("Номера, которые мы для вас подобрали")
+                    +b-h1("Номера, которые мы для вас подобрали").__e-h1
                     // {roomNumber, isLux, price, rating, feedBackCount, imagesUrlArray}
                     +e.e-rooms-grid
                         +b-room({
@@ -42,12 +111,12 @@ block content
                             ]
                         })
                         +b-room({
-                            roomNumber: 888, isLux: true, price: 9900, rating: 5, feedBackCount: 145, imagesUrlArray: [
+                            roomNumber: 840, isLux: false, price: 9900, rating: 4, feedBackCount: 65, imagesUrlArray: [
                                 "https://i.imgur.com/9rTdtxM.jpeg", "https://i.imgur.com/dgKnm7D.jpeg", "https://i.imgur.com/CE66PkT.jpeg"
                             ]
                         })
                         +b-room({
-                            roomNumber: 888, isLux: true, price: 9900, rating: 5, feedBackCount: 145, imagesUrlArray: [
+                            roomNumber: 980, isLux: true, price: 9900, rating: 5, feedBackCount: 145, imagesUrlArray: [
                                 "https://i.imgur.com/9rTdtxM.jpeg", "https://i.imgur.com/dgKnm7D.jpeg", "https://i.imgur.com/CE66PkT.jpeg"
                             ]
                         })

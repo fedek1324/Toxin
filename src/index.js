@@ -17,7 +17,7 @@ ExpandableCheckboxList.initExpandableCheckboxLists();
 Carousel.initCarousels();
 
 let currentPage = 1;
-let currentPageElementsCount = 12;
+const currentPageElementsCount = 12;
 
 const maxElementsPerPage = 12;
 const pageCount = 15;

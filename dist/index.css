@@ -1317,9 +1317,6 @@ a {
   content: "star";
 }
 
-.b-slider {
-  margin-bottom: 40px;
-}
 .b-slider__e-header {
   display: flex;
   justify-content: space-between;
@@ -1339,7 +1336,6 @@ a {
 .b-slider__e-slider {
   display: flex;
   position: relative;
-  width: 266px;
   height: 6px;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 3px;
@@ -1733,6 +1729,8 @@ a {
 .b-room {
   padding: 0;
   width: auto;
+  min-width: 270px;
+  max-width: 360px; /* для каждого элемента сетки */
 }
 .b-room__e-content {
   padding: 0 17px 19px 20px;
@@ -2271,8 +2269,24 @@ a {
   display: flex;
   flex-direction: column;
 }
+.b-find-room-page__e-settings-header {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #1F2041;
+}
+.b-find-room-page__e-sileder-and-span {
+  margin-bottom: 30px;
+}
+.b-find-room-page__e-room-price-span {
+  font-size: 12px;
+  line-height: 14px;
+}
+.b-find-room-page__e-h1 {
+  margin-bottom: 20.5px;
+}
 .b-find-room-page__e-rooms-grid {
   display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
 }

@@ -5,3 +5,20 @@ mixin b-expandable-checkbox-list(options)
             +e.e-chevron
         +e.e-checkboxes-container
             block
+
+    //-
+        +b-expandable-checkbox-list({title: "expandable checkbox list"})(style="margin-bottom: 20px;")
+            +b-checkbox({id: "exp1", text: "Завтрак"})
+            +b-checkbox({id: "exp2", text: "Письменный стол", active: "true"})
+            +b-checkbox({id: "exp3", text: "Стул для кормления", active: "true"})
+            +b-checkbox({id: "exp4", text: "Кроватка", active: "true"})
+            +b-checkbox({id: "exp5", text: "Телевизор", active: "false"})
+            +b-checkbox({id: "exp6", text: "Шампунь", active: "false"})
+
+        +b-expandable-checkbox-list({title: "expandable checkbox list"})(data-open-by-default="")
+            +b-checkbox({id: "exp2_1", text: "Завтрак"})
+            +b-checkbox({id: "exp2_2", text: "Письменный стол", active: "true"})
+            +b-checkbox({id: "exp2_3", text: "Стул для кормления", active: "true"})
+            +b-checkbox({id: "exp2_4", text: "Кроватка", active: "true"})
+            +b-checkbox({id: "exp2_5", text: "Телевизор", active: "false"})
+            +b-checkbox({id: "exp2_6", text: "Шампунь", active: "false"})

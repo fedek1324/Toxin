@@ -7,7 +7,9 @@ import { Slider } from './blocks/form-elements-blocks/slider/slider';
 import { Pagination } from './blocks/form-elements-blocks/pagination/pagination';
 import { ExpandableCheckboxList } from './blocks/form-elements-blocks/expandable-checkbox-list/b-expandable-checkbox-list';
 import { Carousel } from './blocks/cards-blocks/carousel/carousel';
+import { Header } from './blocks/headers-and-footers-blocks/header/header';
 
+Header.initHeaders();
 Calendar.initCalendars();
 Counter.initCounters();
 LikeButton.initLikeButtons();

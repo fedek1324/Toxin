@@ -7,6 +7,11 @@ mixin b-header(options)
             +e.e-left
                 +b-logo()(style="height: 40px")
 
+            +e.BUTTON.e-mobile-menu-toggle
+                +e.SPAN.e-mobile-menu-icon
+                    +e.SPAN.e-mobile-menu-icon-line_top
+                    +e.SPAN.e-mobile-menu-icon-line_bottom
+
             +e.e-nav
                 +e.UL.e-menu
                     each item in options.elements

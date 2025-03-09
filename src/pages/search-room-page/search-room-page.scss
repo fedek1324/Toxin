@@ -28,7 +28,13 @@
     grid-template-columns: 0.2418fr 0.7582fr;
     gap: 59px; // used one time - for distance between two columns
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1340px) {
+      // for slider enough width for correct work
+      grid-template-columns: 0.4fr 0.7582fr;
+    }
+
+    @media (max-width: 1130px) {
+      // fot no situation with one column
       grid-template-columns: 1fr;
     }
   }

@@ -22,6 +22,8 @@
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
+    text-align: right;
+    width: 90px; // otherwise when text changes it may drop to another line
   }
 
   &__e-slider {

@@ -28,7 +28,7 @@
     grid-template-columns: 0.2418fr 0.7582fr;
     gap: 59px; // used one time - for distance between two columns
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       grid-template-columns: 1fr;
     }
   }

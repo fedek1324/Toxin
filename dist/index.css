@@ -1332,6 +1332,7 @@ a {
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
+  width: 90px;
 }
 .b-slider__e-slider {
   display: flex;
@@ -2450,7 +2451,7 @@ body.menu-open {
   grid-template-columns: 0.2418fr 0.7582fr;
   gap: 59px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .b-find-room-page__e-params-and-rooms {
     grid-template-columns: 1fr;
   }

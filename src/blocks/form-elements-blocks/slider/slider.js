@@ -7,17 +7,17 @@ export class Slider {
 
     this.initThumb(sliderElement, 0, defaultStart);
     this.initThumb(sliderElement, 1, defaultEnd);
-    this.setUIValue(defaultStart, 0);
-    this.setUIValue(defaultEnd, 1);
+    this.setUIText(defaultStart, 0);
+    this.setUIText(defaultEnd, 1);
   }
 
   isInt(value) {
-    return !Number.isNaN(value) &&
-      parseInt(Number(value)) == value &&
+    return !Number.isNaN(value)
+      && parseInt(Number(value)) == value &&
       !Number.isNaN(parseInt(value, 10));
   }
 
-  setUIValue(value, thumbElNum) {
+  setUIText(value, thumbElNum) {
     const element = this.sliderElement.querySelector('.b-slider__e-current-range-text');
     const text = element.textContent;
     const indexOfDash = text.indexOf('-');
@@ -36,15 +36,14 @@ export class Slider {
   convertPxToFraction(valuePx) {
     const thumb = this.sliderElement.querySelector('.b-slider__e-thumb');
     const rightEdge = this.sliderElement.offsetWidth - thumb.offsetWidth;
-    return valuePx / rightEdge;  // rightEdge == maxLeft == maxPose of left cord
+    return valuePx / rightEdge; // rightEdge == maxLeft == maxPose of left cord
   }
 
   convertFractionToPx(valueFraction) {
     const thumb = this.sliderElement.querySelector('.b-slider__e-thumb');
     const rightEdge = this.sliderElement.offsetWidth - thumb.offsetWidth;
-    return valueFraction * rightEdge;  // rightEdge == maxLeft == maxPose of left cord
+    return valueFraction * rightEdge; // rightEdge == maxLeft == maxPose of left cord
   }
-
 
   convertFractionValueToAbsolute(valueFraction) {
     const { minValue, maxValue } = this;
@@ -109,14 +108,13 @@ export class Slider {
     let shiftX;
 
     const handleThumbPointerMove = (event) => {
-
       const calculatedLeft = this.calculateLeftPx(event, shiftX, sliderElement, thumbElNum, thumb);
 
       const newPoseInFraction = this.convertPxToFraction(calculatedLeft);
       const appropriateFractionPose = this.getFractionInSteps(newPoseInFraction, thumbElNum);
 
       const newAbsolutePose = this.convertFractionValueToAbsolute(appropriateFractionPose);
-      this.setUIValue(newAbsolutePose, thumbElNum);
+      this.setUIText(newAbsolutePose, thumbElNum);
 
       const newPxPose = this.convertFractionToPx(appropriateFractionPose);
       thumb.style.left = `${newPxPose}px`;

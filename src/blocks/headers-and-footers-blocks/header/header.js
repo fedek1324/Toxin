@@ -21,7 +21,7 @@ export class Header {
         if (link && submenu) {
           link.addEventListener('click', (e) => {
             // Only handle as toggle on mobile screens
-            if (window.innerWidth <= 1200) { // Fixed: removed 'px' suffix
+            if (window.innerWidth <= 1220) { // Fixed: removed 'px' suffix
               e.preventDefault();
               item.classList.toggle('b-header__e-menu-item_submenu-open');
 

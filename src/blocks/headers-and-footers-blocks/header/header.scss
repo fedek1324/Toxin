@@ -25,6 +25,9 @@
   }
 
   &_mobile-menu-open {
+    padding-left: calc(140px + var(--scrollbar-width));
+    padding-right: calc(140px + var(--scrollbar-width));
+
     @media (max-width: 1024px) {
       padding-left: calc(60px + var(--scrollbar-width));
       padding-right: calc(60px + var(--scrollbar-width));

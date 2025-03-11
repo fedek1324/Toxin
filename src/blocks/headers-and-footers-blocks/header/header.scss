@@ -186,15 +186,17 @@
       margin-bottom: 15px;
     }
 
-    &:hover .b-header__e-submenu {
-      display: block;
+    //&:hover .b-header__e-submenu {
+    //  display: block;
+    //}
 
-      @media (max-width: 1220px) {
-        display: none;
-      }
-    }
-
-    &_submenu-open .b-header__e-submenu {
+    //@media (max-width: 1220px) {
+    //  &__e-menu-item:hover .b-header__e-submenu {
+    //    display: none !important; // Force override with !important
+    //  }
+    //}
+    //
+    &_submenu-open .b-header__e-menu-item_submenu-open {
       display: block;
     }
   }

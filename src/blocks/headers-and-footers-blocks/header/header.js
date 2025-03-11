@@ -21,16 +21,21 @@ export class Header {
         if (link && submenu) {
           link.addEventListener('click', (e) => {
             // Only handle as toggle on mobile screens
-            if (window.innerWidth <= 1220) { // Fixed: removed 'px' suffix
+            if (window.innerWidth <= 1220) {
               e.preventDefault();
-              item.classList.toggle('b-header__e-menu-item_submenu-open');
+              e.stopPropagation(); // Stop event from bubbling up
 
-              // Close other open submenus
+              // Force close other open submenus first
               menuItems.forEach((otherItem) => {
                 if (otherItem !== item && otherItem.classList.contains('b-header__e-menu-item_submenu-open')) {
                   otherItem.classList.remove('b-header__e-menu-item_submenu-open');
                 }
               });
+
+              // Toggle the current submenu with a small delay to ensure DOM updates
+              setTimeout(() => {
+                item.classList.toggle('b-header__e-menu-item_submenu-open');
+              }, 10);
             }
           });
         }

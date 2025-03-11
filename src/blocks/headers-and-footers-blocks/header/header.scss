@@ -3,10 +3,13 @@
 .b-header {
   width: 100%;
   padding: 15px 140px;
+
   background-color: #fff;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
   font-size: 14px;
   line-height: 24px;
+
   position: relative;
 
   @media (max-width: 1024px) {
@@ -22,6 +25,21 @@
   }
 
   &_mobile-menu-open {
+    @media (max-width: 1024px) {
+      padding-left: calc(60px + var(--scrollbar-width));
+      padding-right: calc(60px + var(--scrollbar-width));
+    }
+
+    @media (max-width: 768px) {
+      padding-left: calc(30px + var(--scrollbar-width));
+      padding-right: calc(30px + var(--scrollbar-width));
+    }
+
+    @media (max-width: 480px) {
+      padding-left: calc(20px + var(--scrollbar-width));
+      padding-right: calc(20px + var(--scrollbar-width));
+    }
+
     .b-header__e-nav {
       display: flex;
     }
@@ -81,7 +99,6 @@
     @media (max-width: 1220px) {
       display: block;
       margin-left: auto;
-      margin-right: 20px;
     }
   }
 
@@ -128,10 +145,13 @@
       left: 0;
       right: 0;
       bottom: 0;
+
       background-color: white;
       z-index: 2;
+
       margin-left: 0;
-      padding: 80px 20px 20px;
+      padding: 80px 140px 20px;
+
       overflow-y: auto;
       flex-direction: column;
       justify-content: flex-start;

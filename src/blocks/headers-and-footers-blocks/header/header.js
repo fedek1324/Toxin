@@ -39,7 +39,7 @@ export class Header {
 
     // Close mobile menu on window resize
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 1200) { // Fixed: removed 'px' suffix
+      if (window.innerWidth > 1220) { // Fixed: removed 'px' suffix
         const openMenus = document.querySelectorAll('.b-header_mobile-menu-open');
         openMenus.forEach((menu) => {
           menu.classList.remove('b-header_mobile-menu-open');

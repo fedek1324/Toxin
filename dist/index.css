@@ -2079,12 +2079,17 @@ a {
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 1;
   background-color: #fff;
-  list-style: none;
-  margin: 0;
-  padding: 8px 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+@media (min-width: 1221px) {
+  .b-header__e-submenu {
+    /* Only enable hover behavior on desktop */
+  }
+  .b-header__e-menu-item:hover .b-header__e-submenu {
+    display: block;
+  }
 }
 @media (max-width: 1220px) {
   .b-header__e-submenu {

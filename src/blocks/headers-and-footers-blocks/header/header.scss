@@ -249,6 +249,13 @@
       padding-left: 20px;
       margin-top: 5px;
     }
+
+    /* Add this rule for desktop hover behavior */
+    @media (min-width: 1221px) {
+      .b-header__e-menu-item:hover .b-header__e-submenu {
+        display: block;
+      }
+    }
   }
 
   &__e-submenu-link {

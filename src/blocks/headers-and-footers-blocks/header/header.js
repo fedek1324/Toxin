@@ -19,11 +19,12 @@ export class Header {
         const submenu = item.querySelector('.b-header__e-submenu');
 
         if (link && submenu) {
-          link.addEventListener('click', (e) => {
+          link.addEventListener('pointerdown', (e) => {
+            // Only prevent default and handle toggle on mobile
             if (window.innerWidth <= 1220) {
               e.preventDefault();
 
-              // Close all submenus first
+              // Close all other submenus
               menuItems.forEach((menuItem) => {
                 if (menuItem !== item) {
                   menuItem.classList.remove('submenu-open');
@@ -36,18 +37,25 @@ export class Header {
               item.classList.toggle('submenu-open');
               submenu.style.display = item.classList.contains('submenu-open') ? 'block' : 'none';
             }
+            // For desktop, let the default link behavior happen
           });
         }
       });
     });
 
-    // Close mobile menu on window resize
+    // Reset submenu display properties on resize
     window.addEventListener('resize', () => {
       if (window.innerWidth > 1220) {
+        // Close mobile menu
         document.querySelectorAll('.b-header_mobile-menu-open').forEach((menu) => {
           menu.classList.remove('b-header_mobile-menu-open');
         });
         document.body.classList.remove('menu-open');
+
+        // Reset all submenu display properties to default
+        document.querySelectorAll('.b-header__e-submenu').forEach((submenu) => {
+          submenu.style.display = '';  // Reset to CSS-controlled value
+        });
       }
     });
   }

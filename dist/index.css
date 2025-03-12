@@ -2259,7 +2259,7 @@ body.menu-open {
 }
 
 .b-logo {
-  display: block;
+  display: flex;
 }
 
 .logo_type_full {

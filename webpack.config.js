@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const PugPlugin = require('pug-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 // const postcssReporter = require('postcss-reporter');
 // const postcssSCSS = require('postcss-scss');
@@ -75,6 +76,7 @@ module.exports = {
         filename: '[name].[contenthash:8].css',
       },
     }),
+    // new HtmlWebpackPlugin({ filename: 'landing-page.html', template: './pages/landing-page/landing-page.pug' }),
   ],
   module: {
     rules: [

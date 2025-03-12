@@ -25,7 +25,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "file-loader": "^6.2.0",
     "html-loader": "^4.1.0",
-    "html-webpack-plugin": "^5.5.0",
+    "html-webpack-plugin": "^5.6.3",
     "mini-css-extract-plugin": "^2.6.1",
     "postcss-normalize": "^10.0.1",
     "pug": "^3.0.2",

@@ -1,5 +1,4 @@
 export class InputField {
-
   static removeInputFocusOnOntherInputClick() {
     const inputs = document.querySelectorAll('.b-input-field__e-input');
     document.body.addEventListener('click', (e) => {
@@ -14,6 +13,7 @@ export class InputField {
       }
     }, { passive: true, capture: true });
   }
+
   static initDropdowns() {
     // InputField.removeInputFocusOnOntherInputClick();
 
@@ -79,7 +79,16 @@ export class InputField {
       dropdownContent.hidden = true;
       input.setAttribute('readonly', '');
       let dropdownEnabled = false;
-      dropdownContent.style.width = `${input.offsetWidth}px`;
+
+      // Add resize listener using an anonymous function
+      const handleWidthOnResize = () => {
+        dropdownContent.style.width = `${input.offsetWidth}px`;
+      };
+      window.addEventListener('resize', handleWidthOnResize);
+
+      // Set initial width
+      handleWidthOnResize();
+
       inputWrapper.onclick = handleInputFieldClick;
 
       if (inputBlock.dataset.openByDefault || inputBlock.dataset.openByDefault === '') {

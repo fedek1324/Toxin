@@ -87,6 +87,7 @@ export class Slider {
       }
       return valueAbsolute;
     }
+    return undefined;
   }
 
   getFractionInSteps(valueFraction, thumbElNum) {

@@ -2184,6 +2184,9 @@ body.menu-open {
   .b-footer__e-footer-small {
     display: block;
   }
+  .b-footer__e-copyright {
+    text-align: center;
+  }
 }
 .b-footer__e-main-wide {
   display: flex;

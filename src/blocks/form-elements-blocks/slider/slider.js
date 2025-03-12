@@ -5,10 +5,16 @@ export class Slider {
     this.maxValue = maxValue;
     this.step = step;
 
+    this.thumbValuesAbsolute = [defaultStart, defaultEnd];
+
     this.initThumb(sliderElement, 0, defaultStart);
     this.initThumb(sliderElement, 1, defaultEnd);
     this.setUIText(defaultStart, 0);
     this.setUIText(defaultEnd, 1);
+
+    window.addEventListener('resize', () => {
+      this.recalculateThumbPositions();
+    });
   }
 
   isInt(value) {
@@ -93,9 +99,19 @@ export class Slider {
     return newFraction;
   }
 
+  storeThumbsPositons(valueAbsolute, thumb) {
+    // store values
+    const thumbs = this.sliderElement.querySelectorAll('.b-slider__e-thumb');
+    const thumbIndex = Array.from(thumbs).indexOf(thumb);
+    this.thumbValuesAbsolute[thumbIndex] = valueAbsolute;
+  }
+
   setThumbPos(valueAbsolute, thumb) {
+    this.storeThumbsPositons(valueAbsolute, thumb);
+
     const valueFraction = this.convertAbsoluteValueToFraction(valueAbsolute);
     const valuePx = this.convertFractionToPx(valueFraction);
+    // eslint-disable-next-line no-param-reassign
     thumb.style.left = `${valuePx}px`;
   }
 
@@ -115,6 +131,7 @@ export class Slider {
 
       const newAbsolutePose = this.convertFractionValueToAbsolute(appropriateFractionPose);
       this.setUIText(newAbsolutePose, thumbElNum);
+      this.storeThumbsPositons(newAbsolutePose, thumb);
 
       const newPxPose = this.convertFractionToPx(appropriateFractionPose);
       thumb.style.left = `${newPxPose}px`;
@@ -161,6 +178,19 @@ export class Slider {
       newLeft = rightEdge;
     }
     return newLeft;
+  }
+
+  recalculateThumbPositions() {
+    const thumbs = this.sliderElement.querySelectorAll('.b-slider__e-thumb');
+
+    // Get current values for both thumbs and update their positions
+    for (let i = 0; i < thumbs.length; i++) {
+      const thumb = thumbs[i];
+      const currentValue = this.thumbValuesAbsolute[i];
+
+      // Update thumb position based on current value
+      this.setThumbPos(currentValue, thumb);
+    }
   }
 
   static initSliders() {

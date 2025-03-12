@@ -372,7 +372,7 @@ template {
   font-family: "Quicksand";
   font-style: normal;
   font-weight: 300;
-  src: url(assets/fonts/quicksand-v30-latin-300.b6d21e21.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/quicksand-v30-latin-300.b6d21e21.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* quicksand-regular - latin */
 @font-face {
@@ -380,28 +380,28 @@ template {
   font-family: "Quicksand";
   font-style: normal;
   font-weight: 400;
-  src: url(assets/fonts/quicksand-v30-latin-regular.cef2e580.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/quicksand-v30-latin-regular.cef2e580.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: "Quicksand";
   font-style: normal;
   font-weight: 500;
-  src: url(assets/fonts/quicksand-v30-latin-500.23257612.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/quicksand-v30-latin-500.23257612.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: "Quicksand";
   font-style: normal;
   font-weight: 600;
-  src: url(assets/fonts/quicksand-v30-latin-600.83100914.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/quicksand-v30-latin-600.83100914.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: "Quicksand";
   font-style: normal;
   font-weight: 700;
-  src: url(assets/fonts/quicksand-v30-latin-700.81492e5c.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/quicksand-v30-latin-700.81492e5c.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-100 - cyrillic_latin */
 @font-face {
@@ -409,7 +409,7 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 100;
-  src: url(assets/fonts/montserrat-v25-cyrillic_latin-100.0778673f.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/montserrat-v25-cyrillic_latin-100.0778673f.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-100italic - cyrillic_latin */
 @font-face {
@@ -417,7 +417,7 @@ template {
   font-family: "Montserrat";
   font-style: italic;
   font-weight: 100;
-  src: url(assets/fonts/montserrat-v25-cyrillic_latin-100italic.ffa9732a.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/montserrat-v25-cyrillic_latin-100italic.ffa9732a.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-200 - cyrillic_latin */
 @font-face {
@@ -425,7 +425,7 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 200;
-  src: url(assets/fonts/montserrat-v25-cyrillic_latin-200.1a6b262a.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/montserrat-v25-cyrillic_latin-200.1a6b262a.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-200italic - cyrillic_latin */
 @font-face {
@@ -433,7 +433,7 @@ template {
   font-family: "Montserrat";
   font-style: italic;
   font-weight: 200;
-  src: url(assets/fonts/montserrat-v25-cyrillic_latin-200italic.6a595dee.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/montserrat-v25-cyrillic_latin-200italic.6a595dee.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-300 - cyrillic_latin */
 @font-face {
@@ -441,7 +441,7 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 300;
-  src: url(assets/fonts/montserrat-v25-cyrillic_latin-300.d6324367.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/montserrat-v25-cyrillic_latin-300.d6324367.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-300italic - cyrillic_latin */
 @font-face {
@@ -449,7 +449,7 @@ template {
   font-family: "Montserrat";
   font-style: italic;
   font-weight: 300;
-  src: url(assets/fonts/montserrat-v25-cyrillic_latin-300italic.6c8474b9.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/montserrat-v25-cyrillic_latin-300italic.6c8474b9.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-regular - cyrillic_latin */
 @font-face {
@@ -457,7 +457,7 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  src: url(assets/fonts/montserrat-v25-cyrillic_latin-regular.62c0f043.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/montserrat-v25-cyrillic_latin-regular.62c0f043.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-italic - cyrillic_latin */
 @font-face {
@@ -465,7 +465,7 @@ template {
   font-family: "Montserrat";
   font-style: italic;
   font-weight: 400;
-  src: url(assets/fonts/montserrat-v25-cyrillic_latin-italic.38fe8b3b.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/montserrat-v25-cyrillic_latin-italic.38fe8b3b.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-500 - cyrillic_latin */
 @font-face {
@@ -473,7 +473,7 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
-  src: url(assets/fonts/montserrat-v25-cyrillic_latin-500.6bba3d8a.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/montserrat-v25-cyrillic_latin-500.6bba3d8a.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-500italic - cyrillic_latin */
 @font-face {
@@ -481,7 +481,7 @@ template {
   font-family: "Montserrat";
   font-style: italic;
   font-weight: 500;
-  src: url(assets/fonts/montserrat-v25-cyrillic_latin-500italic.d5bcb04b.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/montserrat-v25-cyrillic_latin-500italic.d5bcb04b.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-600 - cyrillic_latin */
 @font-face {
@@ -489,7 +489,7 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
-  src: url(assets/fonts/montserrat-v25-cyrillic_latin-600.57bef0d4.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/montserrat-v25-cyrillic_latin-600.57bef0d4.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-600italic - cyrillic_latin */
 @font-face {
@@ -497,7 +497,7 @@ template {
   font-family: "Montserrat";
   font-style: italic;
   font-weight: 600;
-  src: url(assets/fonts/montserrat-v25-cyrillic_latin-600italic.63b9a8ab.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/montserrat-v25-cyrillic_latin-600italic.63b9a8ab.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-700 - cyrillic_latin */
 @font-face {
@@ -505,7 +505,7 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
-  src: url(assets/fonts/montserrat-v25-cyrillic_latin-700.31b571dc.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/montserrat-v25-cyrillic_latin-700.31b571dc.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-700italic - cyrillic_latin */
 @font-face {
@@ -513,7 +513,7 @@ template {
   font-family: "Montserrat";
   font-style: italic;
   font-weight: 700;
-  src: url(assets/fonts/montserrat-v25-cyrillic_latin-700italic.13ff4dc9.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/montserrat-v25-cyrillic_latin-700italic.13ff4dc9.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-800 - cyrillic_latin */
 @font-face {
@@ -521,7 +521,7 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 800;
-  src: url(assets/fonts/montserrat-v25-cyrillic_latin-800.8cc071a9.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/montserrat-v25-cyrillic_latin-800.8cc071a9.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-800italic - cyrillic_latin */
 @font-face {
@@ -529,7 +529,7 @@ template {
   font-family: "Montserrat";
   font-style: italic;
   font-weight: 800;
-  src: url(assets/fonts/montserrat-v25-cyrillic_latin-800italic.9d5638bf.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/montserrat-v25-cyrillic_latin-800italic.9d5638bf.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-900 - cyrillic_latin */
 @font-face {
@@ -537,7 +537,7 @@ template {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 900;
-  src: url(assets/fonts/montserrat-v25-cyrillic_latin-900.eca3463e.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/montserrat-v25-cyrillic_latin-900.eca3463e.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* montserrat-900italic - cyrillic_latin */
 @font-face {
@@ -545,7 +545,7 @@ template {
   font-family: "Montserrat";
   font-style: italic;
   font-weight: 900;
-  src: url(assets/fonts/montserrat-v25-cyrillic_latin-900italic.84167029.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/montserrat-v25-cyrillic_latin-900italic.84167029.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* material-icons-regular - latin */
 @font-face {
@@ -553,7 +553,7 @@ template {
   font-family: "Material Icons";
   font-style: normal;
   font-weight: 400;
-  src: url(assets/fonts/material-icons-v140-latin-regular.0c35d18b.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(/assets/fonts/material-icons-v140-latin-regular.0c35d18b.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 .dark-100 {
   background-color: #1f2041;
@@ -1144,7 +1144,7 @@ a {
 }
 .b-checkbox__e-legacy-checkbox:checked + .b-checkbox__e-new-checkbox {
   border-color: #BC9CFF;
-  background-image: url(assets/images/checkmark.c93d1d2e.svg);
+  background-image: url(/assets/images/checkmark.c93d1d2e.svg);
 }
 .b-checkbox__e-label-and-check-container {
   display: flex;
@@ -1206,7 +1206,7 @@ a {
 }
 .b-radio-button__e-legacy-radio-button:checked + .b-radio-button__e-new-radio-button {
   border-color: #BC9CFF;
-  background-image: url(assets/images/circle-purple.4344cd3c.svg);
+  background-image: url(/assets/images/circle-purple.4344cd3c.svg);
 }
 .b-radio-button__e-label {
   color: rgba(31, 32, 65, 0.5);
@@ -1248,11 +1248,11 @@ a {
   width: 12px;
   height: 12px;
   left: 4px;
-  content: url(assets/images/circle-gray.7ac61070.svg);
+  content: url(/assets/images/circle-gray.7ac61070.svg);
   transition: all 70ms;
 }
 .b-toggle__e-legacy-checkbox:checked ~ .b-toggle__e-circle {
-  content: url(assets/images/circle-purple.4344cd3c.svg);
+  content: url(/assets/images/circle-purple.4344cd3c.svg);
   left: 24px;
 }
 .b-toggle__e-legacy-checkbox:checked + .b-toggle__e-toggle {
@@ -1694,7 +1694,7 @@ a {
   width: 20px;
   height: 21px;
   margin-left: 5px;
-  background-image: url(assets/images/info-icon.a2ef7acc.svg);
+  background-image: url(/assets/images/info-icon.a2ef7acc.svg);
   color: rgba(31, 32, 65, 0.5);
 }
 .b-booking-checkout__e-additional-service-price-with-icon {
@@ -2438,7 +2438,7 @@ body.menu-open {
 
 .b-find-room-block {
   height: 830px;
-  background-image: url(assets/images/bg1.e99de59c.jpg);
+  background-image: url(/assets/images/bg1.e99de59c.jpg);
   background-size: cover;
   background-position: center center;
   padding: 70px 134px 18px 140px;

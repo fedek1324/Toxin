@@ -25,6 +25,7 @@ module.exports = {
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/' // Important! This ensures assets are referenced correctly
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.css', '.png'], // теперь можно писать import '../jsFile' без .js в конце
@@ -52,6 +53,7 @@ module.exports = {
       directory: path.join(__dirname, 'dist'),
     },
     compress: true,
+    historyApiFallback: true, // Important for client-side routing
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -76,7 +78,7 @@ module.exports = {
         filename: '[name].[contenthash:8].css',
       },
     }),
-    // new HtmlWebpackPlugin({ filename: 'landing-page.html', template: './pages/landing-page/landing-page.pug' }),
+    new HtmlWebpackPlugin({ filename: 'landing-page.html', template: './pages/landing-page/landing-page.pug' }),
   ],
   module: {
     rules: [

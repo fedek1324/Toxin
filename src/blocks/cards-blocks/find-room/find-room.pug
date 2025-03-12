@@ -4,8 +4,9 @@ include ../../form-elements-blocks/button/button
 include ../../form-elements-blocks/counter/b-counter
 
 
-mixin b-find-room()
-    +b.FORM.b-find-room&attributes(attributes)
+mixin b-find-room(options)
+    - const redirectUrl = options && options.redirectUrl ? options.redirectUrl : '/search-room-page.html'
+    +b.FORM.b-find-room(action=redirectUrl method="GET")&attributes(attributes)
         +b-h1("Найдём номера под ваши пожелания")
         +e.e-row
             +b-input-field({

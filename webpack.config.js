@@ -1,5 +1,5 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -78,7 +78,11 @@ module.exports = {
         filename: '[name].[contenthash:8].css',
       },
     }),
-    new HtmlWebpackPlugin({ filename: 'landing-page.html', template: './pages/landing-page/landing-page.pug' }),
+    new HtmlWebpackPlugin({filename: 'landing-page.html', template: './pages/landing-page/landing-page.pug'}),
+    new HtmlWebpackPlugin({
+      filename: 'search-room-page.html',
+      template: './pages/search-room-page/search-room-page.pug'
+    }),
   ],
   module: {
     rules: [

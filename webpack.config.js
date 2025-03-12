@@ -25,7 +25,6 @@ module.exports = {
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/' // Important! This ensures assets are referenced correctly
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.css', '.png'], // теперь можно писать import '../jsFile' без .js в конце
@@ -73,15 +72,14 @@ module.exports = {
       filename: '[name].[contenthash].css',
     }),
     new PugPlugin({
-      css: {
-        // output filename of CSS files
-        filename: '[name].[contenthash:8].css',
+      extractCss: {
+        filename: '[name].[contenthash:8].css'
       },
     }),
     new HtmlWebpackPlugin({filename: 'landing-page.html', template: './pages/landing-page/landing-page.pug'}),
     new HtmlWebpackPlugin({
       filename: 'search-room-page.html',
-      template: './pages/search-room-page/search-room-page.pug'
+      template: './pages/search-room-page/search-room-page.pug',
     }),
   ],
   module: {

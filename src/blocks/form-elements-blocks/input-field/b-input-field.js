@@ -28,7 +28,7 @@ export class InputField {
 
       if (inputBlock.matches('.b-input-field_has-counters-text-no-buttons')) {
         // setCounterValuesAsText();
-        dropdownContent.addEventListener('pointerdown', setCounterValuesAsText, { passive: true });
+        dropdownContent.addEventListener('click', setCounterValuesAsText, { passive: true });
       }
 
       if (inputBlock.matches('.b-input-field_has-counters-text-and-apply-button')) {
@@ -85,7 +85,6 @@ export class InputField {
         dropdownContent.style.width = `${input.offsetWidth}px`;
       };
       window.addEventListener('resize', handleWidthOnResize);
-
       // Set initial width
       handleWidthOnResize();
 

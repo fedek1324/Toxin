@@ -25,17 +25,17 @@ export class Counter {
       const value = counter.querySelector('.b-counter__e-value');
       const initialValue = +value.textContent; // Parse the initial value as a number
 
-      minusBtn.onclick = (e) => {
+      minusBtn.addEventListener('click', (e) => {
         // to not reload page when in form element
         e.preventDefault();
         updateCounterValue(counter, value, -1);
-      };
+      });
 
-      plusBtn.onclick = (e) => {
+      plusBtn.addEventListener('click', (e) => {
         // to not reload page when in form element
         e.preventDefault();
         updateCounterValue(counter, value, 1);
-      };
+      })
 
       // Initialize counter value based on initial value and limits
       updateCounterValue(counter, value, 0);

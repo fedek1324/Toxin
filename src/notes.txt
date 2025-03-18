@@ -12,7 +12,6 @@ i can select last (expanded) dropdown text onpointer down under it and under exp
 use this in input block add class constructors to access class inner things fron static init dropdowns
 rewrite input block not add additional classes to several nodes just use complex css selectors
 like button changes its size on click
-cb click works only on label
 rewrite check box with header (should be like table) but not using table use css grid
 add postcss maybe
 add cursor poiner where it needed

@@ -134,6 +134,31 @@ a {
 
   /* Support for IE. */
   font-feature-settings: 'liga';
+
+
+
+  color: transparent; /* Make the text invisible */
+  position: relative;
+  /* Add a placeholder/spinner while loading */
+  //&::before {
+  //  content: "";
+  //  position: absolute;
+  //  top: 0;
+  //  left: 0;
+  //  width: 100%;
+  //  height: 100%;
+  //  background-color: rgba(211, 211, 211, 0.3); /* Light gray background */
+  //  border-radius: 4px;
+  //}
+  /* Animation to fade in when font is loaded */
+  //animation: fadeInIcons 0.3s ease forwards;
+  //animation-delay: 1s; /* Adjust based on your typical font load time */
+}
+
+@keyframes fadeInIcons {
+  to {
+    color: inherit; /* Restore the text color */
+  }
 }
 
 /* Rules for sizing the icon. */

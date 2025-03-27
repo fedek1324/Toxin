@@ -35,7 +35,7 @@ export class Counter {
         // to not reload page when in form element
         e.preventDefault();
         updateCounterValue(counter, value, 1);
-      })
+      });
 
       // Initialize counter value based on initial value and limits
       updateCounterValue(counter, value, 0);
